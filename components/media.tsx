@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { ExternalLink } from "lucide-react"
 
 const mediaItems = [
@@ -67,12 +66,11 @@ export function Media() {
             >
               <div className="flex items-center justify-between gap-4 mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-10 relative rounded overflow-hidden bg-secondary flex-shrink-0">
-                    <Image
+                  <div className="w-12 h-10 rounded overflow-hidden bg-secondary flex-shrink-0 flex items-center justify-center">
+                    <img
                       src={item.logo}
                       alt={item.source}
-                      fill
-                      className="object-contain p-1"
+                      className="max-w-full max-h-full object-contain p-1"
                     />
                   </div>
                   <span className="text-xs font-medium text-primary">

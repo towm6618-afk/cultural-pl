@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 export function Footer() {
@@ -7,11 +6,9 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
           <div>
-            <Image
+            <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%BC%D0%B8%D1%81%D1%82%D0%B5%D1%86%D1%82%D0%B2%D0%BE%2C%20%D0%BA%D0%BE%D0%BF%D1%96%D1%8F-omvlCV4W3nKGq9vFPbgQMH5FG47jMo.png"
               alt="Поліська Казка"
-              width={180}
-              height={70}
               className="h-14 w-auto mb-6 brightness-0 invert"
             />
             <p className="text-background/70 leading-relaxed max-w-md mb-8">

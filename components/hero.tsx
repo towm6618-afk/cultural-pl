@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 export function Hero() {
@@ -18,13 +17,10 @@ export function Hero() {
           Конкурс триває — приймаємо заявки
         </div>
         
-        <Image
+        <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%BC%D0%B8%D1%81%D1%82%D0%B5%D1%86%D1%82%D0%B2%D0%BE%2C%20%D0%BA%D0%BE%D0%BF%D1%96%D1%8F-omvlCV4W3nKGq9vFPbgQMH5FG47jMo.png"
           alt="Поліська Казка"
-          width={500}
-          height={200}
           className="mx-auto mb-8 w-full max-w-md"
-          priority
         />
         
         <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance leading-tight">

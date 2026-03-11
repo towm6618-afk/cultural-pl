@@ -1,4 +1,4 @@
-import Image from "next/image"
+
 
 const strategicPartners = [
   {
@@ -62,11 +62,9 @@ export function Partners() {
                 className="bg-background rounded-2xl border border-border p-8 text-center max-w-sm hover:border-primary/50 transition-colors"
               >
                 <div className="h-28 flex items-center justify-center mb-4">
-                  <Image
+                  <img
                     src={partner.logo}
                     alt={partner.name}
-                    width={180}
-                    height={100}
                     className="max-h-24 w-auto object-contain"
                   />
                 </div>
@@ -88,11 +86,9 @@ export function Partners() {
                 key={index}
                 className="bg-background rounded-xl border border-border p-4 flex items-center justify-center h-20 hover:border-primary/50 transition-colors"
               >
-                <Image
+                <img
                   src={partner.logo}
                   alt={partner.name}
-                  width={100}
-                  height={50}
                   className="max-h-12 w-auto object-contain"
                 />
               </div>
