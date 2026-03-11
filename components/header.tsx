@@ -2,18 +2,19 @@
 
 import { useState } from "react"
 import Link from "next/link"
-
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
 
   const navLinks = [
-    { href: "#about", label: "Про нас" },
-    { href: "#competition", label: "Національний конкурс" },
-    { href: "#media", label: "Медіа" },
-    { href: "#partners", label: "Партнери" },
-    { href: "#contact", label: "Контакти" },
+    { href: "/", label: "Головна" },
+    { href: "/pro-nas", label: "Про нас" },
+    { href: "/konkurs", label: "Національний конкурс" },
+    { href: "/media", label: "Медіа" },
+    { href: "/kontakty", label: "Контакти" },
   ]
 
   return (
@@ -33,13 +34,17 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-muted hover:text-foreground transition-colors text-sm font-medium"
+                className={`text-sm font-medium transition-colors ${
+                  pathname === link.href 
+                    ? "text-primary" 
+                    : "text-muted hover:text-foreground"
+                }`}
               >
                 {link.label}
               </Link>
             ))}
             <Link
-              href="#competition"
+              href="/konkurs"
               className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium hover:bg-accent transition-colors"
             >
               Взяти участь
@@ -64,13 +69,17 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-muted hover:text-foreground transition-colors text-base font-medium"
+                className={`text-base font-medium transition-colors ${
+                  pathname === link.href 
+                    ? "text-primary" 
+                    : "text-muted hover:text-foreground"
+                }`}
               >
                 {link.label}
               </Link>
             ))}
             <Link
-              href="#competition"
+              href="/konkurs"
               onClick={() => setIsOpen(false)}
               className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium hover:bg-accent transition-colors text-center"
             >
