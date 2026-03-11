@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export function About() {
   return (
     <section id="about" className="py-24 bg-background">
@@ -41,25 +43,41 @@ export function About() {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="aspect-[4/5] rounded-2xl bg-secondary overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-                    <svg className="w-12 h-12 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-                  </div>
-                  <p className="font-serif text-xl text-foreground italic">
-                    «Підтримка мистецтва — це інвестиція в майбутнє України»
-                  </p>
-                </div>
-              </div>
+          <div id="competition" className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-8 md:p-10">
+            <div className="flex items-center gap-4 mb-6">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%20%D0%B1%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-7-ZqmUXXg5IJhdL8KSw39hxTUKKZD1YX.png"
+                alt="НАОМА"
+                width={120}
+                height={80}
+                className="h-16 w-auto"
+              />
             </div>
-            
-            {/* Decorative element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full -z-10" />
-            <div className="absolute -top-6 -left-6 w-20 h-20 bg-accent/20 rounded-full -z-10" />
+            <span className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-medium mb-4">
+              Спільно з НАОМА
+            </span>
+            <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Національний конкурс молодих художників
+            </h3>
+            <p className="text-muted mb-6 leading-relaxed">
+              Культурна Платформа «Поліська Казка» спільно з Національною академією 
+              образотворчого мистецтва і архітектури проводить щорічний конкурс для 
+              молодих художників.
+            </p>
+            <ul className="space-y-3 text-muted">
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
+                Стипендія переможцю — 300 000 грн на рік
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
+                Персональна виставка в Києві
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
+                Менторська підтримка від провідних митців
+              </li>
+            </ul>
           </div>
         </div>
       </div>

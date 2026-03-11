@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 
 export function Header() {
@@ -9,25 +10,27 @@ export function Header() {
 
   const navLinks = [
     { href: "#about", label: "Про нас" },
-    { href: "#mission", label: "Місія" },
+    { href: "#competition", label: "Національний конкурс" },
     { href: "#media", label: "Медіа" },
     { href: "#partners", label: "Партнери" },
+    { href: "#contact", label: "Контакти" },
   ]
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-serif text-lg font-bold">ПК</span>
-            </div>
-            <span className="hidden sm:block font-serif text-lg font-semibold text-foreground">
-              Поліська Казка
-            </span>
+        <div className="flex items-center justify-between h-20">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%BC%D0%B8%D1%81%D1%82%D0%B5%D1%86%D1%82%D0%B2%D0%BE%2C%20%D0%BA%D0%BE%D0%BF%D1%96%D1%8F-omvlCV4W3nKGq9vFPbgQMH5FG47jMo.png"
+              alt="Поліська Казка"
+              width={160}
+              height={60}
+              className="h-12 w-auto"
+            />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -38,7 +41,7 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="#contact"
+              href="#competition"
               className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium hover:bg-accent transition-colors"
             >
               Взяти участь
@@ -47,7 +50,7 @@ export function Header() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-foreground"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -56,7 +59,7 @@ export function Header() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-background border-b border-border">
+        <div className="lg:hidden bg-background border-b border-border">
           <nav className="flex flex-col px-4 py-4 gap-4">
             {navLinks.map((link) => (
               <Link
@@ -69,7 +72,7 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="#contact"
+              href="#competition"
               onClick={() => setIsOpen(false)}
               className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium hover:bg-accent transition-colors text-center"
             >

@@ -1,9 +1,9 @@
+import Image from "next/image"
 import Link from "next/link"
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background pattern */}
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background" />
       <div 
         className="absolute inset-0 opacity-5"
@@ -18,9 +18,18 @@ export function Hero() {
           Конкурс триває — приймаємо заявки
         </div>
         
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance leading-tight">
-          Культурна Платформа
-          <span className="block text-primary mt-2">«Поліська Казка»</span>
+        <Image
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%BC%D0%B8%D1%81%D1%82%D0%B5%D1%86%D1%82%D0%B2%D0%BE%2C%20%D0%BA%D0%BE%D0%BF%D1%96%D1%8F-omvlCV4W3nKGq9vFPbgQMH5FG47jMo.png"
+          alt="Поліська Казка"
+          width={500}
+          height={200}
+          className="mx-auto mb-8 w-full max-w-md"
+          priority
+        />
+        
+        <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance leading-tight">
+          Культурна Платформа підтримки
+          <span className="block text-primary mt-2">молодих митців</span>
         </h1>
         
         <p className="text-lg sm:text-xl text-muted max-w-3xl mx-auto mb-10 text-balance leading-relaxed">
@@ -36,7 +45,7 @@ export function Hero() {
             Дізнатися більше
           </Link>
           <Link
-            href="#contact"
+            href="#competition"
             className="bg-background text-foreground px-8 py-4 rounded-full text-base font-medium border border-border hover:border-primary transition-colors"
           >
             Взяти участь у конкурсі
@@ -59,7 +68,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Decorative scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted">
         <span className="text-xs uppercase tracking-widest">Прокрутіть</span>
         <div className="w-6 h-10 border-2 border-muted rounded-full flex justify-center pt-2">
