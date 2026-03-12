@@ -45,20 +45,7 @@ export function Hero() {
           </Link>
         </div>
 
-        <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
-          <div className="text-center">
-            <div className="font-serif text-3xl sm:text-4xl font-bold text-primary">300K</div>
-            <div className="text-sm text-muted mt-1">грн стипендія</div>
-          </div>
-          <div className="text-center">
-            <div className="font-serif text-3xl sm:text-4xl font-bold text-primary">2025</div>
-            <div className="text-sm text-muted mt-1">рік заснування</div>
-          </div>
-          <div className="text-center">
-            <div className="font-serif text-3xl sm:text-4xl font-bold text-primary">1</div>
-            <div className="text-sm text-muted mt-1">рік підтримки</div>
-          </div>
-        </div>
+
       </div>
 
 
