@@ -59,13 +59,13 @@ export function Partners() {
             {strategicPartners.map((partner, index) => (
               <div
                 key={index}
-                className="bg-background rounded-2xl border border-border p-8 text-center max-w-sm hover:border-primary/50 transition-colors"
+                className="bg-background rounded-2xl border border-border p-10 text-center max-w-md hover:border-primary/50 transition-colors"
               >
-                <div className="h-28 flex items-center justify-center mb-4">
+                <div className="h-48 flex items-center justify-center mb-6">
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="max-h-24 w-auto object-contain"
+                    className="max-h-44 w-auto object-contain"
                   />
                 </div>
                 <p className="text-muted text-sm leading-relaxed">
