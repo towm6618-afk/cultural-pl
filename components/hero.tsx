@@ -12,10 +12,7 @@ export function Hero() {
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 text-center">
-        <div className="inline-flex items-center gap-2 bg-secondary/80 text-foreground px-4 py-2 rounded-full text-sm font-medium mb-8">
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          Конкурс триває — приймаємо заявки
-        </div>
+
 
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%BC%D0%B8%D1%81%D1%82%D0%B5%D1%86%D1%82%D0%B2%D0%BE%2C%20%D0%BA%D0%BE%D0%BF%D1%96%D1%8F-omvlCV4W3nKGq9vFPbgQMH5FG47jMo.png"
@@ -41,7 +38,7 @@ export function Hero() {
             Дізнатися більше
           </Link>
           <Link
-            href="#competition"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSezGch8eqZ14ei-35R_HlpEqgniWM7gBzPfL2c4rNdGRQdSMQ/viewform?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPMTI0MDI0NTc0Mjg3NDE0AAGnrszkMQtoub9PJv2DCU5unTTCt5QQ-wu4-zeLqKpfCZar5-WzYq_iNPG2Xkk_aem_YvDpMOwNZIkQmV-xnZ4aOA&pli=1"
             className="bg-background text-foreground px-8 py-4 rounded-full text-base font-medium border border-border hover:border-primary transition-colors"
           >
             Взяти участь у конкурсі
