@@ -13,6 +13,7 @@ export function Header() {
     { href: "/", label: "Головна" },
     { href: "/#about", label: "Про нас" },
     { href: "/konkurs", label: "Національний конкурс" },
+    { href: "/golosuvannya", label: "Голосування" },
     { href: "/#media", label: "Медіа" },
   ]
 
