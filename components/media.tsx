@@ -2,40 +2,40 @@ import { ExternalLink } from "lucide-react"
 
 const mediaItems = [
   {
-    title: "Культурна платформа «Поліська казка» та НАОМА проведуть конкурс для молодих художників",
+    title: "Конкурс народного мистецтва «Поліська Казка» продовжено. Молоді художники мають шанс отримати річні стипендії",
     source: "Interfax-Україна",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/11-0C4lcAwfIzgDWgC1we7KydLLmmPre4.jpg",
-    url: "https://interfax.com.ua",
+    url: "https://interfax.com.ua/news/culture/1135702.html",
   },
   {
-    title: "В Україні стартує конкурс молодих художників зі стипендією 300 000 грн",
+    title: "В Україні стартував Національний конкурс народного мистецтва «Поліська Казка»",
     source: "OBOZ.UA",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/oboz_ua-n7B1jVvagbJ6fi3ZD3a9qciLJERAXT.png",
-    url: "https://oboz.ua",
+    url: "https://www.obozrevatel.com/ukr/novosti-obschestvo/v-ukraini-startuvav-natsionalnij-konkurs-narodnogo-mistetstva-poliska-kazka.htm",
   },
   {
-    title: "Молоді митці зможуть отримати стипендію на рік від «Поліської казки»",
+    title: "Річна стипендія до 300 000 гривень: Культурна Платформа «Поліська казка» продовжує конкурс для молодих художників",
     source: "#ШОТАМ",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/00_jpg-BwxnnK5bWrf7KkHFbo1pJyAA0vTFeN.webp",
-    url: "https://shotam.info",
+    url: "https://shotam.info/kulturna-platforma-poliska-kazka-prodovzhuie-konkurs-dlia-molodykh-khudozhnykiv/",
   },
   {
-    title: "НАОМА та культурна платформа оголосили про новий конкурс для художників",
+    title: "Триває національний конкурс народного мистецтва «Поліська казка»: як він підтримає молодих художників?",
     source: "РУБРИКА",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/channels4_profile_edited-RvY5TxcZ6TTdFTbNJ88xr1T1vrOnZM.jpg",
-    url: "https://rubryka.com",
+    url: "https://rubryka.com/2025/12/23/tryvaye-natsionalnyj-konkurs-narodnogo-mystetstva-poliska-kazka-yak-vin-pidtrymaye-molodyh-hudozhnykiv/",
   },
   {
-    title: "Культурна ініціатива підтримає молодих українських художників",
+    title: "Національний конкурс для молодих художників «Поліська казка» продовжує прийом заявок — як доєднатися",
     source: "online.ua",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/og-ru_64f8e67c93-6aeYLGpDvYIkrlSPQAO8iJGpTgfUzO.jpg",
-    url: "https://online.ua",
+    url: "https://news.online.ua/nacionalnii-konkurs-dlia-molodix-xudoznikiv-poliska-kazka-prodovzuje-priiom-zaiavok-iak-dojednatisia-900632/",
   },
   {
-    title: "Як молодому художнику отримати стипендію 300 тисяч гривень",
+    title: "В Україні стартував національний конкурс народного мистецтва «Поліська казка»",
     source: "ТиКиїв",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-30%20%D0%B2%2012_24_54-64tjUZ72pqvn9YIO64Y0tRzwB0QD12.png",
-    url: "https://tykyiv.com",
+    url: "https://tykyiv.com/news/v-ukrayini-startuvav-natsionalnii-konkurs-narodnogo-mistetstva-poliska-kazka/",
   },
 ]
 

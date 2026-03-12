@@ -11,10 +11,9 @@ export function Header() {
 
   const navLinks = [
     { href: "/", label: "Головна" },
-    { href: "/pro-nas", label: "Про нас" },
+    { href: "/#about", label: "Про нас" },
     { href: "/konkurs", label: "Національний конкурс" },
-    { href: "/media", label: "Медіа" },
-    { href: "/kontakty", label: "Контакти" },
+    { href: "/#media", label: "Медіа" },
   ]
 
   return (
@@ -35,8 +34,8 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors ${pathname === link.href
-                    ? "text-primary"
-                    : "text-muted hover:text-foreground"
+                  ? "text-primary"
+                  : "text-muted hover:text-foreground"
                   }`}
               >
                 {link.label}
@@ -69,8 +68,8 @@ export function Header() {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className={`text-base font-medium transition-colors ${pathname === link.href
-                    ? "text-primary"
-                    : "text-muted hover:text-foreground"
+                  ? "text-primary"
+                  : "text-muted hover:text-foreground"
                   }`}
               >
                 {link.label}
