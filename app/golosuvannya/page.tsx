@@ -38,7 +38,7 @@ const artworks = [
     id: "4",
     title: "Робота №4",
     artist: "Художник 4",
-    image: "https://images.unsplash.com/photo-1549887534-1541e9326642?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=400&h=400&fit=crop",
   },
   {
     id: "5",
@@ -50,7 +50,7 @@ const artworks = [
     id: "6",
     title: "Робота №6",
     artist: "Художник 6",
-    image: "https://images.unsplash.com/photo-1569172122301-bc5008bc09c5?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=400&h=400&fit=crop",
   },
   {
     id: "7",
@@ -117,7 +117,7 @@ export default function VotingPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background">
@@ -126,7 +126,7 @@ export default function VotingPage() {
               Народне голосування
             </h1>
             <p className="text-lg text-muted max-w-2xl mx-auto">
-              Оберіть найкращу роботу конкурсу народного мистецтва «Поліська Казка». 
+              Оберіть найкращу роботу конкурсу народного мистецтва «Поліська Казка».
               Натисніть на картину, щоб проголосувати.
             </p>
           </div>
@@ -170,7 +170,7 @@ export default function VotingPage() {
               Введіть ваш email, щоб проголосувати за цю роботу
             </DialogDescription>
           </DialogHeader>
-          
+
           {selectedArtwork && (
             <div className="space-y-4">
               <div className="aspect-square w-full max-w-[200px] mx-auto overflow-hidden rounded-lg">
@@ -180,7 +180,7 @@ export default function VotingPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               <div className="text-center">
                 <h3 className="font-medium">{selectedArtwork.title}</h3>
                 <p className="text-sm text-muted">{selectedArtwork.artist}</p>
