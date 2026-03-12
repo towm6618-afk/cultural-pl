@@ -99,7 +99,7 @@ export default function KonkursPage() {
                   <div className="text-muted">грн стипендія</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-primary">150+</div>
+                  <div className="text-4xl md:text-5xl font-bold text-primary">410</div>
                   <div className="text-muted">учасників</div>
                 </div>
                 <div className="text-center">
