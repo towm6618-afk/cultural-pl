@@ -8,6 +8,69 @@ export const metadata: Metadata = {
   description: "Візьміть участь у першому національному конкурсі народного мистецтва «Поліська Казка». Стипендії до 25 000 грн/місяць.",
 }
 
+const juryMembers = [
+  {
+    name: "Маргарита Бондарєва",
+    role: "Засновниця культурної платформи «Поліська Казка»",
+    description: "Меценатка та громадська діячка.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-12-17%20at%2011_edited_edited-rLGHB0sYLNwQz2zKLQEDmRwMh3wzkW.jpg",
+  },
+  {
+    name: "Олег Скрипка",
+    role: "Народний артист України",
+    description: "Музикант, лідер гурту «ВВ», популяризатор української культури.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/312470681_681440666680037_8395954243288797366_n_edited-YWjFwAbXS4qkTENbMMoblN2IVjJ7p4.jpg",
+  },
+  {
+    name: "Остап Ступка",
+    role: "Народний артист України",
+    description: "Актор театру і кіно, режисер.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-12-22%20%D0%B2%2011_10_edited-F41HLiwg1YIREnxm4Azz3xdTajvykZ.jpg",
+  },
+  {
+    name: "Тетяна Лозова",
+    role: "Директор музею Полтавська Битва",
+    description: "Заслужений працівник культури України. Мистецтвознавець, кераміст та продюсер культурних проєктів.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-12-17%20%D0%B2%2012_edited-DnQo5TljAogUgdIKDA0X5ONUARZ7Ro.jpg",
+  },
+  {
+    name: "Артем Палієнко",
+    role: "Колишній перший заступник генерального директора",
+    description: "Національного музею народної архітектури та побуту України.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%90%D1%80%D1%82%D0%B5%D0%BC%20%D0%9F%D0%B0%D0%BB%D1%96%D1%94%D0%BD%D0%BA%D0%BE-ZDMntAEcN7evgPzzIKRJrMtO0CGdwU.jpg",
+  },
+  {
+    name: "Олена Осадча",
+    role: "Кандидат мистецтвознавства",
+    description: "Доцент кафедри образотворчого мистецтва НАОМА.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%9E%D0%BB%D0%B5%D0%BD%D0%B0%20%D0%9E%D1%81%D0%B0%D0%B4%D1%87%D0%B0-Z3onQflY8ebFFxVGMuquNOiQ1PndKb.jpg",
+  },
+  {
+    name: "Юрій Вакуленко",
+    role: "Заслужений художник України",
+    description: "Професор, член Національної спілки художників України.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%92%D0%B0%D0%BA%D1%83%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE%20%D0%AE%D1%80%D1%96%D0%B9-xKTH3tQcdsFAAHFhfSDRyPM5tgz0O7.jpg",
+  },
+  {
+    name: "Михайло Левадний",
+    role: "Мистецтвознавець",
+    description: "Експерт з народного мистецтва.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-12-22%20%D0%B2%2011_13_edited-WXrYCYGidV9SmwaIamks0fEiHvKkCX.jpg",
+  },
+  {
+    name: "Андрій Чебикін",
+    role: "Ректор НАОМА",
+    description: "Народний художник України, академік.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-30%20%D0%B2%2012_51_edited-XBcDT0UnPCNUdYJDzQePZ3p7syRRz6.jpg",
+  },
+  {
+    name: "Олексій Бондаренко",
+    role: "Художник-графік",
+    description: "Член Національної спілки художників України.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-30%20%D0%B2%2013_02_edited-thmLYIbIp0NmXoTGXldfEa0EBftNOT.jpg",
+  },
+]
+
 export default function KonkursPage() {
   return (
     <>
@@ -28,9 +91,26 @@ export default function KonkursPage() {
                 академією образотворчого мистецтва і архітектури оголошують старт першого 
                 національного конкурсу народного мистецтва «Поліська Казка».
               </p>
+              
+              {/* Statistics */}
+              <div className="flex flex-wrap justify-center gap-8 mb-10">
+                <div className="text-center">
+                  <div className="text-4xl md:text-5xl font-bold text-primary">300K</div>
+                  <div className="text-muted">грн стипендія</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl md:text-5xl font-bold text-primary">150+</div>
+                  <div className="text-muted">учасників</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl md:text-5xl font-bold text-primary">10</div>
+                  <div className="text-muted">членів журі</div>
+                </div>
+              </div>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="https://forms.google.com"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSezGch8eqZ14ei-35R_HlpEqgniWM7gBzPfL2c4rNdGRQdSMQ/viewform"
                   target="_blank"
                   className="bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-medium hover:bg-accent transition-colors"
                 >
@@ -43,6 +123,41 @@ export default function KonkursPage() {
                   Умови участі
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Jury Section */}
+        <section className="py-16 md:py-24 bg-muted/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+              Конкурсна комісія
+            </h2>
+            <p className="text-muted text-center max-w-2xl mx-auto mb-12">
+              Професійне журі, яке оцінюватиме роботи учасників конкурсу
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
+              {juryMembers.map((member) => (
+                <div key={member.name} className="text-center group">
+                  <div className="aspect-square mb-4 overflow-hidden rounded-2xl bg-secondary">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                  <h3 className="font-bold text-foreground text-sm md:text-base mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-xs md:text-sm text-primary font-medium mb-1">
+                    {member.role}
+                  </p>
+                  <p className="text-xs text-muted line-clamp-2 hidden md:block">
+                    {member.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -173,6 +288,18 @@ export default function KonkursPage() {
               </div>
 
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
+                Як подати заявку?
+              </h2>
+              <div className="space-y-4 text-muted leading-relaxed mb-12">
+                <p>
+                  Подати свої роботи на конкурс можна за посиланням нижче.
+                </p>
+                <p>
+                  Прийом робіт триває до 12.02.2026 року.
+                </p>
+              </div>
+
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
                 Відбір та результати
               </h2>
               <div className="space-y-4 text-muted leading-relaxed mb-12">
@@ -202,7 +329,7 @@ export default function KonkursPage() {
                   Подати свої роботи на конкурс можна за посиланням нижче
                 </p>
                 <Link
-                  href="https://forms.google.com"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSezGch8eqZ14ei-35R_HlpEqgniWM7gBzPfL2c4rNdGRQdSMQ/viewform"
                   target="_blank"
                   className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-medium hover:bg-accent transition-colors"
                 >

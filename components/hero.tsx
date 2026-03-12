@@ -4,35 +4,35 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background" />
-      <div 
+      <div
         className="absolute inset-0 opacity-5"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8860B' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}
       />
-      
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 text-center">
         <div className="inline-flex items-center gap-2 bg-secondary/80 text-foreground px-4 py-2 rounded-full text-sm font-medium mb-8">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
           Конкурс триває — приймаємо заявки
         </div>
-        
+
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%BC%D0%B8%D1%81%D1%82%D0%B5%D1%86%D1%82%D0%B2%D0%BE%2C%20%D0%BA%D0%BE%D0%BF%D1%96%D1%8F-omvlCV4W3nKGq9vFPbgQMH5FG47jMo.png"
           alt="Поліська Казка"
           className="mx-auto mb-8 w-full max-w-md"
         />
-        
+
         <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance leading-tight">
           Культурна Платформа підтримки
           <span className="block text-primary mt-2">молодих митців</span>
         </h1>
-        
+
         <p className="text-lg sm:text-xl text-muted max-w-3xl mx-auto mb-10 text-balance leading-relaxed">
           Популяризуємо українське мистецтво, підтримуємо молодих митців.
           Ми даємо можливість творити, розвиватися та бути почутими.
         </p>
-        
+
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="#about"
@@ -64,12 +64,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted">
-        <span className="text-xs uppercase tracking-widest">Прокрутіть</span>
-        <div className="w-6 h-10 border-2 border-muted rounded-full flex justify-center pt-2">
-          <div className="w-1.5 h-3 bg-muted rounded-full animate-bounce" />
-        </div>
-      </div>
+
     </section>
   )
 }
