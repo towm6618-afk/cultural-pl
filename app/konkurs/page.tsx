@@ -16,6 +16,24 @@ const juryMembers = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-12-17%20at%2011_edited_edited-rLGHB0sYLNwQz2zKLQEDmRwMh3wzkW.jpg",
   },
   {
+    name: "Оксана Повякель",
+    role: "Генеральний директор Національного музею народної архітектури та побуту України",
+    description: "Заслужений працівник культури України. Мистецтвознавець, кераміст  та продюсер культурних проєктів.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-12-17%20%D0%B2%2012_edited-DnQo5TljAogUgdIKDA0X5ONUARZ7Ro.jpg",
+  },
+  {
+    name: "Ахтем Сеітаблаєв",
+    role: "Український режисер, актор та військовослужбовець",
+    description: "Служить у ЗСУ на посаді художнього керівника підрозділу «ТРО Медіа» (відділ комунікацій Командування Сил територіальної оборони ЗСУ), а також є директором «Кримського дому», крім того, має звання «Заслуженого діяча мистецтв України».",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-30%20%D0%B2%2013_02_edited-thmLYIbIp0NmXoTGXldfEa0EBftNOT.jpg",
+  },
+  {
+    name: "Олесь Санін",
+    role: "Віцепрезидент Національної академії мистецтв України. ",
+    description: "Народний артист України, український режисер, лауреат  Державної премії України імені Олександра Довженка та Національної премії України імені Тараса Шевченка, кінорежисер. актор, оператор, продюсер, музикант і скульптор.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-12-22%20%D0%B2%2011_13_edited-WXrYCYGidV9SmwaIamks0fEiHvKkCX.jpg",
+  },
+  {
     name: "Євген Нищук",
     role: "Народний артист України",
     description: "Голова Комітету з Національної премії України імені Тараса Шевченка та Генеральний директор-художній керівник Національного академічного драматичного театру ім. Івана Франка, народний артист України, актор театру та кіно, громадський і державний діяч, колишній Міністр культури України.",
@@ -28,10 +46,10 @@ const juryMembers = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-12-22%20%D0%B2%2011_10_edited-F41HLiwg1YIREnxm4Azz3xdTajvykZ.jpg",
   },
   {
-    name: "Оксана Повякель",
-    role: "Генеральний директор Національного музею народної архітектури та побуту України",
-    description: "Заслужений працівник культури України. Мистецтвознавець, кераміст  та продюсер культурних проєктів.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-12-17%20%D0%B2%2012_edited-DnQo5TljAogUgdIKDA0X5ONUARZ7Ro.jpg",
+    name: "Олександр Цугорка",
+    role: "Ректор Національної академії образотворчого мистецтва та архітектури.",
+    description: "Заслужений діяч мистецтв України, видатний український художник, мистецтвознавець.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-30%20%D0%B2%2012_51_edited-XBcDT0UnPCNUdYJDzQePZ3p7syRRz6.jpg",
   },
   {
     name: "Артем Палієнко",
@@ -50,24 +68,6 @@ const juryMembers = [
     role: "Віцепрезидент Національної академії мистецтв України, член Ради з питань розвитку національного культурно-мистецького комплексу «Мистецький арсенал».",
     description: "",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%92%D0%B0%D0%BA%D1%83%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE%20%D0%AE%D1%80%D1%96%D0%B9-xKTH3tQcdsFAAHFhfSDRyPM5tgz0O7.jpg",
-  },
-  {
-    name: "Олесь Санін",
-    role: "Віцепрезидент Національної академії мистецтв України. ",
-    description: "Народний артист України, український режисер, лауреат  Державної премії України імені Олександра Довженка та Національної премії України імені Тараса Шевченка, кінорежисер. актор, оператор, продюсер, музикант і скульптор.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-12-22%20%D0%B2%2011_13_edited-WXrYCYGidV9SmwaIamks0fEiHvKkCX.jpg",
-  },
-  {
-    name: "Олександр Цугорка",
-    role: "Ректор Національної академії образотворчого мистецтва та архітектури.",
-    description: "Заслужений діяч мистецтв України, видатний український художник, мистецтвознавець.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-30%20%D0%B2%2012_51_edited-XBcDT0UnPCNUdYJDzQePZ3p7syRRz6.jpg",
-  },
-  {
-    name: "Ахтем Сеітаблаєв",
-    role: "Український режисер, актор та військовослужбовець",
-    description: "Служить у ЗСУ на посаді художнього керівника підрозділу «ТРО Медіа» (відділ комунікацій Командування Сил територіальної оборони ЗСУ), а також є директором «Кримського дому», крім того, має звання «Заслуженого діяча мистецтв України».",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-30%20%D0%B2%2013_02_edited-thmLYIbIp0NmXoTGXldfEa0EBftNOT.jpg",
   },
 ]
 
