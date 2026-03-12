@@ -23,17 +23,16 @@ export async function POST(request: Request) {
 
     const supabase = await createClient()
 
-    // Check if this email already voted for this artwork
+    // Check if this email already voted for ANY artwork
     const { data: existingVote } = await supabase
       .from("votes")
-      .select("id")
+      .select("id, artwork_id")
       .eq("email", email)
-      .eq("artwork_id", artworkId)
       .single()
 
     if (existingVote) {
       return NextResponse.json(
-        { error: "Ви вже голосували за цю роботу" },
+        { error: "Ви вже проголосували. Один email може голосувати лише один раз." },
         { status: 400 }
       )
     }

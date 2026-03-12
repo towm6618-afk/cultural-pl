@@ -53,26 +53,31 @@ async function getVotingResults() {
   
   const { data, error } = await supabase
     .from("votes")
-    .select("artwork_id")
+    .select("artwork_id, email")
   
   if (error) {
     console.error("Error fetching votes:", error)
     return null
   }
   
-  // Підрахунок голосів за кожну картину
-  const voteCounts: Record<string, number> = {}
+  // Групування голосів за картиною з emails
+  const votesByArtwork: Record<string, { count: number; emails: string[] }> = {}
   data.forEach((vote) => {
-    voteCounts[vote.artwork_id] = (voteCounts[vote.artwork_id] || 0) + 1
+    if (!votesByArtwork[vote.artwork_id]) {
+      votesByArtwork[vote.artwork_id] = { count: 0, emails: [] }
+    }
+    votesByArtwork[vote.artwork_id].count += 1
+    votesByArtwork[vote.artwork_id].emails.push(vote.email)
   })
   
   // Сортування за кількістю голосів
-  const sorted = Object.entries(voteCounts)
-    .sort(([, a], [, b]) => b - a)
-    .map(([id, count], index) => ({
+  const sorted = Object.entries(votesByArtwork)
+    .sort(([, a], [, b]) => b.count - a.count)
+    .map(([id, data], index) => ({
       position: index + 1,
       artworkId: id,
-      votes: count,
+      votes: data.count,
+      emails: data.emails,
     }))
   
   return {
@@ -114,7 +119,8 @@ export async function POST(request: NextRequest) {
         
         results.results.slice(0, 20).forEach((item) => {
           const medal = item.position === 1 ? "🥇" : item.position === 2 ? "🥈" : item.position === 3 ? "🥉" : `${item.position}.`
-          message += `${medal} Картина #${item.artworkId}: <b>${item.votes}</b> голосів\n`
+          message += `${medal} <b>Картина #${item.artworkId}</b>: ${item.votes} голосів\n`
+          message += `   📧 ${item.emails.join(", ")}\n\n`
         })
         
         if (results.results.length > 20) {
@@ -149,7 +155,8 @@ export async function POST(request: NextRequest) {
         
         results.results.slice(0, 20).forEach((item) => {
           const medal = item.position === 1 ? "🥇" : item.position === 2 ? "🥈" : item.position === 3 ? "🥉" : `${item.position}.`
-          message += `${medal} Картина #${item.artworkId}: <b>${item.votes}</b> голосів\n`
+          message += `${medal} <b>Картина #${item.artworkId}</b>: ${item.votes} голосів\n`
+          message += `   📧 ${item.emails.join(", ")}\n\n`
         })
         
         if (results.results.length > 20) {
