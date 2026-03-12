@@ -45,16 +45,16 @@ export function Footer() {
             <div>
               <h3 className="font-semibold text-background mb-4">Навігація</h3>
               <nav className="flex flex-col gap-3">
-                <Link href="#about" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/#about" className="text-background/70 hover:text-primary transition-colors">
                   Про нас
                 </Link>
-                <Link href="#competition" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/konkurs" className="text-background/70 hover:text-primary transition-colors">
                   Національний конкурс
                 </Link>
-                <Link href="#media" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/#media" className="text-background/70 hover:text-primary transition-colors">
                   Медіа
                 </Link>
-                <Link href="#partners" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/#partners" className="text-background/70 hover:text-primary transition-colors">
                   Партнери
                 </Link>
               </nav>
