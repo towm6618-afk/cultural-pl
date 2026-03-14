@@ -1,22 +1,15 @@
-import {
-  ArrowRight
-} from "lucide-react"
-import Link from "next/link"
 
 export function Info() {
   return (
-    <section id="mission" className="py-20 md:py-28 lg:py-32 bg-gradient-to-b from-background to-muted/30">
+    <section id="mission" className="py-20 md:py-28 lg:py-32 from-background to-muted/30">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Заголовок секції */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium text-sm uppercase tracking-wider mb-4">
-            Наша місія
-          </span>
           <h2 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-foreground">
-            Простір, де поєднуються три сили
+            Всеукраїнська культурна платформа «Поліська Казка»
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
-            Всеукраїнська культурна платформа «Поліська Казка» — це місце, де митці, бізнес та філантропія працюють разом для збереження та розвитку української культури.
+            Це простір у якому поєднується три складові: митці, бізнес, філантропія
           </p>
         </div>
 
@@ -78,14 +71,8 @@ export function Info() {
               </p>
             </div>
           </div>
-
-          {/* Додатковий блок знизу (опціонально) */}
-          <div className="mt-16 text-center">
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Три складові — одна мета: зберегти, розвинути та популяризувати українську культуру через творчість, партнерства та підтримку.
-            </p>
-          </div>
         </div>
+      </div>
     </section>
   )
 }
