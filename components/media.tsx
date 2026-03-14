@@ -29,7 +29,7 @@ const mediaItems = [
     title: "Національний конкурс для молодих художників «Поліська казка» продовжує прийом заявок — як доєднатися",
     source: "online.ua",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/og-ru_64f8e67c93-6aeYLGpDvYIkrlSPQAO8iJGpTgfUzO.jpg",
-    url: "https://news.online.ua/nacionalnii-konkurs-dlia-molodix-xudoznikiv-poliska-kazka-prodovzuje-priiom-zaiavok-iak-dojednatisia-900632/",
+    url: "https://news.online.ua/nacionalnii-konkurs-dlia-molodix-xudoznikiv-poliska-kazka-prodovzhuie-priiom-zaiavok-iak-dojednatisia-900632/",
   },
   {
     title: "В Україні стартував національний конкурс народного мистецтва «Поліська казка»",
@@ -41,48 +41,53 @@ const mediaItems = [
 
 export function Media() {
   return (
-    <section id="media" className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary font-medium text-sm uppercase tracking-widest">
-            Медіа
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6 text-balance">
+    <section id="media" className="py-20 md:py-32 bg-background">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 md:mb-24">
+          <h2 className="font-serif text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-primary via-primary/90 to-primary/70 bg-clip-text text-transparent">
             Ми в медіа
           </h2>
-          <p className="text-muted leading-relaxed">
-            Публікації про нашу діяльність у провідних українських медіа
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {mediaItems.map((item, index) => (
-            <a
+            <div
               key={index}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-background rounded-2xl border border-border p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all"
+              className="group relative h-80 [perspective:1000px] cursor-pointer"
             >
-              <div className="flex items-center justify-between gap-4 mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-10 rounded overflow-hidden bg-secondary flex-shrink-0 flex items-center justify-center">
+              <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                {/* Лицьова сторона — тільки логотип на всю площу */}
+                <div className="absolute inset-0 [backface-visibility:hidden] rounded-3xl border border-border/50 bg-gradient-to-br from-card to-card/90 shadow-xl overflow-hidden">
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-secondary/70 to-background/80">
                     <img
                       src={item.logo}
                       alt={item.source}
-                      className="max-w-full max-h-full object-contain p-1"
+                      className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
+                      loading="lazy"
                     />
                   </div>
-                  <span className="text-xs font-medium text-primary">
-                    {item.source}
-                  </span>
                 </div>
-                <ExternalLink className="w-4 h-4 text-muted group-hover:text-primary transition-colors flex-shrink-0" />
+
+                {/* Зворотна сторона — заголовок + посилання */}
+                <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl border border-primary/40 bg-gradient-to-br from-primary/5 via-background to-background shadow-2xl flex flex-col p-6 sm:p-8">
+                  <h3 className="text-xl font-medium leading-tight text-foreground line-clamp-[6] mb-auto">
+                    {item.title}
+                  </h3>
+
+                  <div className="mt-4 flex items-center justify-between text-sm">
+                    <span className="font-medium text-primary/90">{item.source}</span>
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+                    >
+                      Читати <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
               </div>
-              <h3 className="font-medium text-foreground leading-snug group-hover:text-primary transition-colors">
-                {item.title}
-              </h3>
-            </a>
+            </div>
           ))}
         </div>
       </div>

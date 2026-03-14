@@ -21,13 +21,11 @@ export function Hero() {
         />
 
         <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance leading-tight">
-          Культурна Платформа підтримки
-          <span className="block text-primary mt-2">молодих митців</span>
+          Поліська Казка — Всеукраїнська культурна платформа
         </h1>
 
         <p className="text-lg sm:text-xl text-muted max-w-3xl mx-auto mb-10 text-balance leading-relaxed">
-          Популяризуємо українське мистецтво, підтримуємо молодих митців.
-          Ми даємо можливість творити, розвиватися та бути почутими.
+          Популяризуємо українське мистецтво, підтримуємо молодих митців
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -38,10 +36,10 @@ export function Hero() {
             Дізнатися більше
           </Link>
           <Link
-            href="https://docs.google.com/forms/d/e/1FAIpQLSezGch8eqZ14ei-35R_HlpEqgniWM7gBzPfL2c4rNdGRQdSMQ/viewform?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPMTI0MDI0NTc0Mjg3NDE0AAGnrszkMQtoub9PJv2DCU5unTTCt5QQ-wu4-zeLqKpfCZar5-WzYq_iNPG2Xkk_aem_YvDpMOwNZIkQmV-xnZ4aOA&pli=1"
+            href="/blog/konkurs"
             className="bg-background text-foreground px-8 py-4 rounded-full text-base font-medium border border-border hover:border-primary transition-colors"
           >
-            Взяти участь у конкурсі
+            Конкурс народного мистецтва
           </Link>
         </div>
 

@@ -12,7 +12,7 @@ export function Header() {
   const navLinks = [
     { href: "/", label: "Головна" },
     { href: "/#about", label: "Про нас" },
-    { href: "/konkurs", label: "Національний конкурс" },
+    { href: "/blog", label: "Блог" },
     { href: "/golosuvannya", label: "Голосування" },
     { href: "/#media", label: "Медіа" },
   ]
