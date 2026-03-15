@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Metadata } from "next"
@@ -23,51 +22,50 @@ export default function ArticlePage() {
   return (
     <>
       <Header />
-      <main className="pt-20">
-        {/* Кнопка назад */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4 bg-background">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Назад до новин
-          </Link>
-        </div>
+      <main className="pt-24 pb-24 bg-background">
 
-        {/* Hero Section */}
-        <section className="py-12 md:py-16 bg-background">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+        {/* Єдиний широкий контейнер для всієї статті */}
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Кнопка назад */}
+          <div className="pb-6">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium group"
+            >
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+              Назад до новин
+            </Link>
+          </div>
+
+          {/* 1. ВЕЛИКА КАРТИНКА ОБКЛАДИНКИ */}
+          <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 relative group shadow-md">
+            <img
+              src="/blog/IMG_3542.webp"
+              alt="Малюнки учасників конкурсу Поліська Казка"
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </div>
+
+          {/* 2. ТЕГИ ТА ДАТА */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className="inline-flex items-center bg-primary/10 text-primary px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
               Підсумки конкурсу
             </div>
-
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Від Донеччини до В’єтнаму: понад 1000 робіт на конкурсі народного мистецтва «Поліська Казка»
-            </h1>
-
-            <div className="flex flex-wrap items-center justify-center gap-6 text-muted-foreground text-sm font-medium mb-12">
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                <span>14 Лютого 2026</span>
-              </div>
-            </div>
-
-            {/* Обкладинка (заміни src на свою картинку, якщо є) */}
-            <div className="aspect-[21/9] w-full overflow-hidden rounded-3xl bg-secondary mb-12 relative group">
-              <img
-                src="/blog/IMG_3542.JPG"
-                alt="Малюнки учасників конкурсу Поліська Казка"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent mix-blend-multiply" />
+            <div className="flex items-center gap-2 text-muted-foreground text-sm font-medium">
+              <Calendar className="w-4 h-4" />
+              <span>14 Лютого 2026</span>
             </div>
           </div>
-        </section>
 
-        {/* Тіло статті */}
-        <section className="pb-16 md:pb-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* 3. ЖУРНАЛЬНИЙ ЗАГОЛОВОК */}
+          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-12 leading-[1.2] text-balance">
+            Від Донеччини до В’єтнаму: понад 1000 робіт на конкурсі народного мистецтва «Поліська Казка»
+          </h1>
+
+          {/* 4. ОСНОВНИЙ ТЕКСТ (ДОСЛІВНО) */}
+          <div className="prose-lg">
 
             {/* Лід-абзац */}
             <p className="text-xl md:text-2xl text-foreground font-medium mb-8 leading-relaxed">
@@ -81,37 +79,33 @@ export default function ArticlePage() {
                 <p className="text-muted-foreground text-sm"></p>
               </div>
               <Link
-                href="/blog/konkurs" // Заміни на реальне посилання
+                href="/blog/konkurs"
                 className="inline-flex items-center gap-2 bg-background border border-border px-4 py-2 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors whitespace-nowrap"
               >
                 Читати статтю <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                За три місяці організатори отримали понад 1000 художніх робіт, створених молодими українськими митцями в Україні та за її межами. Попри війну, вимушену еміграцію й щоденні виклики, конкурс об’єднав українську творчу молодь у спільному культурному просторі.
-              </p>
-            </div>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-16">
+              За три місяці організатори отримали понад 1000 художніх робіт, створених молодими українськими митцями в Україні та за її межами. Попри війну, вимушену еміграцію й щоденні виклики, конкурс об’єднав українську творчу молодь у спільному культурному просторі.
+            </p>
 
             {/* Географія */}
-            <div className="mt-16 mb-8 flex items-center gap-3">
-              <div className="bg-primary/10 p-3 rounded-xl text-primary">
+            <div className="mt-12 mb-8 flex items-center gap-4 group">
+              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Globe className="w-6 h-6" />
               </div>
-              <h2 className="text-3xl font-serif font-bold text-foreground">
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
                 Географія «Поліської Казки»: Україна і світ
               </h2>
             </div>
 
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                До участі долучилися художники з усіх регіонів України — від Одещини, Київщини та Львівщини до Донеччини. Не було жодної області, з якої не надійшла б хоча б одна конкурсна робота.
-              </p>
-              <p>
-                Водночас «Поліська Казка» стала містком між Україною та світом. Свої твори надсилали українці, які через війну були змушені залишити домівки. Малюнки «летіли» з Німеччини, Польщі, Грузії, Китаю та навіть В’єтнаму.
-              </p>
-            </div>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              До участі долучилися художники з усіх регіонів України — від Одещини, Київщини та Львівщини до Донеччини. Не було жодної області, з якої не надійшла б хоча б одна конкурсна робота.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+              Водночас «Поліська Казка» стала містком між Україною та світом. Свої твори надсилали українці, які через війну були змушені залишити домівки. Малюнки «летіли» з Німеччини, Польщі, Грузії, Китаю та навіть В’єтнаму.
+            </p>
 
             {/* Цитата */}
             <blockquote className="my-12 relative overflow-hidden bg-secondary rounded-3xl p-8 md:p-10">
@@ -137,35 +131,35 @@ export default function ArticlePage() {
             </blockquote>
 
             {/* Інтерпретація */}
-            <div className="mt-16 mb-8 flex items-center gap-3">
-              <div className="bg-primary/10 p-3 rounded-xl text-primary">
+            <div className="mt-16 mb-8 flex items-center gap-4 group">
+              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Sparkles className="w-6 h-6" />
               </div>
-              <h2 className="text-3xl font-serif font-bold text-foreground">
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
                 Як молоді художники інтерпретують «Поліську Казку»
               </h2>
             </div>
 
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                Серед образів, які найчастіше з’являлися у роботах конкурсантів, — <strong>мавки, дивоптахи, чарівні квіти та поліські відьми</strong>. Молоді митці активно працюють із поліською міфологією, поєднуючи традиційні символи із сучасною візуальною мовою.
-              </p>
-              <div className="bg-background border border-border p-6 rounded-2xl my-6">
-                <p className="text-foreground">
-                  ❄️ <strong>Неочікуваний тренд:</strong> авторські вертепи — ймовірно, натхненні затяжною зимою та різдвяною атмосферою.
-                </p>
-              </div>
-              <p>
-                Кожна робота — це не просто ілюстрація, а особистий діалог із традицією. Через казкові образи художники осмислюють досвід війни, втрати, надії та відродження.
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              Серед образів, які найчастіше з’являлися у роботах конкурсантів, — <strong>мавки, дивоптахи, чарівні квіти та поліські відьми</strong>. Молоді митці активно працюють із поліською міфологією, поєднуючи традиційні символи із сучасною візуальною мовою.
+            </p>
+
+            <div className="bg-background border border-border p-6 rounded-2xl my-6 shadow-sm">
+              <p className="text-foreground text-lg">
+                ❄️ <strong className="font-bold">Неочікуваний тренд:</strong> авторські вертепи — ймовірно, натхненні затяжною зимою та різдвяною атмосферою.
               </p>
             </div>
 
+            <p className="text-lg text-muted-foreground leading-relaxed mb-16">
+              Кожна робота — це не просто ілюстрація, а особистий діалог із традицією. Через казкові образи художники осмислюють досвід війни, втрати, надії та відродження.
+            </p>
+
             {/* Статистика учасників */}
-            <div className="mt-16 mb-8 flex items-center gap-3">
-              <div className="bg-primary/10 p-3 rounded-xl text-primary">
+            <div className="mt-16 mb-8 flex items-center gap-4 group">
+              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Users className="w-6 h-6" />
               </div>
-              <h2 className="text-3xl font-serif font-bold text-foreground">
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
                 Хто творить сучасну народну казку
               </h2>
             </div>
@@ -176,15 +170,15 @@ export default function ArticlePage() {
 
             {/* Інтерактивні картки статистики */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-              <div className="bg-secondary p-6 rounded-2xl text-center hover:-translate-y-1 transition-transform">
+              <div className="bg-secondary/50 border border-border p-6 rounded-2xl text-center hover:-translate-y-1 transition-transform shadow-sm">
                 <div className="text-4xl font-bold text-primary mb-2">11<span className="text-2xl"> років</span></div>
                 <div className="text-sm text-foreground font-medium">Наймолодшому автору</div>
               </div>
-              <div className="bg-secondary p-6 rounded-2xl text-center hover:-translate-y-1 transition-transform">
+              <div className="bg-secondary/50 border border-border p-6 rounded-2xl text-center hover:-translate-y-1 transition-transform shadow-sm">
                 <div className="text-4xl font-bold text-primary mb-2">15<span className="text-2xl"> років</span></div>
                 <div className="text-sm text-foreground font-medium">Значна кількість заявок</div>
               </div>
-              <div className="bg-secondary p-6 rounded-2xl text-center hover:-translate-y-1 transition-transform">
+              <div className="bg-secondary/50 border border-border p-6 rounded-2xl text-center hover:-translate-y-1 transition-transform shadow-sm">
                 <div className="text-4xl font-bold text-primary mb-2">71<span className="text-2xl"> рік</span></div>
                 <div className="text-sm text-foreground font-medium">Найстаршому митцю</div>
               </div>
@@ -192,33 +186,30 @@ export default function ArticlePage() {
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Через вікові обмеження ці роботи не можуть брати участь в оцінюванні, однак вони стали окремим джерелом натхнення для команди проєкту.
-
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-16">
               Близько <strong>80% конкурсних робіт створені жінками</strong>, що відображає реалії воєнного часу. Водночас організатори отримали й кілька робіт від військових, які знаходять можливість творити навіть на фронті.
             </p>
 
             {/* Матеріали та форма */}
-            <div className="mt-16 mb-8 flex items-center gap-3">
-              <div className="bg-primary/10 p-3 rounded-xl text-primary">
+            <div className="mt-16 mb-8 flex items-center gap-4 group">
+              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Palette className="w-6 h-6" />
               </div>
-              <h2 className="text-3xl font-serif font-bold text-foreground">
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
                 Експерименти з формою: «металева казка»
               </h2>
             </div>
 
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                Найчастіше учасники працювали з гуашшю, аквареллю та олівцем. Водночас конкурс відкрив і несподівані експерименти з матеріалами — зокрема, серед робіт є твір, <strong>виконаний на металі</strong>.
-              </p>
-              <p>
-                Такі приклади демонструють, що сучасне українське народне мистецтво може сміливо виходити за межі звичних форматів, зберігаючи при цьому глибокий зв’язок із традицією.
-              </p>
-            </div>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              Найчастіше учасники працювали з гуашшю, аквареллю та олівцем. Водночас конкурс відкрив і несподівані експерименти з матеріалами — зокрема, серед робіт є твір, <strong>виконаний на металі</strong>.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-16">
+              Такі приклади демонструють, що сучасне українське народне мистецтво може сміливо виходити за межі звичних форматів, зберігаючи при цьому глибокий зв’язок із традицією.
+            </p>
 
             {/* Call to action (Фіналісти) */}
-            <div className="mt-16 bg-primary rounded-3xl p-8 md:p-12 text-center text-primary-foreground relative overflow-hidden">
+            <div className="mt-16 bg-primary rounded-[2rem] p-8 md:p-12 text-center text-primary-foreground relative overflow-hidden shadow-lg mb-8">
               <div className="absolute inset-0 bg-[url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.jpg')] opacity-10 mix-blend-overlay object-cover w-full h-full" />
               <div className="relative z-10">
                 <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
@@ -228,8 +219,8 @@ export default function ArticlePage() {
                   Вже <strong>5 березня</strong> всеукраїнська культурна платформа «Поліська Казка» спільно з Національною академією образотворчого мистецтва і архітектури оголосять імена фіналістів, чиї роботи роботи буде презентовано на виставці в НАОМА.
                 </p>
                 <Link
-                  href="/konkurs#jury" // Посилання на сторінку конкурсу з журі
-                  className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 rounded-full text-lg font-medium hover:bg-secondary transition-colors"
+                  href="/konkurs#jury"
+                  className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 rounded-full text-lg font-medium hover:bg-secondary transition-colors shadow-sm"
                 >
                   Детальніше познайомитися з членами журі можна тут
                 </Link>
@@ -237,7 +228,7 @@ export default function ArticlePage() {
             </div>
 
           </div>
-        </section>
+        </article>
       </main>
       <Footer />
     </>

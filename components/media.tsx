@@ -53,9 +53,11 @@ export function Media() {
           {mediaItems.map((item, index) => (
             <div
               key={index}
-              className="group relative h-80 [perspective:1000px] cursor-pointer"
+              tabIndex={0}
+              className="group relative h-80 [perspective:1000px] cursor-pointer focus:outline-none"
             >
-              <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+
+              <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]  group-focus:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]">
                 {/* Лицьова сторона — тільки логотип на всю площу */}
                 <div className="absolute inset-0 [backface-visibility:hidden] rounded-3xl border border-border/50 bg-gradient-to-br from-card to-card/90 shadow-xl overflow-hidden">
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-secondary/70 to-background/80">
@@ -88,6 +90,7 @@ export function Media() {
                 </div>
               </div>
             </div>
+
           ))}
         </div>
       </div>

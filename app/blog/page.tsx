@@ -10,7 +10,7 @@ const posts = [
     title: "Від Донеччини до В’єтнаму: понад 1000 робіт на конкурсі народного мистецтва “Поліська Казка”",
     excerpt: "12 лютого 2026 року завершився прийом робіт. Конкурс об’єднав творчу молодь в Україні та за її межами, ставши масштабним культурним явищем.",
     date: "14 лютого 2026",
-    image: "/blog/IMG_3542.JPG",
+    image: "/blog/IMG_3542.webp",
   },
   {
     slug: "press-conference",
@@ -18,7 +18,7 @@ const posts = [
     title: "У Києві відбулася пресконференція національного конкурсу народного мистецтва “Поліська Казка”",
     excerpt: "Захід пройшов у пресцентрі Інтерфакс-Україна та зібрав ініціаторів конкурсу, членів журі й представників культурної спільноти.",
     date: "3 лютого 2026",
-    image: "/blog/IMG_3541.JPG",
+    image: "/blog/IMG_3541.webp",
   },
   {
     slug: "konkurs",
@@ -26,7 +26,7 @@ const posts = [
     title: "Стартував Національний конкурс народного мистецтва «Поліська Казка»",
     excerpt: "Молоді митці 16–30 років можуть отримати річні стипендії до 25 000 грн/місяць. Прийом робіт відкрито.",
     date: "22 грудня 2025",
-    image: "/blog/IMG_3543.JPG",
+    image: "/blog/IMG_3543.webp",
   },
 ]
 
@@ -86,7 +86,7 @@ export default function BlogPage() {
 
                 {/* Текстовий блок картки */}
                 <div className="flex flex-col flex-grow bg-card p-6 md:p-8 -mt-6 relative z-10 rounded-t-[2rem]">
-                  <h2 className="text-xl md:text-2xl font-serif font-bold mb-4 text-foreground group-hover:text-primary transition-colors line-clamp-3">
+                  <h2 className="text-xl md:text-2xl font-serif font-bold mb-4 mt-4 text-foreground group-hover:text-primary transition-colors line-clamp-3">
                     {post.title}
                   </h2>
 

@@ -21,59 +21,58 @@ export default function PressConferencePage() {
   return (
     <>
       <Header />
-      <main className="pt-20">
-        {/* Навігація "Назад" */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4 bg-background">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium group"
-          >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Назад до блогу
-          </Link>
-        </div>
+      <main className="pt-24 pb-24 bg-background">
 
-        {/* Шапка (Hero Section) */}
-        <section className="py-8 md:py-12 bg-background">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Єдиний широкий контейнер для всієї статті */}
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 animate-pulse">
-              <Mic className="w-4 h-4" />
-              Пресконфереція
-            </div>
+          {/* Навігація "Назад" */}
+          <div className="pb-6">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium group"
+            >
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+              Назад до блогу
+            </Link>
+          </div>
 
-            <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8 leading-tight">
-              У Києві відбулася пресконференція національного конкурсу народного мистецтва “Поліська Казка”
-            </h1>
-
-            <div className="flex flex-wrap items-center justify-center gap-6 text-muted-foreground text-sm font-medium mb-10">
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                <span>Офіційний реліз</span>
-              </div>
-            </div>
-
-            {/* Анімоване фото пресконференції */}
-            <div className="aspect-[21/9] w-full overflow-hidden rounded-3xl bg-secondary mb-12 relative group shadow-sm">
-              <img
-                src="/blog/IMG_3541.JPG"
-                alt="Пресконференція Поліська Казка"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-6">
-                <div className="flex items-center gap-2 text-white/80 font-medium">
-                  <Camera className="w-5 h-5" />
-                  Пресцентр Інтерфакс-Україна
-                </div>
+          {/* 1. ВЕЛИКА КАРТИНКА ОБКЛАДИНКИ З ЕФЕКТОМ */}
+          <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 relative group shadow-md">
+            <img
+              src="/blog/IMG_3541.JPG"
+              alt="Пресконференція Поліська Казка"
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            />
+            {/* Градієнт та іконка камери при наведенні */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-8">
+              <div className="flex items-center gap-2 text-white/90 font-medium translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <Camera className="w-5 h-5" />
+                Пресцентр Інтерфакс-Україна
               </div>
             </div>
           </div>
-        </section>
 
-        {/* Основний текст */}
-        <section className="pb-16 md:pb-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* 2. ТЕГИ ТА ДАТА */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest animate-pulse">
+              <Mic className="w-4 h-4" />
+              Пресконфереція
+            </div>
+            <div className="w-1.5 h-1.5 rounded-full bg-border" />
+            <div className="flex items-center gap-2 text-muted-foreground text-sm font-medium">
+              <Calendar className="w-4 h-4" />
+              <span>Офіційний реліз</span>
+            </div>
+          </div>
 
+          {/* 3. ЖУРНАЛЬНИЙ ЗАГОЛОВОК */}
+          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-12 leading-[1.2] text-balance">
+            У Києві відбулася пресконференція національного конкурсу народного мистецтва “Поліська Казка”
+          </h1>
+
+          {/* 4. ОСНОВНИЙ ТЕКСТ (ДОСЛІВНО) */}
+          <div className="prose-lg">
             <p className="text-xl md:text-2xl text-foreground font-medium mb-8 leading-relaxed">
               У Києві відбулася пресконференція, присвячена першому національному конкурсу народного мистецтва “Поліська Казка”, який об’єднує молодих художників з України та з-за кордону. Захід пройшов у пресцентрі Інтерфакс-Україна та зібрав ініціаторів конкурсу, членів журі й представників культурної спільноти.
             </p>
@@ -83,13 +82,13 @@ export default function PressConferencePage() {
             </p>
 
             {/* Блок з учасниками заходу */}
-            <div className="bg-secondary/40 border border-secondary hover:border-primary/20 transition-colors duration-300 rounded-3xl p-8 my-10 group">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="bg-background p-3 rounded-2xl text-primary shadow-sm group-hover:scale-110 group-hover:-rotate-6 transition-all">
+            <div className="bg-secondary/40 border border-secondary hover:border-primary/20 transition-colors duration-300 rounded-3xl p-8 my-10 group shadow-sm">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-background p-3 rounded-2xl text-primary shadow-sm group-hover:-translate-y-1 transition-transform">
                   <Users className="w-6 h-6" />
                 </div>
               </div>
-              <p className="text-lg text-foreground leading-relaxed">
+              <p className="text-lg text-foreground leading-relaxed m-0">
                 У пресконференції взяли участь засновниця платформи Маргарита Бондарєва, ректор НАОМА Олександр Цугорка, режисер і народний артист України Олесь Санін, а також режисер і військовослужбовець Ахтем Сеітаблаєв.
               </p>
             </div>
@@ -150,7 +149,7 @@ export default function PressConferencePage() {
 
             {/* Інтерактивне посилання в кінці */}
             <div className="bg-secondary/30 border border-secondary hover:border-primary/30 transition-all duration-300 rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6 group">
-              <p className="text-lg text-foreground font-medium text-center sm:text-left">
+              <p className="text-lg text-foreground font-medium text-center sm:text-left m-0">
                 Детальніше про конкурс ми розповідали тут. Посилання на матеріал про конкурс
               </p>
               <Link
@@ -162,7 +161,7 @@ export default function PressConferencePage() {
             </div>
 
           </div>
-        </section>
+        </article>
       </main>
       <Footer />
     </>

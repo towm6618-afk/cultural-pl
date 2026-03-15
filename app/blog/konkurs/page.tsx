@@ -22,53 +22,49 @@ export default function KonkursAnnouncePage() {
   return (
     <>
       <Header />
-      <main className="pt-20">
-        {/* Навігація */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4 bg-background">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium group"
-          >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Назад до блогу
-          </Link>
-        </div>
+      <main className="pt-24 pb-24 bg-background">
 
-        {/* Обкладинка і заголовок */}
-        <section className="py-8 md:py-12 bg-background">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Контейнер max-w-4xl для всей статьи (шире, чем 3xl) */}
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+          {/* Навігація */}
+          <div className="pb-6">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium group"
+            >
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+              Назад до блогу
+            </Link>
+          </div>
+
+          {/* 1. КАРТИНКА СВЕРХУ */}
+          <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 relative shadow-md">
+            <img
+              src="/blog/IMG_3543.webp"
+              alt="Старт конкурсу Поліська Казка"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* 2. ТЕГИ И ДАТА */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className="inline-flex items-center bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
               Анонс
             </div>
-
-            <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8 leading-tight">
-              Національний конкурс народного мистецтва “Поліська Казка” стартував в Україні: річні стипендії для молодих художників
-            </h1>
-
-            <div className="flex flex-wrap items-center justify-center gap-6 text-muted-foreground text-sm font-medium mb-10">
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                <span>22 Грудня 2025</span>
-              </div>
-            </div>
-
-            {/* Анімоване фото */}
-            <div className="aspect-[21/9] w-full overflow-hidden rounded-3xl bg-secondary mb-12 relative group shadow-sm">
-              <img
-                src="/blog/IMG_3543.JPG"
-                alt="Старт конкурсу Поліська Казка"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="flex items-center gap-2 text-muted-foreground text-sm font-medium">
+              <Calendar className="w-4 h-4" />
+              <span>22 Грудня 2025</span>
             </div>
           </div>
-        </section>
 
-        {/* Основний текст */}
-        <section className="pb-16 md:pb-24">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* 3. АККУРАТНЫЙ ЗАГОЛОВОК */}
+          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-12 leading-[1.2]">
+            Національний конкурс народного мистецтва “Поліська Казка” стартував в Україні: річні стипендії для молодих художників
+          </h1>
 
+          {/* 4. ОСНОВНОЙ ТЕКСТ */}
+          <div className="prose-lg">
             <p className="text-xl md:text-2xl text-foreground font-medium mb-8 leading-relaxed">
               В Україні стартував національний конкурс народного мистецтва “Поліська Казка” — масштабна культурна ініціатива, спрямована на підтримку та розвиток молодих українських митців. Конкурс організований Всеукраїнською культурною платформою “Поліська Казка” спільно з Національна академія образотворчого мистецтва і архітектури.{" "}
               <Link href="https://naoma.edu.ua/" className="text-primary hover:text-primary/80 underline decoration-primary/30 hover:decoration-primary transition-all">
@@ -82,10 +78,10 @@ export default function KonkursAnnouncePage() {
 
             {/* Стипендії */}
             <div className="mt-12 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:rotate-12 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Trophy className="w-7 h-7" />
               </div>
-              <h2 className="text-3xl font-serif font-bold text-foreground">
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
                 Стипендії для переможців конкурсу “Поліська Казка”
               </h2>
             </div>
@@ -96,34 +92,32 @@ export default function KonkursAnnouncePage() {
 
             {/* Картки стипендій */}
             <div className="grid md:grid-cols-2 gap-6 mb-16">
-              {/* Професійна категорія */}
-              <div className="bg-secondary/40 border border-secondary hover:border-primary/20 rounded-3xl p-8 transition-all duration-300 group">
+              <div className="bg-secondary/40 border border-border hover:border-primary/30 rounded-3xl p-8 transition-colors">
                 <h3 className="text-xl font-serif font-bold text-foreground mb-6">
                   Професійна категорія
                 </h3>
                 <ul className="space-y-4">
-                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl group-hover:-translate-y-1 transition-transform">
+                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl shadow-sm">
                     <span className="text-primary font-bold text-xl">І</span>
                     <span className="text-lg text-muted-foreground">місце — <strong className="text-foreground">25 000 грн</strong> щомісяця</span>
                   </li>
-                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl group-hover:-translate-y-1 transition-transform delay-75">
+                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl shadow-sm">
                     <span className="text-primary font-bold text-xl">ІІ</span>
                     <span className="text-lg text-muted-foreground">місце — <strong className="text-foreground">20 000 грн</strong> щомісяця</span>
                   </li>
-                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl group-hover:-translate-y-1 transition-transform delay-150">
+                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl shadow-sm">
                     <span className="text-primary font-bold text-xl">ІІІ</span>
                     <span className="text-lg text-muted-foreground">місце — <strong className="text-foreground">15 000 грн</strong> щомісяця</span>
                   </li>
                 </ul>
               </div>
 
-              {/* Аматорська категорія */}
-              <div className="bg-secondary/40 border border-secondary hover:border-primary/20 rounded-3xl p-8 transition-all duration-300 group">
+              <div className="bg-secondary/40 border border-border hover:border-primary/30 rounded-3xl p-8 transition-colors">
                 <h3 className="text-xl font-serif font-bold text-foreground mb-6">
                   Аматорська категорія
                 </h3>
                 <ul className="space-y-4">
-                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl group-hover:-translate-y-1 transition-transform">
+                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl shadow-sm">
                     <span className="text-primary font-bold text-xl">І</span>
                     <span className="text-lg text-muted-foreground">місце — <strong className="text-foreground">25 000 грн</strong> щомісяця протягом року</span>
                   </li>
@@ -133,10 +127,10 @@ export default function KonkursAnnouncePage() {
 
             {/* Мета та місія */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:rotate-12 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Target className="w-7 h-7" />
               </div>
-              <h2 className="text-3xl font-serif font-bold text-foreground">
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
                 Мета та місія конкурсу народного мистецтва
               </h2>
             </div>
@@ -145,9 +139,8 @@ export default function KonkursAnnouncePage() {
               Головна мета конкурсу “Поліська Казка” — підтримка молодих художників, розвиток сучасного українського народного мистецтва та його популяризація в Україні й за кордоном.
             </p>
 
-            {/* Цитата Маргарити */}
-            <blockquote className="my-12 relative bg-primary/5 rounded-3xl p-8 md:p-10 border-l-4 border-primary group hover:shadow-md transition-all duration-300">
-              <Quote className="absolute -top-4 -right-4 w-32 h-32 text-primary/10 rotate-12 group-hover:scale-110 transition-transform duration-500" />
+            <blockquote className="my-12 relative bg-primary/5 rounded-3xl p-8 md:p-10 border-l-4 border-primary">
+              <Quote className="absolute -top-4 -right-4 w-24 h-24 text-primary/10 rotate-12" />
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl font-serif italic text-foreground leading-relaxed mb-6">
                   “В умовах війни культура стає основою національної єдності та ідентичності. Саме тому виникла ідея створення платформи “Поліська Казка”, яка відкриватиме світу нові імена сучасних українських митців”, — <span className="not-italic text-lg text-muted-foreground font-medium">зазначає засновниця платформи Маргарита Бондарєва.</span>
@@ -164,7 +157,7 @@ export default function KonkursAnnouncePage() {
             </p>
 
             {/* Тематика */}
-            <h2 className="text-3xl font-serif font-bold text-foreground mb-6">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-6">
               Тематика робіт на конкурс “Поліська Казка”
             </h2>
 
@@ -172,7 +165,7 @@ export default function KonkursAnnouncePage() {
               На конкурс приймаються роботи, що розкривають:
             </p>
 
-            <ul className="space-y-4 mb-16 ml-2">
+            <ul className="space-y-4 mb-16">
               {[
                 "образи героїв народних легенд і казок;",
                 "фантазійні та символічні композиції;",
@@ -180,19 +173,19 @@ export default function KonkursAnnouncePage() {
                 "фантастичних звірів і птахів;",
                 "авторські інтерпретації української народної символіки."
               ].map((item, index) => (
-                <li key={index} className="flex items-start gap-3 group">
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0 opacity-70 group-hover:opacity-100 transition-opacity mt-0.5" />
-                  <span className="text-lg text-muted-foreground group-hover:text-foreground transition-colors">{item}</span>
+                <li key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-0.5" />
+                  <span className="text-lg text-muted-foreground">{item}</span>
                 </li>
               ))}
             </ul>
 
             {/* Вимоги та техніки */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:rotate-12 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Palette className="w-7 h-7" />
               </div>
-              <h2 className="text-3xl font-serif font-bold text-foreground">
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
                 Вимоги до робіт і техніки виконання
               </h2>
             </div>
@@ -201,7 +194,7 @@ export default function KonkursAnnouncePage() {
               Формати та напрями:
             </p>
 
-            <ul className="space-y-4 mb-8 ml-2">
+            <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3">
                 <span className="text-primary text-xl mt-0.5">•</span>
                 <span className="text-lg text-muted-foreground">Живопис (композиційний живопис, рисунок) — А2, А3</span>
@@ -223,8 +216,8 @@ export default function KonkursAnnouncePage() {
               Кожен учасник може подати від 1 до 3 робіт.
             </p>
 
-            {/* Терміни подачі (Фінальний блок) */}
-            <div className="bg-secondary/50 border border-primary/20 rounded-3xl p-8 md:p-12">
+            {/* Терміни подачі */}
+            <div className="bg-secondary/50 border border-primary/20 rounded-3xl p-8 md:p-12 mb-8">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-background p-3 rounded-xl text-primary shadow-sm">
                   <CalendarDays className="w-6 h-6" />
@@ -258,17 +251,19 @@ export default function KonkursAnnouncePage() {
                 </li>
               </ul>
 
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 Оригінали відібраних робіт будуть представлені на виставці в Національній академії образотворчого мистецтва і архітектури.
               </p>
 
-              <p className="text-xl font-medium text-foreground bg-background p-6 rounded-2xl border border-border shadow-sm text-center">
-                Імена переможців оголосять 23 квітня 2026 року
-              </p>
+              <div className="bg-background p-6 rounded-2xl border border-border shadow-sm text-center">
+                <p className="text-xl font-medium text-foreground">
+                  Імена переможців оголосять 23 квітня 2026 року
+                </p>
+              </div>
             </div>
 
           </div>
-        </section>
+        </article>
       </main>
       <Footer />
     </>
