@@ -140,10 +140,10 @@ export default function VotingPage() {
     } catch (error) {
       // ПРИМЕЧАНИЕ: Для тестов, пока нет API, просто переключаем на шаг кода
       // В реальном проекте это нужно закомментировать и раскомментировать код ниже:
-      setStep("code")
+      //setStep("code")
 
-      // setSubmitStatus("error")
-      // setErrorMessage("Помилка відправки коду. Спробуйте ще раз.")
+      setSubmitStatus("error")
+      setErrorMessage("Помилка відправки коду. Спробуйте ще раз.")
     } finally {
       setIsSubmitting(false)
     }
