@@ -12,8 +12,9 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog"
-import { X, Check, Loader2 } from "lucide-react"
+import { X, Check, Loader2, ChevronLeft, ChevronRight } from "lucide-react"
 
+// Временные картинки для тестирования (83 штуки)
 const artworks = [
   {
     id: "1",
@@ -522,11 +523,30 @@ export default function VotingPage() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState("")
 
+  // Знаходимо індекс поточної відкритої картини
+  const currentIndex = selectedArtwork ? artworks.findIndex((a) => a.id === selectedArtwork.id) : -1
+
+  // Функція для перемикання на ПОПЕРЕДНЮ картину
+  const handlePrev = () => {
+    if (currentIndex === -1) return
+    const prevIndex = currentIndex === 0 ? artworks.length - 1 : currentIndex - 1
+    setSelectedArtwork(artworks[prevIndex])
+    setSubmitStatus("idle")
+    setErrorMessage("")
+  }
+
+  // Функція для перемикання на НАСТУПНУ картину
+  const handleNext = () => {
+    if (currentIndex === -1) return
+    const nextIndex = currentIndex === artworks.length - 1 ? 0 : currentIndex + 1
+    setSelectedArtwork(artworks[nextIndex])
+    setSubmitStatus("idle")
+    setErrorMessage("")
+  }
+
   const handleVote = async () => {
     if (!selectedArtwork || !email) return
 
-    // 1. ПЕРЕВІРКА НА КИРИЛИЦЮ (Російські/Українські літери)
-    // Еmail повинен містити лише латиницю, цифри та спецсимволи
     const hasCyrillic = /[а-яА-ЯёЁіІїЇєЄґҐ]/.test(email);
     if (hasCyrillic) {
       setSubmitStatus("error")
@@ -534,8 +554,6 @@ export default function VotingPage() {
       return
     }
 
-    // 2. ПЕРЕВІРКА НА ПРАВИЛЬНИЙ ФОРМАТ EMAIL
-    // Базовий регулярний вираз для email: name@domain.com
     const isValidEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
     if (!isValidEmail) {
       setSubmitStatus("error")
@@ -586,7 +604,6 @@ export default function VotingPage() {
       <Header />
 
       <main className="pt-20">
-        {/* Hero Section */}
         <section className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
@@ -601,7 +618,6 @@ export default function VotingPage() {
           </div>
         </section>
 
-        {/* Artworks Grid */}
         <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3 md:gap-4">
@@ -630,7 +646,6 @@ export default function VotingPage() {
 
       <Footer />
 
-      {/* Vote Dialog */}
       <Dialog open={!!selectedArtwork} onOpenChange={(open) => !open && setSelectedArtwork(null)}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
@@ -642,7 +657,8 @@ export default function VotingPage() {
 
           {selectedArtwork && (
             <div className="space-y-4">
-              <div className="relative w-full h-[50vh] min-h-[300px] flex items-center justify-center rounded-lg overflow-hidden">
+              {/* Блок з картинкою (тепер без кнопок всередині) */}
+              <div className="relative w-full h-[50vh] min-h-[300px] flex items-center justify-center rounded-lg overflow-hidden bg-secondary/10">
                 <img
                   src={selectedArtwork.image}
                   alt={selectedArtwork.title}
@@ -650,10 +666,31 @@ export default function VotingPage() {
                 />
               </div>
 
-              <div className="text-center">
-                <h3 className="font-medium">{selectedArtwork.title}</h3>
-                <p className="text-sm text-muted">{selectedArtwork.artist}</p>
+              {/* Блок з текстом ТА кнопками перемикання */}
+              <div className="flex items-center justify-between px-2 pt-2">
+                <button
+                  type="button"
+                  onClick={handlePrev}
+                  className="p-2 bg-secondary/50 hover:bg-secondary text-foreground rounded-full shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+
+                <div className="text-center px-4">
+                  <h3 className="font-medium">{selectedArtwork.title}</h3>
+                  <p className="text-sm text-muted">{selectedArtwork.artist}</p>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  className="p-2 bg-secondary/50 hover:bg-secondary text-foreground rounded-full shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
+
+
 
               {submitStatus === "success" ? (
                 <div className="flex items-center justify-center gap-2 p-4 bg-green-50 text-green-700 rounded-lg">
