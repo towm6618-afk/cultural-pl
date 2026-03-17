@@ -10,7 +10,7 @@ const posts = [
     title: "Від Донеччини до В’єтнаму: понад 1000 робіт на конкурсі народного мистецтва “Поліська Казка”",
     excerpt: "12 лютого 2026 року завершився прийом робіт. Конкурс об’єднав творчу молодь в Україні та за її межами, ставши масштабним культурним явищем.",
     date: "14 лютого 2026",
-    image: "/blog/IMG_3542.webp",
+    image: "/news/IMG_3542.webp",
   },
   {
     slug: "press-conference",
@@ -18,7 +18,7 @@ const posts = [
     title: "У Києві відбулася пресконференція національного конкурсу народного мистецтва “Поліська Казка”",
     excerpt: "Захід пройшов у пресцентрі Інтерфакс-Україна та зібрав ініціаторів конкурсу, членів журі й представників культурної спільноти.",
     date: "3 лютого 2026",
-    image: "/blog/IMG_3541.webp",
+    image: "/news/IMG_3541.webp",
   },
   {
     slug: "konkurs",
@@ -26,7 +26,7 @@ const posts = [
     title: "Стартував Національний конкурс народного мистецтва «Поліська Казка»",
     excerpt: "Молоді митці 16–30 років можуть отримати річні стипендії до 25 000 грн/місяць. Прийом робіт відкрито.",
     date: "22 грудня 2025",
-    image: "/blog/IMG_3543.webp",
+    image: "/news/IMG_3543.webp",
   },
 ]
 
@@ -41,7 +41,7 @@ export default function BlogPage() {
           <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
-              Блог та новини
+              Новини
             </div>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
               Новини та події
@@ -56,7 +56,7 @@ export default function BlogPage() {
             {posts.map((post) => (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={`/news/${post.slug}`}
                 className="group flex flex-col h-full bg-card rounded-[2rem] border border-border overflow-hidden hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/30 hover:-translate-y-2 transition-all duration-500"
               >
                 {/* Блок з картинкою */}
