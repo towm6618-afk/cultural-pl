@@ -231,6 +231,9 @@ export default function VotingPage() {
               Народне голосування
             </h1>
             <p className="text-lg text-muted max-w-2xl mx-auto">
+              Допоможіть обрати переможців першого національного конкурсу народного мистецтва для молодих художників.
+            </p>
+            <p className="text-lg text-muted max-w-2xl mx-auto">
               Натисніть на картину, щоб проголосувати за улюблений твір
             </p>
           </div>
