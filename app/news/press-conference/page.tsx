@@ -150,7 +150,9 @@ export default function PressConferencePage() {
             {/* Інтерактивне посилання в кінці */}
             <div className="bg-secondary/30 border border-secondary hover:border-primary/30 transition-all duration-300 rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6 group">
               <p className="text-lg text-foreground font-medium text-center sm:text-left m-0">
-                Детальніше про конкурс ми розповідали тут. Посилання на матеріал про конкурс
+                Детальніше про конкурс ми розповідали <Link href="/news/konkurs" className="text-primary hover:text-primary/80 underline decoration-primary/30 hover:decoration-primary transition-all">
+                  тут.
+                </Link> Посилання на матеріал про конкурс
               </p>
               <Link
                 href="/news/konkurs" // Заміни на правильне посилання
