@@ -211,11 +211,7 @@ export default function VotingPage() {
       }
 
       setSubmitStatus("success")
-      setTimeout(() => {
-        setSelectedArtwork(null)
-        setEmail("")
-        resetFormOnSwitch()
-      }, 2000)
+
     } catch (error) {
       setSubmitStatus("error")
       setErrorMessage("Помилка з'єднання з сервером.")
@@ -276,7 +272,7 @@ export default function VotingPage() {
         onOpenChange={(open) => {
           if (!open) {
             setSelectedArtwork(null)
-            setTimeout(resetFormOnSwitch, 300)
+            resetFormOnSwitch()
           }
         }}
       >
