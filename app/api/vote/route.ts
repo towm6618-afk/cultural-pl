@@ -1,95 +1,70 @@
-import { createClient } from "@/lib/supabase/server"
 import { NextResponse } from "next/server"
+import { createClient } from "@/lib/supabase/server"
 
-export async function POST(request: Request) {
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+)
+
+export async function POST(req: Request) {
   try {
-    let { email, artworkId } = await request.json()
+    const { email, code, artworkId } = await req.json()
 
-    if (email) {
-      email = email.toLowerCase().trim()
-    }
-    if (!email || !artworkId) {
-      return NextResponse.json(
-        { error: "Email та ID картини обов'язкові" },
-        { status: 400 }
-      )
+    if (!email || !code || !artworkId) {
+      return NextResponse.json({ error: "Недостатньо даних" }, { status: 400 })
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: "Невірний формат email" },
-        { status: 400 }
-      )
-    }
+    // Перетворюємо artworkId в число, бо у твоїй базі це INTEGER
+    const parsedArtworkId = parseInt(artworkId, 10)
 
-    const supabase = await createClient()
-
-    // Check if this email already voted for ANY artwork
-    const { data: existingVote } = await supabase
-      .from("votes")
-      .select("id, artwork_id")
+    // 1. Шукаємо код у базі Supabase
+    const { data: record, error: fetchError } = await supabase
+      .from("verification_codes")
+      .select("*")
       .eq("email", email)
       .single()
 
-    if (existingVote) {
-      return NextResponse.json(
-        { error: "Ви вже проголосували. Один email може голосувати лише один раз." },
-        { status: 400 }
-      )
+    if (fetchError || !record) {
+      return NextResponse.json({ error: "Код не знайдено. Запросіть новий." }, { status: 400 })
     }
 
-    // Insert the vote
-    const { error } = await supabase.from("votes").insert({
-      email,
-      artwork_id: artworkId,
-    })
-
-    if (error) {
-      console.error("Supabase error:", error)
-      return NextResponse.json(
-        { error: "Помилка при збереженні голосу" },
-        { status: 500 }
-      )
+    // 2. Перевіряємо, чи код співпадає
+    if (record.code !== code) {
+      return NextResponse.json({ error: "Невірний код" }, { status: 400 })
     }
 
-    return NextResponse.json({ success: true, message: "Дякуємо за ваш голос!" })
-  } catch (error) {
-    console.error("Vote error:", error)
-    return NextResponse.json(
-      { error: "Внутрішня помилка сервера" },
-      { status: 500 }
-    )
-  }
-}
+    // 3. Перевіряємо, чи не закінчився час (10 хвилин)
+    if (new Date(record.expires_at) < new Date()) {
+      return NextResponse.json({ error: "Час дії коду вичерпано. Запросіть новий." }, { status: 400 })
+    }
 
-export async function GET() {
-  try {
-    const supabase = await createClient()
-
-    // Get vote counts for each artwork
-    const { data, error } = await supabase
+    // 4. Зберігаємо голос у ТВОЮ таблицю votes
+    const { error: insertError } = await supabase
       .from("votes")
-      .select("artwork_id")
+      .insert({
+        email: email,
+        artwork_id: parsedArtworkId
+      })
 
-    if (error) {
-      console.error("Supabase error:", error)
-      return NextResponse.json({ error: "Помилка при отриманні даних" }, { status: 500 })
+    // Обробляємо твій UNIQUE(email, artwork_id)
+    if (insertError) {
+      // Код 23505 означає порушення унікальності в PostgreSQL
+      if (insertError.code === '23505') {
+        return NextResponse.json({ error: "Ви вже проголосували за цю картину!" }, { status: 403 })
+      }
+      throw insertError // Якщо інша помилка — кидаємо далі
     }
 
-    // Count votes per artwork
-    const voteCounts: Record<string, number> = {}
-    data?.forEach((vote) => {
-      voteCounts[vote.artwork_id] = (voteCounts[vote.artwork_id] || 0) + 1
-    })
+    // 5. Видаляємо використаний код
+    await supabase
+      .from("verification_codes")
+      .delete()
+      .eq("email", email)
 
-    return NextResponse.json({ voteCounts })
+    return NextResponse.json({ success: true })
+
   } catch (error) {
-    console.error("Get votes error:", error)
-    return NextResponse.json(
-      { error: "Внутрішня помилка сервера" },
-      { status: 500 }
-    )
+    console.error("Vote API Error:", error)
+    return NextResponse.json({ error: "Внутрішня помилка сервера" }, { status: 500 })
   }
 }
