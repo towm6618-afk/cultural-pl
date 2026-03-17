@@ -12,7 +12,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog"
-import { X, Check, Loader2 } from "lucide-react"
+import { X, Check, Loader2, ChevronLeft, ChevronRight } from "lucide-react"
 
 // Временные картинки для тестирования (83 штуки)
 const artworks = [
@@ -104,7 +104,7 @@ const artworks = [
 export default function VotingPage() {
   const [selectedArtwork, setSelectedArtwork] = useState<typeof artworks[0] | null>(null)
 
-  // ДОБАВЛЕНО ДЛЯ ДВУХЭТАПНОЙ ВЕРИФИКАЦИИ
+  // Стейт для 2-етапної верифікації
   const [step, setStep] = useState<"email" | "code">("email")
   const [email, setEmail] = useState("")
   const [verificationCode, setVerificationCode] = useState("")
@@ -113,12 +113,45 @@ export default function VotingPage() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState("")
 
-  // ФУНКЦИЯ 1: Отправка кода на почту
+  const currentIndex = selectedArtwork ? artworks.findIndex((a) => a.id === selectedArtwork.id) : -1
+
+  // Функція скидання форми при зміні картини
+  const resetFormOnSwitch = () => {
+    setStep("email")
+    setVerificationCode("")
+    setSubmitStatus("idle")
+    setErrorMessage("")
+  }
+
+  const handlePrev = () => {
+    if (currentIndex === -1) return
+    const prevIndex = currentIndex === 0 ? artworks.length - 1 : currentIndex - 1
+    setSelectedArtwork(artworks[prevIndex])
+    resetFormOnSwitch()
+  }
+
+  const handleNext = () => {
+    if (currentIndex === -1) return
+    const nextIndex = currentIndex === artworks.length - 1 ? 0 : currentIndex + 1
+    setSelectedArtwork(artworks[nextIndex])
+    resetFormOnSwitch()
+  }
+
+  // ЕТАП 1: ВІДПРАВКА КОДУ
   const handleSendCode = async () => {
-    // Простейшая проверка почты
-    if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+    if (!email) return
+
+    const hasCyrillic = /[а-яА-ЯёЁіІїЇєЄґҐ]/.test(email);
+    if (hasCyrillic) {
       setSubmitStatus("error")
-      setErrorMessage("Введіть коректний email")
+      setErrorMessage("Email не може містити кириличні літери.")
+      return
+    }
+
+    const isValidEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+    if (!isValidEmail) {
+      setSubmitStatus("error")
+      setErrorMessage("Введіть коректний email (наприклад: name@gmail.com).")
       return
     }
 
@@ -133,25 +166,26 @@ export default function VotingPage() {
         body: JSON.stringify({ email }),
       })
 
-      if (!response.ok) throw new Error("Помилка відправки коду")
+      const data = await response.json()
 
-      // Если все ок - переключаемся на шаг ввода кода
-      setStep("code")
+      if (!response.ok) {
+        setSubmitStatus("error")
+        setErrorMessage(data.error || "Помилка відправки коду")
+        return
+      }
+
+      setStep("code") // Успішно! Переходимо до вводу коду
     } catch (error) {
-      // ПРИМЕЧАНИЕ: Для тестов, пока нет API, просто переключаем на шаг кода
-      // В реальном проекте это нужно закомментировать и раскомментировать код ниже:
-      //setStep("code")
-
       setSubmitStatus("error")
-      setErrorMessage("Помилка відправки коду. Спробуйте ще раз.")
+      setErrorMessage("Помилка з'єднання з сервером. Спробуйте пізніше.")
     } finally {
       setIsSubmitting(false)
     }
   }
 
-  // ФУНКЦИЯ 2: Подтверждение кода и голосование
+  // ЕТАП 2: ПЕРЕВІРКА КОДУ ТА ГОЛОСУВАННЯ
   const handleVote = async () => {
-    if (!selectedArtwork || !email || verificationCode.length < 4) return
+    if (!selectedArtwork || !email || verificationCode.length !== 4) return
 
     setIsSubmitting(true)
     setSubmitStatus("idle")
@@ -160,10 +194,7 @@ export default function VotingPage() {
     try {
       const response = await fetch("/api/vote", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        // Отправляем и email, и введенный код
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
           code: verificationCode,
@@ -175,32 +206,22 @@ export default function VotingPage() {
 
       if (!response.ok) {
         setSubmitStatus("error")
-        setErrorMessage(data.error || "Невірний код або помилка при голосуванні")
+        setErrorMessage(data.error || "Помилка при голосуванні")
         return
       }
 
       setSubmitStatus("success")
       setTimeout(() => {
-        closeDialog()
+        setSelectedArtwork(null)
+        setEmail("")
+        resetFormOnSwitch()
       }, 2000)
     } catch (error) {
       setSubmitStatus("error")
-      setErrorMessage("Помилка з'єднання")
+      setErrorMessage("Помилка з'єднання з сервером.")
     } finally {
       setIsSubmitting(false)
     }
-  }
-
-  // Функция для правильного закрытия диалога и сброса шагов
-  const closeDialog = () => {
-    setSelectedArtwork(null)
-    setTimeout(() => {
-      setStep("email")
-      setEmail("")
-      setVerificationCode("")
-      setSubmitStatus("idle")
-      setErrorMessage("")
-    }, 300)
   }
 
   return (
@@ -208,30 +229,28 @@ export default function VotingPage() {
       <Header />
 
       <main className="pt-20">
-        {/* Hero Section */}
         <section className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
               Народне голосування
             </h1>
             <p className="text-lg text-muted max-w-2xl mx-auto">
-              Допоможіть обрати переможців першого національного конкурсу народного мистецтва для молодих художників.
-            </p>
-            <p className="text-lg text-muted max-w-2xl mx-auto">
               Натисніть на картину, щоб проголосувати за улюблений твір
             </p>
           </div>
         </section>
 
-        {/* Artworks Grid */}
         <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3 md:gap-4">
               {artworks.map((artwork) => (
                 <button
                   key={artwork.id}
-                  onClick={() => setSelectedArtwork(artwork)}
-                  className="group relative aspect-square overflow-hidden rounded-lg border-2 border-transparent hover:border-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  onClick={() => {
+                    setSelectedArtwork(artwork)
+                    resetFormOnSwitch()
+                  }}
+                  className="group relative aspect-square overflow-hidden rounded-lg border-2 border-transparent hover:border-primary transition-all duration-300"
                 >
                   <img
                     src={artwork.image}
@@ -252,11 +271,13 @@ export default function VotingPage() {
 
       <Footer />
 
-      {/* Vote Dialog */}
       <Dialog
         open={!!selectedArtwork}
         onOpenChange={(open) => {
-          if (!open) closeDialog()
+          if (!open) {
+            setSelectedArtwork(null)
+            setTimeout(resetFormOnSwitch, 300)
+          }
         }}
       >
         <DialogContent className="sm:max-w-md">
@@ -265,13 +286,13 @@ export default function VotingPage() {
             <DialogDescription>
               {step === "email"
                 ? "Введіть ваш email, щоб проголосувати за цю роботу."
-                : "Введіть код, який ми надіслали на ваш email."}
+                : "Введіть 4-значний код, надісланий на вашу пошту."}
             </DialogDescription>
           </DialogHeader>
 
           {selectedArtwork && (
             <div className="space-y-4">
-              <div className="relative w-full h-[50vh] min-h-[300px] flex items-center justify-center rounded-lg overflow-hidden">
+              <div className="relative w-full h-[50vh] min-h-[300px] flex items-center justify-center rounded-lg overflow-hidden bg-secondary/10">
                 <img
                   src={selectedArtwork.image}
                   alt={selectedArtwork.title}
@@ -279,9 +300,25 @@ export default function VotingPage() {
                 />
               </div>
 
-              <div className="text-center">
-                <h3 className="font-medium">{selectedArtwork.title}</h3>
-                <p className="text-sm text-muted">{selectedArtwork.artist}</p>
+              <div className="flex items-center justify-between px-2 pt-2">
+                <button
+                  type="button"
+                  onClick={handlePrev}
+                  className="p-2 bg-secondary/50 hover:bg-secondary text-foreground rounded-full shadow-sm transition-all"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <div className="text-center px-4">
+                  <h3 className="font-medium">{selectedArtwork.title}</h3>
+                  <p className="text-sm text-muted">{selectedArtwork.artist}</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  className="p-2 bg-secondary/50 hover:bg-secondary text-foreground rounded-full shadow-sm transition-all"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
 
               {submitStatus === "success" ? (
@@ -293,38 +330,32 @@ export default function VotingPage() {
                 <div className="space-y-4 pt-2">
 
                   {step === "email" ? (
-                    // ШАГ 1: Ввод почты
                     <>
                       <div className="space-y-2">
                         <Input
                           type="email"
                           placeholder="Ваш email"
                           value={email}
-                          onChange={(e) => setEmail(e.target.value.toLowerCase())}
+                          onChange={(e) => setEmail(e.target.value)}
                           disabled={isSubmitting}
                         />
                         {submitStatus === "error" && (
                           <p className="text-sm text-red-500 text-center">{errorMessage}</p>
                         )}
                       </div>
-
                       <Button
                         onClick={handleSendCode}
                         disabled={!email || isSubmitting}
                         className="w-full bg-primary hover:bg-primary/90"
                       >
                         {isSubmitting ? (
-                          <>
-                            <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                            Обробка...
-                          </>
+                          <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Відправка...</>
                         ) : (
                           "Отримати код"
                         )}
                       </Button>
                     </>
                   ) : (
-                    // ШАГ 2: Ввод кода
                     <>
                       <div className="space-y-2">
                         <p className="text-xs text-center text-muted-foreground">
@@ -332,10 +363,10 @@ export default function VotingPage() {
                         </p>
                         <Input
                           type="text"
-                          maxLength={6}
-                          placeholder="Введіть код"
+                          maxLength={4}
+                          placeholder="Введіть 4 цифри"
                           value={verificationCode}
-                          onChange={(e) => setVerificationCode(e.target.value.replace(/\D/g, ''))} // Только цифры
+                          onChange={(e) => setVerificationCode(e.target.value.replace(/\D/g, ''))} // тільки цифри
                           disabled={isSubmitting}
                           className="text-center text-xl tracking-widest font-mono"
                         />
@@ -343,18 +374,14 @@ export default function VotingPage() {
                           <p className="text-sm text-red-500 text-center">{errorMessage}</p>
                         )}
                       </div>
-
                       <div className="flex flex-col gap-2">
                         <Button
                           onClick={handleVote}
-                          disabled={verificationCode.length < 4 || isSubmitting}
+                          disabled={verificationCode.length !== 4 || isSubmitting}
                           className="w-full bg-primary hover:bg-primary/90"
                         >
                           {isSubmitting ? (
-                            <>
-                              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                              Обробка...
-                            </>
+                            <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Обробка...</>
                           ) : (
                             "Проголосувати"
                           )}
@@ -374,7 +401,6 @@ export default function VotingPage() {
                       </div>
                     </>
                   )}
-
                 </div>
               )}
             </div>
