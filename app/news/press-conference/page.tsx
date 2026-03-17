@@ -73,7 +73,7 @@ export default function PressConferencePage() {
 
           {/* 4. ОСНОВНИЙ ТЕКСТ (ДОСЛІВНО) */}
           <div className="prose-lg">
-            <p className="text-xl md:text-2xl text-foreground font-medium mb-8 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-16">
               У Києві відбулася пресконференція, присвячена першому національному конкурсу народного мистецтва “Поліська Казка”, який об’єднує молодих художників з України та з-за кордону. Захід пройшов у пресцентрі Інтерфакс-Україна та зібрав ініціаторів конкурсу, членів журі й представників культурної спільноти.
             </p>
 
