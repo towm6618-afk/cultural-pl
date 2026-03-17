@@ -50,7 +50,7 @@ export function Mission() {
               <p>Підтримка мистецтва — це інвестиція в майбутнє України.</p>
             </div>
             <Link
-              href="/konkurs"
+              href="/news/konkurs"
               className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors"
             >
               Дізнатися більше про конкурс
