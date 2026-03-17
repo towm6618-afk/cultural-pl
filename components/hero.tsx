@@ -36,7 +36,7 @@ export function Hero() {
             Дізнатися більше
           </Link>
           <Link
-            href="/blog/konkurs"
+            href="/news/konkurs"
             className="bg-background text-foreground px-8 py-4 rounded-full text-base font-medium border border-border hover:border-primary transition-colors"
           >
             Конкурс народного мистецтва
