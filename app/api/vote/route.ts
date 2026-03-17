@@ -3,8 +3,11 @@ import { NextResponse } from "next/server"
 
 export async function POST(request: Request) {
   try {
-    const { email, artworkId } = await request.json()
+    let { email, artworkId } = await request.json()
 
+    if (email) {
+      email = email.toLowerCase().trim()
+    }
     if (!email || !artworkId) {
       return NextResponse.json(
         { error: "Email та ID картини обов'язкові" },
