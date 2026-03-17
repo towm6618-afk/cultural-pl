@@ -42,12 +42,12 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link
+            {/*<Link
               href="https://docs.google.com/forms/d/e/1FAIpQLSezGch8eqZ14ei-35R_HlpEqgniWM7gBzPfL2c4rNdGRQdSMQ/viewform?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPMTI0MDI0NTc0Mjg3NDE0AAGnrszkMQtoub9PJv2DCU5unTTCt5QQ-wu4-zeLqKpfCZar5-WzYq_iNPG2Xkk_aem_YvDpMOwNZIkQmV-xnZ4aOA&pli=1"
               className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium hover:bg-accent transition-colors"
             >
               Взяти участь
-            </Link>
+            </Link>*/}
           </nav>
 
           <button
@@ -76,13 +76,13 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link
+            {/*<Link
               href="/konkurs"
               onClick={() => setIsOpen(false)}
               className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium hover:bg-accent transition-colors text-center"
             >
               Взяти участь
-            </Link>
+            </Link>*/}
           </nav>
         </div>
       )}
