@@ -67,7 +67,7 @@ export default function MediaPage() {
                 Медіа
               </h1>
               <p className="text-lg md:text-xl text-muted leading-relaxed">
-                Публікації про Культурну Платформу «Поліська Казка» 
+                Публікації про Культурну Платформу «Поліська Казка»
                 в українських та міжнародних медіа
               </p>
             </div>
@@ -141,7 +141,7 @@ export default function MediaPage() {
                 Для преси
               </h2>
               <p className="text-lg text-muted leading-relaxed mb-8">
-                Якщо ви представляєте медіа та хочете написати про нас, 
+                Якщо ви представляєте медіа та хочете написати про нас,
                 будь ласка, зв&apos;яжіться з нами
               </p>
               <Link

@@ -30,18 +30,18 @@ export default function KonkursAnnouncePage() {
           {/* Навігація */}
           <div className="pb-6">
             <Link
-              href="/blog"
+              href="/news"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              Назад до блогу
+              Назад до новин
             </Link>
           </div>
 
           {/* 1. КАРТИНКА СВЕРХУ */}
           <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 relative shadow-md">
             <img
-              src="/blog/IMG_3543.webp"
+              src="/news/IMG_3543.webp"
               alt="Старт конкурсу Поліська Казка"
               className="w-full h-full object-cover"
             />
@@ -68,7 +68,7 @@ export default function KonkursAnnouncePage() {
             <p className="text-xl md:text-2xl text-foreground font-medium mb-8 leading-relaxed">
               В Україні стартував національний конкурс народного мистецтва “Поліська Казка” — масштабна культурна ініціатива, спрямована на підтримку та розвиток молодих українських митців. Конкурс організований Всеукраїнською культурною платформою “Поліська Казка” спільно з Національна академія образотворчого мистецтва і архітектури.{" "}
               <Link href="https://naoma.edu.ua/" className="text-primary hover:text-primary/80 underline decoration-primary/30 hover:decoration-primary transition-all">
-                ( посилання на їхній сайт).
+                (посилання на їхній сайт)
               </Link>
             </p>
 

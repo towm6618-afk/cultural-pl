@@ -1,10 +1,12 @@
-
+import { Palette, Briefcase, HeartHandshake } from "lucide-react"
 
 export function About() {
   return (
     <section id="about" className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+          {/* ЛІВА ЧАСТИНА */}
           <div>
             <span className="text-primary font-medium text-sm uppercase tracking-widest">
               Про нас
@@ -15,7 +17,6 @@ export function About() {
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
                 Всеукраїнська культурна платформа «Поліська Казка» — соціальна ініціатива, заснована громадською діячкою <strong className="text-foreground">Маргаритою Бондарєвою</strong> у 2025 році.
-
               </p>
               <p>
                 Мета діяльності — підтримка молодих художників, митців, скульпторів, розвиток культурного простору та популяризація українського мистецтва як в Україні, так і за її межами.
@@ -41,40 +42,64 @@ export function About() {
             </div>
           </div>
 
-          <div id="competition" className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-8 md:p-10">
-            <div className="flex items-center gap-4 mb-6">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%20%D0%B1%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-7-ZqmUXXg5IJhdL8KSw39hxTUKKZD1YX.png"
-                alt="НАОМА"
-                className="h-16 w-auto"
-              />
-            </div>
-            <span className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-medium mb-4">
-              Спільно з НАОМА
-            </span>
-            <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Національний конкурс молодих художників
+          {/* ПРАВА ЧАСТИНА (Оновлений компактний дизайн) */}
+          <div className="bg-secondary/40 rounded-[2rem] p-8 md:p-10 border border-border/50 h-full flex flex-col justify-center">
+
+            <h3 className="font-serif text-2xl font-bold text-foreground mb-8 leading-snug">
+              «Поліська Казка» — це простір у якому поєднується три складові: митці, бізнес, філантропія.
             </h3>
-            <p className="text-muted mb-6 leading-relaxed">
-              Культурна Платформа «Поліська Казка» спільно з Національною академією
-              образотворчого мистецтва і архітектури проводить щорічний конкурс для
-              молодих художників.
-            </p>
-            <ul className="space-y-3 text-muted">
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
-                Стипендія переможцю — 300 000 грн на рік
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
-                Персональна виставка в Києві
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
-                Менторська підтримка від провідних митців
-              </li>
-            </ul>
+
+            {/* Компактний список замість великих карток */}
+            <div className="space-y-6">
+
+              {/* Пункт 1: Митці */}
+              <div className="flex items-start gap-5 group">
+                <div className="bg-background shadow-sm w-12 h-12 rounded-2xl flex items-center justify-center text-primary shrink-0 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                  <Palette className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-foreground mb-1 font-serif group-hover:text-primary transition-colors">
+                    Митці
+                  </h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Платформа надає можливості молодим митцям знайти ресурси для розвитку, отримати інструменти для популяризації власної творчості та донести свої ідеї до суспільства.
+                  </p>
+                </div>
+              </div>
+
+              {/* Пункт 2: Бізнес */}
+              <div className="flex items-start gap-5 group">
+                <div className="bg-background shadow-sm w-12 h-12 rounded-2xl flex items-center justify-center text-primary shrink-0 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                  <Briefcase className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-foreground mb-1 font-serif group-hover:text-primary transition-colors">
+                    Бізнес
+                  </h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Отримує можливість та колаборації з художниками, скульпторами, акторами, поетами та іншими представниками культури.
+                  </p>
+                </div>
+              </div>
+
+              {/* Пункт 3: Філантропія */}
+              <div className="flex items-start gap-5 group">
+                <div className="bg-background shadow-sm w-12 h-12 rounded-2xl flex items-center justify-center text-primary shrink-0 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                  <HeartHandshake className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-foreground mb-1 font-serif group-hover:text-primary transition-colors">
+                    Філантропія
+                  </h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Всі, хто готовий вкладали кошти у збереження та розвиток української культури та українських цінностей у майбутньому.
+                  </p>
+                </div>
+              </div>
+
+            </div>
           </div>
+
         </div>
       </div>
     </section>

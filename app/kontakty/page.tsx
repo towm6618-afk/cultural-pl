@@ -22,7 +22,7 @@ export default function KontaktyPage() {
                 Контакти
               </h1>
               <p className="text-lg md:text-xl text-muted leading-relaxed">
-                Зв&apos;яжіться з нами для співпраці, питань щодо конкурсу 
+                Зв&apos;яжіться з нами для співпраці, питань щодо конкурсу
                 або медіа-запитів
               </p>
             </div>
@@ -38,7 +38,7 @@ export default function KontaktyPage() {
                 <h2 className="font-serif text-3xl font-bold text-foreground mb-8">
                   Як з нами зв&apos;язатись
                 </h2>
-                
+
                 <div className="space-y-6">
                   <Link
                     href="mailto:poliskakazka.info@gmail.com"
@@ -106,7 +106,7 @@ export default function KontaktyPage() {
                 <h2 className="font-serif text-3xl font-bold text-foreground mb-8">
                   Напишіть нам
                 </h2>
-                
+
                 <form className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -188,7 +188,7 @@ export default function KontaktyPage() {
                   Як взяти участь у конкурсі?
                 </h3>
                 <p className="text-muted">
-                  Для участі потрібно заповнити форму на сторінці конкурсу та завантажити 
+                  Для участі потрібно заповнити форму на сторінці конкурсу та завантажити
                   фото своїх робіт. Участь безкоштовна.
                 </p>
               </div>

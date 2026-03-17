@@ -29,18 +29,18 @@ export default function PressConferencePage() {
           {/* Навігація "Назад" */}
           <div className="pb-6">
             <Link
-              href="/blog"
+              href="/news"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              Назад до блогу
+              Назад до новин
             </Link>
           </div>
 
           {/* 1. ВЕЛИКА КАРТИНКА ОБКЛАДИНКИ З ЕФЕКТОМ */}
           <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 relative group shadow-md">
             <img
-              src="/blog/IMG_3541.JPG"
+              src="/news/IMG_3541.JPG"
               alt="Пресконференція Поліська Казка"
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
@@ -153,7 +153,7 @@ export default function PressConferencePage() {
                 Детальніше про конкурс ми розповідали тут. Посилання на матеріал про конкурс
               </p>
               <Link
-                href="/blog/konkurs" // Заміни на правильне посилання
+                href="/news/konkurs" // Заміни на правильне посилання
                 className="shrink-0 flex items-center justify-center w-14 h-14 rounded-full bg-primary text-primary-foreground group-hover:scale-110 group-hover:rotate-45 transition-all duration-300 shadow-md"
               >
                 <ArrowRight className="w-6 h-6 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />

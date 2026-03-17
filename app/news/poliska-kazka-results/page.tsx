@@ -14,7 +14,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Від Донеччини до В’єтнаму: понад 1000 робіт на конкурсі «Поліська Казка»",
+  title: "Від Донеччини до В’єтнаму: понад 1000 робіт на конкурсі “Поліська Казка”",
   description: "Підсумки прийому робіт на перший національний конкурс народного мистецтва для молодих художників. Географія, учасники та несподівані формати.",
 }
 
@@ -30,7 +30,7 @@ export default function ArticlePage() {
           {/* Кнопка назад */}
           <div className="pb-6">
             <Link
-              href="/blog"
+              href="/news"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -41,7 +41,7 @@ export default function ArticlePage() {
           {/* 1. ВЕЛИКА КАРТИНКА ОБКЛАДИНКИ */}
           <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 relative group shadow-md">
             <img
-              src="/blog/IMG_3542.webp"
+              src="/news/IMG_3542.webp"
               alt="Малюнки учасників конкурсу Поліська Казка"
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
@@ -61,14 +61,14 @@ export default function ArticlePage() {
 
           {/* 3. ЖУРНАЛЬНИЙ ЗАГОЛОВОК */}
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-12 leading-[1.2] text-balance">
-            Від Донеччини до В’єтнаму: понад 1000 робіт на конкурсі народного мистецтва «Поліська Казка»
+            Від Донеччини до В’єтнаму: понад 1000 робіт на конкурсі народного мистецтва “Поліська Казка”
           </h1>
 
           {/* 4. ОСНОВНИЙ ТЕКСТ (ДОСЛІВНО) */}
           <div className="prose-lg">
 
             {/* Лід-абзац */}
-            <p className="text-xl md:text-2xl text-foreground font-medium mb-8 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-16">
               12 лютого 2026 року завершився прийом робіт на перший національний конкурс народного мистецтва для молодих художників “Поліська Казка”. Ініціатива Всеукраїнської культурної платформи “Поліська Казка”, реалізована у партнерстві з Національна академія образотворчого мистецтва і архітектури, вже на етапі подачі заявок переросла формат конкурсу та стала масштабним культурним явищем.
             </p>
 
@@ -79,7 +79,7 @@ export default function ArticlePage() {
                 <p className="text-muted-foreground text-sm"></p>
               </div>
               <Link
-                href="/blog/konkurs"
+                href="/news/konkurs"
                 className="inline-flex items-center gap-2 bg-background border border-border px-4 py-2 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors whitespace-nowrap"
               >
                 Читати статтю <ArrowRight className="w-4 h-4" />
@@ -96,7 +96,7 @@ export default function ArticlePage() {
                 <Globe className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
-                Географія «Поліської Казки»: Україна і світ
+                Географія “Поліської Казки”: Україна і світ
               </h2>
             </div>
 
@@ -104,7 +104,7 @@ export default function ArticlePage() {
               До участі долучилися художники з усіх регіонів України — від Одещини, Київщини та Львівщини до Донеччини. Не було жодної області, з якої не надійшла б хоча б одна конкурсна робота.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-              Водночас «Поліська Казка» стала містком між Україною та світом. Свої твори надсилали українці, які через війну були змушені залишити домівки. Малюнки «летіли» з Німеччини, Польщі, Грузії, Китаю та навіть В’єтнаму.
+              Водночас “Поліська Казка” стала містком між Україною та світом. Свої твори надсилали українці, які через війну були змушені залишити домівки. Малюнки “летіли” з Німеччини, Польщі, Грузії, Китаю та навіть В’єтнаму.
             </p>
 
             {/* Цитата */}
@@ -136,7 +136,7 @@ export default function ArticlePage() {
                 <Sparkles className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
-                Як молоді художники інтерпретують «Поліську Казку»
+                Як молоді художники інтерпретують “Поліську Казку”
               </h2>
             </div>
 
@@ -197,7 +197,7 @@ export default function ArticlePage() {
                 <Palette className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
-                Експерименти з формою: «металева казка»
+                Експерименти з формою: “металева казка”
               </h2>
             </div>
 
@@ -216,7 +216,7 @@ export default function ArticlePage() {
                   Коли оголосять імена фіналістів конкурсу?
                 </h2>
                 <p className="text-primary-foreground/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-                  Вже <strong>5 березня</strong> всеукраїнська культурна платформа «Поліська Казка» спільно з Національною академією образотворчого мистецтва і архітектури оголосять імена фіналістів, чиї роботи роботи буде презентовано на виставці в НАОМА.
+                  Вже <strong>5 березня</strong> всеукраїнська культурна платформа “Поліська Казка” спільно з Національною академією образотворчого мистецтва і архітектури оголосять імена фіналістів, чиї роботи роботи буде презентовано на виставці в НАОМА.
                 </p>
                 <Link
                   href="/konkurs#jury"
