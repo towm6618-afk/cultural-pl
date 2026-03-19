@@ -65,7 +65,7 @@ export function Footer() {
             <div>
               <h3 className="font-semibold text-background mb-4">Контакти</h3>
               <div className="flex flex-col gap-3 text-background/70">
-                <a href="mailto:poliskakazka.info@gmail.com" className="hover:text-primary transition-colors">
+                <a href="mailto:info@cultural-platform.com" className="hover:text-primary transition-colors">
                   info@cultural-platform.com
                 </a>
                 <span>Київ, Україна</span>
