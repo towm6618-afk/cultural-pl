@@ -164,7 +164,7 @@ export async function POST(request: NextRequest) {
                     `${item.position}.`
 
             message += `${medal} <b>ID#${item.artworkId}</b> <b>${artwork.title}</b> — ${artwork.artist}: ${item.votes} голосів\n`
-            message += `   📧 ${item.emails.join(", ")}\n\n`
+            message += "\n"
           }
         })
 
