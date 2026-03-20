@@ -60,7 +60,7 @@ const artworks = [
   },
   {
     id: "7",
-    title: "Без назви",
+    title: "Сад пам'яті та див",
     artist: "Кулібаба Аделіна, 19 років",
     image: "/konkurs/7.webp",
     category: "Аматорська категорія",
@@ -565,7 +565,7 @@ const artworks = [
   {
     id: "79",
     title: "Хранителька рідної хати",
-    artist: "Бабаніязова Лейлі, 16 років",
+    artist: "Лейлі Бабаніязова , 16 років",
     image: "/konkurs/79.webp",
     category: "Аматорська категорія",
   },
