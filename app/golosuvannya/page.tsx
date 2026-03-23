@@ -89,13 +89,13 @@ const artworks = [
   {
     id: "11",
     title: "Без назви",
-    artist: "Трофімчук Тетяна",
+    artist: "Вогняна пшениця",
     image: "https://i.ibb.co/20kp8sm5/11.webp",
     category: "Професійна категорія",
   },
   {
     id: "12",
-    title: "Без назви",
+    title: "Нічне поле",
     artist: "Трофімчук Тетяна",
     image: "https://i.ibb.co/NdvKW36T/12.webp",
     category: "Професійна категорія",
@@ -326,7 +326,7 @@ const artworks = [
   },
   {
     id: "45",
-    title: "Магічний твіст",
+    title: "Магічний цвіт папороті",
     artist: "Мілінчук Софія, 18 років",
     image: "https://i.ibb.co/rKfG6mFK/45.webp",
     category: "Аматорська категорія",
