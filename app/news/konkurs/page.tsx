@@ -241,8 +241,8 @@ export default function KonkursAnnouncePage() {
                   <span className="text-lg text-muted-foreground">
                     оцінювання професійним журі.{" "}
                     <Link href="/konkurs#jury" className="text-primary hover:text-primary/80 underline decoration-primary/30 hover:decoration-primary transition-all">
-                      ( посилання на сторінку журі)
-                    </Link>
+                      посилання
+                    </Link> на сторінку журі
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
