@@ -25,7 +25,7 @@ const artworks = [
   },
   {
     id: "2",
-    title: "Без назви (Краказяблікі)",
+    title: "Краказяблікі",
     artist: "Трішневська Дар'я",
     image: "https://i.ibb.co/hFgYM1VJ/2.webp",
     category: "Аматорська категорія",
