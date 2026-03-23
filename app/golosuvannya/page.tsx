@@ -531,7 +531,7 @@ const artworks = [
     id: "74",
     title: "Триптих «Полин»",
     artist: "Ваганова Надія, 26 років",
-    image: "https://i.ibb.co/1YLGSfkZ/74.webp",
+    image: "https://i.ibb.co/jvqqm68c/74.webp",
     category: "Професійна категорія",
   },
   {
