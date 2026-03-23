@@ -22,10 +22,32 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Код не знайдено. Поверніться і надішліть новий." }, { status: 400 })
     }
 
+    // --- НОВА ЛОГІКА ЗАХИСТУ ВІД ПЕРЕБОРУ ---
     // 2. Перевіряємо чи код співпадає
     if (record.code !== code) {
-      return NextResponse.json({ error: "Невірний код." }, { status: 400 })
+      const newAttempts = (record.attempts || 0) + 1;
+
+      if (newAttempts >= 3) {
+        // Якщо це вже 3-тя помилка — видаляємо код назавжди
+        await supabase.from("verification_codes").delete().eq("email", email)
+        return NextResponse.json(
+          { error: "Ліміт спроб вичерпано. Будь ласка, змініть email і запитайте новий код." },
+          { status: 400 }
+        )
+      } else {
+        // Якщо помилок ще менше 3-х — просто оновлюємо лічильник в базі
+        await supabase
+          .from("verification_codes")
+          .update({ attempts: newAttempts })
+          .eq("email", email)
+
+        return NextResponse.json(
+          { error: `Невірний код. Залишилось спроб: ${3 - newAttempts}` },
+          { status: 400 }
+        )
+      }
     }
+    // --- КІНЕЦЬ ЛОГІКИ ЗАХИСТУ ---
 
     // 3. Перевіряємо час дії
     if (new Date(record.expires_at).getTime() < Date.now()) {
