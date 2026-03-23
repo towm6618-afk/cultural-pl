@@ -20,7 +20,7 @@ const artworks = [
     id: "1",
     title: "Ба й корівка",
     artist: "Черничко Марія, 23 роки",
-    image: "/konkurs/1.webp",
+    image: "https://s10.iimage.su/s/23/gHTw8rwxO89nqdwh93y4Fz1EARzLhGywnnqFsALqo.webp",
     category: "Професійна категорія",
   },
   {
