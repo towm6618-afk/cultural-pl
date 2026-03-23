@@ -88,8 +88,8 @@ const artworks = [
   },
   {
     id: "11",
-    title: "Без назви",
-    artist: "Вогняна пшениця",
+    title: "Вогняна пшениця",
+    artist: "Трофімчук Тетяна",
     image: "https://i.ibb.co/20kp8sm5/11.webp",
     category: "Професійна категорія",
   },
