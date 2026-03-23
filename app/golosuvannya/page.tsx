@@ -256,7 +256,7 @@ const artworks = [
   },
   {
     id: "35",
-    title: "Казкові вогняні коники",
+    title: "Казкові вогняні коні переповідають одне одному сни",
     artist: "Костікова Аліна, 26 років",
     image: "https://i.ibb.co/qLyPKvZJ/35.webp",
     category: "Професійна категорія",
@@ -305,7 +305,7 @@ const artworks = [
   },
   {
     id: "42",
-    title: "Курйози",
+    title: "Безтурботність",
     artist: "Григораш Катерина, 27 років",
     image: "https://i.ibb.co/Zzg5B0pB/42.webp",
     category: "Професійна категорія",
