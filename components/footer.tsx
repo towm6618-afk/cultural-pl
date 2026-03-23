@@ -51,6 +51,9 @@ export function Footer() {
                 <Link href="/news" className="text-background/70 hover:text-primary transition-colors">
                   Новини
                 </Link>
+                <Link href="/konkurs" className="text-background/70 hover:text-primary transition-colors">
+                  Конкурс
+                </Link>
                 <Link href="/golosuvannya" className="text-background/70 hover:text-primary transition-colors">
                   Голосування
                 </Link>
