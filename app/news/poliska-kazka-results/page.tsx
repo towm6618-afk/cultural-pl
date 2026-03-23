@@ -41,7 +41,7 @@ export default function ArticlePage() {
           {/* 1. ВЕЛИКА КАРТИНКА ОБКЛАДИНКИ */}
           <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 relative group shadow-md">
             <img
-              src="/news/IMG_3542.webp"
+              src="https://i.ibb.co/zWJkT0SW/IMG-3542.webp"
               alt="Малюнки учасників конкурсу Поліська Казка"
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />

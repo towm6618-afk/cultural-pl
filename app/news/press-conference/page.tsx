@@ -40,7 +40,7 @@ export default function PressConferencePage() {
           {/* 1. ВЕЛИКА КАРТИНКА ОБКЛАДИНКИ З ЕФЕКТОМ */}
           <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 relative group shadow-md">
             <img
-              src="/news/IMG_3541.JPG"
+              src="https://i.ibb.co/GfJDW86D/IMG-3541.webp"
               alt="Пресконференція Поліська Казка"
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
