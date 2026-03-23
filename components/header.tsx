@@ -13,6 +13,7 @@ export function Header() {
     { href: "/", label: "Головна" },
     { href: "/#about", label: "Про нас" },
     { href: "/news", label: "Новини" },
+    { href: "/konkurs", label: "Конкурс" },
     { href: "/golosuvannya", label: "Голосування" },
     { href: "/#media", label: "Медіа" },
   ]
