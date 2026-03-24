@@ -50,26 +50,34 @@ async function sendMessage(chatId: number, text: string, replyMarkup?: object) {
 }
 
 async function getVotingResults() {
-  const supabase = await createClient();
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-  // Fetch all votes at once (max_rows = 10000 on server)
-  const { data, error } = await supabase
-    .from("votes")
-    .select("artwork_id, email")
-    .limit(10000); // optional, but safe
+  // Прямой запрос к PostgREST API
+  const response = await fetch(
+    `${supabaseUrl}/rest/v1/votes?select=artwork_id,email&limit=10000`,
+    {
+      headers: {
+        apikey: supabaseAnonKey!,
+        Authorization: `Bearer ${supabaseAnonKey!}`,
+      },
+    }
+  );
 
-  if (error) {
-    console.error("Error fetching votes:", error);
+  if (!response.ok) {
+    console.error("Fetch error:", response.status, await response.text());
     return null;
   }
 
-  if (!data || data.length === 0) {
+  const data = await response.json();
+
+  if (!Array.isArray(data) || data.length === 0) {
     return { results: [], totalVotes: 0 };
   }
 
-  // Aggregate votes by artwork
+  // Агрегация голосов
   const votesByArtwork: Record<string, { count: number; emails: string[] }> = {};
-  data.forEach((vote) => {
+  data.forEach((vote: any) => {
     if (!votesByArtwork[vote.artwork_id]) {
       votesByArtwork[vote.artwork_id] = { count: 0, emails: [] };
     }
