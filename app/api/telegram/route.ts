@@ -50,41 +50,28 @@ async function sendMessage(chatId: number, text: string, replyMarkup?: object) {
 }
 
 async function getVotingResults() {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const supabase = await createClient()
 
-  // Прямой запрос к PostgREST API
-  const response = await fetch(
-    `${supabaseUrl}/rest/v1/votes?select=artwork_id,email&limit=10000`,
-    {
-      headers: {
-        apikey: supabaseAnonKey!,
-        Authorization: `Bearer ${supabaseAnonKey!}`,
-      },
-    }
-  );
+  const { data, error } = await supabase
+    .from("votes")
+    .select("artwork_id, email")
 
-  if (!response.ok) {
-    console.error("Fetch error:", response.status, await response.text());
-    return null;
+  if (error) {
+    console.error("Error fetching votes:", error)
+    return null
   }
 
-  const data = await response.json();
-
-  if (!Array.isArray(data) || data.length === 0) {
-    return { results: [], totalVotes: 0 };
-  }
-
-  // Агрегация голосов
-  const votesByArtwork: Record<string, { count: number; emails: string[] }> = {};
-  data.forEach((vote: any) => {
+  // Групування голосів за картиною з emails
+  const votesByArtwork: Record<string, { count: number; emails: string[] }> = {}
+  data.forEach((vote) => {
     if (!votesByArtwork[vote.artwork_id]) {
-      votesByArtwork[vote.artwork_id] = { count: 0, emails: [] };
+      votesByArtwork[vote.artwork_id] = { count: 0, emails: [] }
     }
-    votesByArtwork[vote.artwork_id].count += 1;
-    votesByArtwork[vote.artwork_id].emails.push(vote.email);
-  });
+    votesByArtwork[vote.artwork_id].count += 1
+    votesByArtwork[vote.artwork_id].emails.push(vote.email)
+  })
 
+  // Сортування за кількістю голосів
   const sorted = Object.entries(votesByArtwork)
     .sort(([, a], [, b]) => b.count - a.count)
     .map(([id, data], index) => ({
@@ -92,12 +79,12 @@ async function getVotingResults() {
       artworkId: id,
       votes: data.count,
       emails: data.emails,
-    }));
+    }))
 
   return {
     results: sorted,
     totalVotes: data.length,
-  };
+  }
 }
 
 export async function POST(request: NextRequest) {
