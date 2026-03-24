@@ -52,26 +52,53 @@ async function sendMessage(chatId: number, text: string, replyMarkup?: object) {
 async function getVotingResults() {
   const supabase = await createClient()
 
-  const { data, error } = await supabase
-    .from("votes")
-    .select("artwork_id, email")
+  let allData: any[] = []
+  let from = 0
+  const step = 1000
+  let fetchMore = true
 
-  if (error) {
-    console.error("Error fetching votes:", error)
-    return null
+  // Запрашиваем все данные из Supabase, пока они не закончатся
+  while (fetchMore) {
+    const { data, error } = await supabase
+      .from("votes")
+      .select("artwork_id, email")
+      // Сортировка обязательна для пагинации! Без неё база может отдавать одно и то же
+      .order("artwork_id", { ascending: true })
+      .range(from, from + step - 1)
+
+    if (error) {
+      console.error("Error fetching votes:", error)
+      return null
+    }
+
+    if (data && data.length > 0) {
+      allData = allData.concat(data)
+      from += step
+
+      // Если пришло меньше 1000, значит это конец
+      if (data.length < step) {
+        fetchMore = false
+      }
+    } else {
+      fetchMore = false
+    }
   }
 
-  // Групування голосів за картиною з emails
+  // Считаем голоса
   const votesByArtwork: Record<string, { count: number; emails: string[] }> = {}
-  data.forEach((vote) => {
+
+  allData.forEach((vote) => {
     if (!votesByArtwork[vote.artwork_id]) {
       votesByArtwork[vote.artwork_id] = { count: 0, emails: [] }
     }
     votesByArtwork[vote.artwork_id].count += 1
-    votesByArtwork[vote.artwork_id].emails.push(vote.email)
+    // Добавляем email только если его еще нет (защита от дублей)
+    if (!votesByArtwork[vote.artwork_id].emails.includes(vote.email)) {
+      votesByArtwork[vote.artwork_id].emails.push(vote.email)
+    }
   })
 
-  // Сортування за кількістю голосів
+  // Сортируем от большего к меньшему
   const sorted = Object.entries(votesByArtwork)
     .sort(([, a], [, b]) => b.count - a.count)
     .map(([id, data], index) => ({
@@ -83,7 +110,7 @@ async function getVotingResults() {
 
   return {
     results: sorted,
-    totalVotes: data.length,
+    totalVotes: allData.length, // Теперь тут 100% реальное количество
   }
 }
 
