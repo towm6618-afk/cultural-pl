@@ -182,5 +182,5 @@ export async function GET(request: NextRequest) {
     })
     return NextResponse.json(await response.json())
   }
-  return NextResponse.json({ message: "Telegram Bot API", actions: ["setWebhook"] })
+  return NextResponse.json({ message: "Telegram  Bot API", actions: ["setWebhook"] })
 }
