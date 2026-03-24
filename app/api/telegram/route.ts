@@ -52,30 +52,32 @@ async function sendMessage(chatId: number, text: string, replyMarkup?: object) {
 async function getVotingResults() {
   const supabase = await createClient()
 
+  // 🔍 ЗАПРОС-ДИАГНОСТ: узнаем точное количество строк напрямую в БД
+  const { count: exactCount } = await supabase
+    .from("votes")
+    .select("*", { count: "exact", head: true })
+
   let allData: any[] = []
   let from = 0
   const step = 1000
   let fetchMore = true
 
-  // Запрашиваем все данные из Supabase, пока они не закончатся
   while (fetchMore) {
     const { data, error } = await supabase
       .from("votes")
       .select("artwork_id, email")
-      // Сортировка обязательна для пагинации! Без неё база может отдавать одно и то же
-      .order("artwork_id", { ascending: true })
+      // ❗️ ИСПРАВЛЕНИЕ: сортируем строго по уникальному ID или created_at
+      .order("id", { ascending: true })
       .range(from, from + step - 1)
 
     if (error) {
       console.error("Error fetching votes:", error)
-      return null
+      break // если ошибка, прерываем цикл, но не падаем
     }
 
     if (data && data.length > 0) {
       allData = allData.concat(data)
       from += step
-
-      // Если пришло меньше 1000, значит это конец
       if (data.length < step) {
         fetchMore = false
       }
@@ -92,10 +94,6 @@ async function getVotingResults() {
       votesByArtwork[vote.artwork_id] = { count: 0, emails: [] }
     }
     votesByArtwork[vote.artwork_id].count += 1
-    // Добавляем email только если его еще нет (защита от дублей)
-    if (!votesByArtwork[vote.artwork_id].emails.includes(vote.email)) {
-      votesByArtwork[vote.artwork_id].emails.push(vote.email)
-    }
   })
 
   // Сортируем от большего к меньшему
@@ -105,12 +103,12 @@ async function getVotingResults() {
       position: index + 1,
       artworkId: id,
       votes: data.count,
-      emails: data.emails,
     }))
 
   return {
     results: sorted,
-    totalVotes: allData.length, // Теперь тут 100% реальное количество
+    totalVotes: allData.length,    // Сколько скачал цикл
+    exactDbCount: exactCount || 0, // Сколько строк реально в БД
   }
 }
 
@@ -148,7 +146,6 @@ export async function POST(request: NextRequest) {
         results.results.slice(0, 20).forEach((item) => {
           const medal = item.position === 1 ? "🥇" : item.position === 2 ? "🥈" : item.position === 3 ? "🥉" : `${item.position}.`
           message += `${medal} <b>Картина #${item.artworkId}</b>: ${item.votes} голосів\n`
-          message += `   📧 ${item.emails.join(", ")}\n\n`
         })
 
         if (results.results.length > 20) {
