@@ -52,16 +52,32 @@ async function sendMessage(chatId: number, text: string, replyMarkup?: object) {
 async function getVotingResults() {
   const supabase = await createClient()
 
-  const { data, error } = await supabase
+  // Беремо першу тисячу
+  const { data: page1, error: err1 } = await supabase
     .from("votes")
     .select("artwork_id, email")
+    .range(0, 999)
 
-  if (error) {
-    console.error("Error fetching votes:", error)
+  // Беремо другу тисячу
+  const { data: page2, error: err2 } = await supabase
+    .from("votes")
+    .select("artwork_id, email")
+    .range(1000, 1999)
+
+  // Беремо третю тисячу (про всяк випадок)
+  const { data: page3, error: err3 } = await supabase
+    .from("votes")
+    .select("artwork_id, email")
+    .range(2000, 2999)
+
+  if (err1) {
+    console.error("Error fetching votes:", err1)
     return null
   }
 
-  // Групування голосів за картиною з emails
+  // Об'єднуємо всі результати в один масив
+  const data = [...(page1 || []), ...(page2 || []), ...(page3 || [])]
+
   const votesByArtwork: Record<string, { count: number; emails: string[] }> = {}
   data.forEach((vote) => {
     if (!votesByArtwork[vote.artwork_id]) {
@@ -71,7 +87,6 @@ async function getVotingResults() {
     votesByArtwork[vote.artwork_id].emails.push(vote.email)
   })
 
-  // Сортування за кількістю голосів
   const sorted = Object.entries(votesByArtwork)
     .sort(([, a], [, b]) => b.count - a.count)
     .map(([id, data], index) => ({
