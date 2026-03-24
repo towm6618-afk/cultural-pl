@@ -52,7 +52,9 @@ async function sendMessage(chatId: number, text: string, replyMarkup?: object) {
 async function getVotingResults() {
   const supabase = await createClient()
 
-  const { data, error } = await supabase.from("votes").select("artwork_id, email").range(0, 10000)
+  const { data, error } = await supabase
+    .from("votes")
+    .select("artwork_id, email")
 
   if (error) {
     console.error("Error fetching votes:", error)
