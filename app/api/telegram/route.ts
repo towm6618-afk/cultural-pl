@@ -146,7 +146,6 @@ export async function POST(request: NextRequest) {
         results.results.slice(0, 20).forEach((item) => {
           const medal = item.position === 1 ? "🥇" : item.position === 2 ? "🥈" : item.position === 3 ? "🥉" : `${item.position}.`
           message += `${medal} <b>Картина #${item.artworkId}</b>: ${item.votes} голосів\n`
-          message += `   📧 ${item.emails.join(", ")}\n\n`
         })
 
         if (results.results.length > 20) {
