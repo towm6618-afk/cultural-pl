@@ -50,42 +50,32 @@ async function sendMessage(chatId: number, text: string, replyMarkup?: object) {
 }
 
 async function getVotingResults() {
-  const supabase = await createClient()
+  const supabase = await createClient();
 
-  // Беремо першу тисячу
-  const { data: page1, error: err1 } = await supabase
+  // Fetch all votes at once (max_rows = 10000 on server)
+  const { data, error } = await supabase
     .from("votes")
     .select("artwork_id, email")
-    .range(0, 999)
+    .limit(10000); // optional, but safe
 
-  // Беремо другу тисячу
-  const { data: page2, error: err2 } = await supabase
-    .from("votes")
-    .select("artwork_id, email")
-    .range(1000, 1999)
-
-  // Беремо третю тисячу (про всяк випадок)
-  const { data: page3, error: err3 } = await supabase
-    .from("votes")
-    .select("artwork_id, email")
-    .range(2000, 2999)
-
-  if (err1) {
-    console.error("Error fetching votes:", err1)
-    return null
+  if (error) {
+    console.error("Error fetching votes:", error);
+    return null;
   }
 
-  // Об'єднуємо всі результати в один масив
-  const data = [...(page1 || []), ...(page2 || []), ...(page3 || [])]
+  if (!data || data.length === 0) {
+    return { results: [], totalVotes: 0 };
+  }
 
-  const votesByArtwork: Record<string, { count: number; emails: string[] }> = {}
+  // Aggregate votes by artwork
+  const votesByArtwork: Record<string, { count: number; emails: string[] }> = {};
   data.forEach((vote) => {
     if (!votesByArtwork[vote.artwork_id]) {
-      votesByArtwork[vote.artwork_id] = { count: 0, emails: [] }
+      votesByArtwork[vote.artwork_id] = { count: 0, emails: [] };
     }
-    votesByArtwork[vote.artwork_id].count += 1
-    votesByArtwork[vote.artwork_id].emails.push(vote.email)
-  })
+    votesByArtwork[vote.artwork_id].count += 1;
+    votesByArtwork[vote.artwork_id].emails.push(vote.email);
+  });
 
   const sorted = Object.entries(votesByArtwork)
     .sort(([, a], [, b]) => b.count - a.count)
@@ -94,12 +84,12 @@ async function getVotingResults() {
       artworkId: id,
       votes: data.count,
       emails: data.emails,
-    }))
+    }));
 
   return {
     results: sorted,
     totalVotes: data.length,
-  }
+  };
 }
 
 export async function POST(request: NextRequest) {
