@@ -52,39 +52,18 @@ async function sendMessage(chatId: number, text: string, replyMarkup?: object) {
 async function getVotingResults() {
   const supabase = await createClient()
 
-  let allData: any[] = []
-  let from = 0
-  const step = 1000
-  let fetchMore = true
+  const { data, error } = await supabase
+    .from("votes")
+    .select("artwork_id, email")
 
-  // Запрашиваем данные порциями по 1000 штук, пока они не закончатся
-  while (fetchMore) {
-    const { data, error } = await supabase
-      .from("votes")
-      .select("artwork_id, email")
-      .range(from, from + step - 1)
-
-    if (error) {
-      console.error("Error fetching votes:", error)
-      return null
-    }
-
-    if (data && data.length > 0) {
-      allData = allData.concat(data)
-      from += step
-      // Если пришло меньше 1000 записей, значит это была последняя порция
-      if (data.length < step) {
-        fetchMore = false
-      }
-    } else {
-      fetchMore = false
-    }
+  if (error) {
+    console.error("Error fetching votes:", error)
+    return null
   }
 
-  // Дальше используем allData вместо data
+  // Групування голосів за картиною з emails
   const votesByArtwork: Record<string, { count: number; emails: string[] }> = {}
-
-  allData.forEach((vote) => {
+  data.forEach((vote) => {
     if (!votesByArtwork[vote.artwork_id]) {
       votesByArtwork[vote.artwork_id] = { count: 0, emails: [] }
     }
@@ -104,7 +83,7 @@ async function getVotingResults() {
 
   return {
     results: sorted,
-    totalVotes: allData.length, // тепер тут буде реальна кількість
+    totalVotes: data.length,
   }
 }
 
