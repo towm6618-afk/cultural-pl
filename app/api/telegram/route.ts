@@ -52,7 +52,7 @@ async function sendMessage(chatId: number, text: string, replyMarkup?: object) {
 async function getVotingResults() {
   const supabase = await createClient()
 
-  let allData = []
+  let allData: any[] = []
   let from = 0
   const step = 1000
   let fetchMore = true
