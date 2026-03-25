@@ -257,7 +257,7 @@ export default function KonkursAnnouncePage() {
 
               <div className="bg-background p-6 rounded-2xl border border-border shadow-sm text-center">
                 <p className="text-xl font-medium text-foreground">
-                  Імена переможців оголосять 23 квітня 2026 року
+                  Імена переможців оголосять 20 квітня 2026 року
                 </p>
               </div>
             </div>
