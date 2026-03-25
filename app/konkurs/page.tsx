@@ -261,7 +261,7 @@ export default function KonkursPage() {
                   Оригінали відібраних робіт будуть представлені на виставці в НАОМА.
                 </p>
                 <div className="bg-primary/10 text-foreground p-6 rounded-xl">
-                  <p className="font-bold text-lg mb-2">Оголошення переможців — 6 квітня 2026</p>
+                  <p className="font-bold text-lg mb-2">Оголошення переможців — 23 квітня 2026</p>
                   <p className="text-muted">
                     Переможці стануть учасниками мистецьких проєктів платформи та отримають річну стипендію,
                     що дозволить зосередитися на творчості.
