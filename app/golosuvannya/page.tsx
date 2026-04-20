@@ -74,7 +74,7 @@ const artworks = [
   },
   {
     id: "9",
-    title: "Без назви",
+    title: "Коза, що веде зорі",
     artist: "Покиньборода Софія, 17 років",
     image: "https://i.ibb.co/rfqKYntX/9.webp",
     category: "Аматорська категорія",
@@ -725,6 +725,9 @@ export default function VotingPage() {
       <main className="pt-20">
         <section className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+              Голосування завершено
+            </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
               Народне голосування
             </h1>
@@ -786,9 +789,12 @@ export default function VotingPage() {
           <DialogHeader>
             <DialogTitle className="text-xl font-serif">Голосування</DialogTitle>
             <DialogDescription>
+              {/* ЗАКОМЕНТОВАНІ СЛОВА ПРО EMAIL
               {step === "email"
                 ? "Введіть ваш email, щоб проголосувати за цю роботу."
                 : "Введіть 4-значний код, надісланий на вашу пошту."}
+                */}
+              Прийом голосів офіційно завершено. Дякуємо!
             </DialogDescription>
           </DialogHeader>
 
@@ -826,7 +832,8 @@ export default function VotingPage() {
                   <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
-
+              {/* ===== ПОВНІСТЮ ЗАКОМЕНТОВАНА ФОРМА ГОЛОСУВАННЯ ===== 
+             
               {submitStatus === "success" ? (
                 <div className="flex items-center justify-center gap-2 p-4 bg-green-50 text-green-700 rounded-lg">
                   <Check className="w-5 h-5" />
@@ -909,6 +916,7 @@ export default function VotingPage() {
                   )}
                 </div>
               )}
+              */}
             </div>
           )}
         </DialogContent>
