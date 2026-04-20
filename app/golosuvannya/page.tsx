@@ -789,9 +789,12 @@ export default function VotingPage() {
           <DialogHeader>
             <DialogTitle className="text-xl font-serif">Голосування</DialogTitle>
             <DialogDescription>
+              {/* ЗАКОМЕНТОВАНІ СЛОВА ПРО EMAIL
               {step === "email"
                 ? "Введіть ваш email, щоб проголосувати за цю роботу."
                 : "Введіть 4-значний код, надісланий на вашу пошту."}
+                */}
+              Прийом голосів офіційно завершено. Дякуємо!
             </DialogDescription>
           </DialogHeader>
 
@@ -829,7 +832,8 @@ export default function VotingPage() {
                   <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
-
+              {/* ===== ПОВНІСТЮ ЗАКОМЕНТОВАНА ФОРМА ГОЛОСУВАННЯ ===== 
+             
               {submitStatus === "success" ? (
                 <div className="flex items-center justify-center gap-2 p-4 bg-green-50 text-green-700 rounded-lg">
                   <Check className="w-5 h-5" />
@@ -912,6 +916,7 @@ export default function VotingPage() {
                   )}
                 </div>
               )}
+              */}
             </div>
           )}
         </DialogContent>
