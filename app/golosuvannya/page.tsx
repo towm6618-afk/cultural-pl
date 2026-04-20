@@ -74,7 +74,7 @@ const artworks = [
   },
   {
     id: "9",
-    title: "Без назви",
+    title: "Коза, що веде зорі",
     artist: "Покиньборода Софія, 17 років",
     image: "https://i.ibb.co/rfqKYntX/9.webp",
     category: "Аматорська категорія",
