@@ -43,7 +43,7 @@ export default function VistavkaNaomaPage() {
           <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 relative shadow-md">
             {/* Ви можете замінити це посилання на реальне фото з виставки */}
             <img
-              src="https://i.ibb.co/kgb0ZSRg/IMG-3543.webp"
+              src="https://i.ibb.co/Z4vRnPJ/vistavka-naoma.webp"
               alt="Виставка народного мистецтва у НАОМА"
               className="w-full h-full object-cover"
             />
