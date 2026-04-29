@@ -165,7 +165,7 @@ export default function WinnersAnnouncePage() {
 
             {/* МІСЦЕ ДЛЯ ОДНОГО ФОТО */}
             <div className="w-full aspect-[16/9] bg-secondary/30 rounded-2xl border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
-              <img src="https://i.ibb.co/qMzJ8tZQ/IMG-1360.webp" alt="Сонячний Сон" className="w-full h-full object-cover" />
+              <img src="https://i.ibb.co/PGb27FyS/IMG-1395.webp" alt="Сонячний Сон" className="w-full h-full object-cover" />
 
             </div>
 
