@@ -144,9 +144,7 @@ export default function WinnersAnnouncePage() {
 
             {/* МІСЦЕ ДЛЯ ОДНОГО ФОТО */}
             <div className="w-full aspect-[16/9] bg-secondary/30 rounded-2xl border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
-              {/* <img src="ВАШЕ_ФОТО" alt="Ба і корівка" className="w-full h-full object-cover" /> */}
-              <ImageIcon className="w-10 h-10 text-muted-foreground/40 mb-2" />
-              <span className="text-sm text-muted-foreground/60">Одне фото</span>
+              <img src="https://i.ibb.co/9mSW7C91/IMG-1359.webp" alt="Ба і корівка" className="w-full h-full object-cover" />
             </div>
 
             {/* АМАТОРСЬКА КАТЕГОРІЯ */}
@@ -167,9 +165,8 @@ export default function WinnersAnnouncePage() {
 
             {/* МІСЦЕ ДЛЯ ОДНОГО ФОТО */}
             <div className="w-full aspect-[16/9] bg-secondary/30 rounded-2xl border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
-              {/* <img src="ВАШЕ_ФОТО" alt="Сонячний Сон" className="w-full h-full object-cover" /> */}
-              <ImageIcon className="w-10 h-10 text-muted-foreground/40 mb-2" />
-              <span className="text-sm text-muted-foreground/60">Одне фото</span>
+              <img src="https://i.ibb.co/qMzJ8tZQ/IMG-1360.webp" alt="Сонячний Сон" className="w-full h-full object-cover" />
+
             </div>
 
             {/* ФІНАЛІСТИ ТА ВИСТАВКА */}
