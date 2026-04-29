@@ -40,9 +40,8 @@ export default function WinnersAnnouncePage() {
           {/* ГОЛОВНЕ ФОТО СТАТТІ */}
           <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 relative shadow-md flex items-center justify-center">
             {/* Коли буде головне фото, розкоментуйте img і видаліть ImageIcon */}
-            {/* <img src="ВАШЕ_ПОСИЛАННЯ_НА_ФОТО" alt="Нагородження переможців" className="w-full h-full object-cover" /> */}
-            <ImageIcon className="w-12 h-12 text-muted-foreground/30" />
-            <span className="absolute text-muted-foreground/50 font-medium">Головне фото нагородження</span>
+            <img src="https://i.ibb.co/yc2mR990/IMG-7860.webp" alt="Нагородження переможців" className="w-full h-full object-cover" />
+
           </div>
 
           {/* ТЕГИ І ДАТА */}
@@ -94,13 +93,34 @@ export default function WinnersAnnouncePage() {
 
             {/* МІСЦЕ ДЛЯ ТРЬОХ ФОТО */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-              {[1, 2, 3].map((num) => (
-                <div key={num} className="aspect-square bg-secondary/30 rounded-2xl border border-border flex flex-col items-center justify-center relative overflow-hidden">
-                  {/* <img src="ВАШЕ_ФОТО" alt="Триптих Полин" className="w-full h-full object-cover" /> */}
-                  <ImageIcon className="w-8 h-8 text-muted-foreground/40 mb-2" />
-                  <span className="text-sm text-muted-foreground/60">Фото {num}</span>
-                </div>
-              ))}
+
+              {/* Фото 1 */}
+              <div className="aspect-square bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm">
+                <img
+                  src="https://i.ibb.co/LdSQgFt1/IMG-1364.webp"
+                  alt="Триптих Полин - частина 1"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Фото 2 */}
+              <div className="aspect-square bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm">
+                <img
+                  src="https://i.ibb.co/9HgwpnbX/IMG-1363.webp"
+                  alt="Триптих Полин - частина 2"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Фото 3 */}
+              <div className="aspect-square bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm">
+                <img
+                  src="https://i.ibb.co/pvjcTGRZ/IMG-1362.webp"
+                  alt="Триптих Полин - частина 3"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
             </div>
 
             {/* 2 МІСЦЕ */}
@@ -112,9 +132,7 @@ export default function WinnersAnnouncePage() {
 
             {/* МІСЦЕ ДЛЯ ОДНОГО ФОТО */}
             <div className="w-full aspect-[16/9] bg-secondary/30 rounded-2xl border border-border mb-12 flex flex-col items-center justify-center relative overflow-hidden">
-              {/* <img src="ВАШЕ_ФОТО" alt="Гірський козлик" className="w-full h-full object-cover" /> */}
-              <ImageIcon className="w-10 h-10 text-muted-foreground/40 mb-2" />
-              <span className="text-sm text-muted-foreground/60">Одне фото</span>
+              <img src="https://i.ibb.co/TMYFxCKL/IMG-1361.webp" alt="Гірський козлик" className="w-full h-full object-cover" />
             </div>
 
             {/* 3 МІСЦЕ */}
