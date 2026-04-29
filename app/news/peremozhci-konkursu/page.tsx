@@ -40,7 +40,7 @@ export default function WinnersAnnouncePage() {
           {/* ГОЛОВНЕ ФОТО СТАТТІ */}
           <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 relative shadow-md flex items-center justify-center">
             {/* Коли буде головне фото, розкоментуйте img і видаліть ImageIcon */}
-            <img src="https://i.ibb.co/yc2mR990/IMG-7860.webp" alt="Нагородження переможців" className="w-full h-full object-cover" />
+            <img src="https://i.ibb.co/yc2mR990/IMG-7860.webp" alt="Нагородження переможців" className="w-full h-full object-cover object-top" />
 
           </div>
 
