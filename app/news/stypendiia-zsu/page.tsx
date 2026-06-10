@@ -104,8 +104,8 @@ export default function ScholarshipZsuPage() {
             </p>
 
             {/* ДОДАТКОВЕ ФОТО (якщо є) */}
-            { <div className="w-full aspect-[16/9] bg-secondary/30 rounded-2xl border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
-               <img src="https://ibb.co/fdWV0BGd" alt="Передача допомоги" className="w-full h-full object-cover" />
+            { <div className="w-full bg-secondary/30 rounded-2xl border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
+               <img src="https://i.ibb.co/JjTWk0Fj/image.png" alt="Передача допомоги" className="w-full h-full object-cover" />
             </div> }
 
             {/* ІНФОРМАЦІЯ ПРО КОНКУРС */}
