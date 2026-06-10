@@ -39,7 +39,7 @@ export default function ScholarshipZsuPage() {
           {/* ГОЛОВНЕ ФОТО СТАТТІ */}
           <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 relative shadow-md flex items-center justify-center">
              {/* Замініть src на посилання з вашим реальним фото. Додано object-top як ви просили раніше */}
-             { <img src="https://i.ibb.co/60C55kF2/IMG-2535.jpg" alt="Костянтин Мельничук та військові" className="w-full h-full object-cover object-top" /> }
+             { <img src="https://i.ibb.co/JjTWk0Fj/image.png" alt="Костянтин Мельничук та військові" className="w-full h-full object-cover object-top" /> }
    
           </div>
 
