@@ -59,7 +59,9 @@ export default function ScholarshipZsuPage() {
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-12 leading-[1.2]">
             Переможець конкурсу народного мистецтва “Поліська Казка” передав свою першу стипендію на потреби ЗСУ
           </h1>
-
+{ <div className="w-full bg-secondary/30 rounded-2xl border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
+               <img src="https://i.ibb.co/JjTWk0Fj/image.png" alt="Передача допомоги" className="w-full h-full object-cover" />
+            </div> }
           {/* ОСНОВНИЙ ТЕКСТ */}
           <div className="prose-lg">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
