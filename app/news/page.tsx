@@ -4,6 +4,14 @@ import Link from "next/link"
 import { ArrowRight, Calendar, Sparkles } from "lucide-react"
 
 const posts = [
+    {
+    slug: "stypendiia-zsu",
+    category: "Переможці",
+    title: "Переможець конкурсу «Поліська Казка» передав стипендію на потреби ЗСУ",
+    excerpt: "16-річний школяр Костянтин Мельничук передав свою першу стипендію у розмірі 25 тисяч гривень на підтримку ЗСУ.",
+    date: "10 червня 2026",
+    image: "https://i.ibb.co/60C55kF2/IMG-2535.jpg",
+  },
   {
     slug: "peremozhci-konkursu",
     category: "Переможці",
