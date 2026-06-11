@@ -10,7 +10,7 @@ const posts = [
     title: "Переможець конкурсу «Поліська Казка» передав стипендію на потреби ЗСУ",
     excerpt: "16-річний школяр Костянтин Мельничук передав свою першу стипендію у розмірі 25 тисяч гривень на підтримку ЗСУ.",
     date: "10 червня 2026",
-    image: "https://i.ibb.co/60C55kF2/IMG-2535.jpg",
+    image: "https://i.ibb.co/JjTWk0Fj/image.png",
   },
   {
     slug: "peremozhci-konkursu",
