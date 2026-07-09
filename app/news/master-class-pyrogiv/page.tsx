@@ -55,9 +55,14 @@ export default function MasterClassPyrogivPage() {
           </div>
 
           {/* ЗАГОЛОВОК (H1) */}
-          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-12 leading-[1.2]">
-            “Це можливість відволіктися від стресу” У музеї Пирогово відбувся перший відкритий майстер-клас із живопису від всеукраїнської культурної платформи “Поліська Казка”
-          </h1>
+          <div className="mb-12">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-[1.1]">
+              “Це можливість відволіктися від стресу”
+            </h1>
+            <h2 className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed">
+              У музеї Пирогово відбувся перший відкритий майстер-клас із живопису від всеукраїнської культурної платформи “Поліська Казка”
+            </h2>
+          </div>
 
           {/* ОСНОВНИЙ ТЕКСТ (SEO оптимізований) */}
           <div className="prose-lg">
