@@ -6,7 +6,6 @@ import {
   ArrowLeft,
   Calendar,
   Quote,
-  ImageIcon,
   MapPin,
   Paintbrush,
   Leaf
@@ -37,15 +36,8 @@ export default function MasterClassPyrogivPage() {
             </Link>
           </div>
 
-          {/* ГОЛОВНЕ ФОТО СТАТТІ */}
-          <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 relative shadow-md flex items-center justify-center">
-             <ImageIcon className="w-12 h-12 text-muted-foreground/30" />
-             <span className="absolute text-muted-foreground/50 font-medium mt-16">Головне фото (Обкладинка)</span>
-             {/* <img src="ВАШЕ_ПОСИЛАННЯ_НА_ФОТО" alt="Майстер-клас із живопису в Пирогово" className="w-full h-full object-cover object-top" /> */}
-          </div>
-
-          {/* ТЕГИ І ДАТА */}
-          <div className="flex flex-wrap items-center gap-4 mb-6">
+          {/* ТЕГИ І ДАТА (Обкладинку прибрали, починаємо одразу з тегів) */}
+          <div className="flex flex-wrap items-center gap-4 mb-6 mt-4">
             <div className="flex gap-2">
               <span className="inline-flex items-center gap-1.5 bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                 <Paintbrush className="w-3.5 h-3.5" />
@@ -103,24 +95,24 @@ export default function MasterClassPyrogivPage() {
               </div>
             </blockquote>
 
-            {/* ГАЛЕРЕЯ НА 5 ФОТО */}
+            {/* ГАЛЕРЕЯ НА 5 ФОТО (Із вашими реальними посиланнями) */}
             <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-12 mt-8">
               {/* Ряд 1 */}
-              <div className="md:col-span-3 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm">
-                <img src="СЮДИ_ВСТАВТЕ_ПОСИЛАННЯ_1" alt="Майстер-клас Пирогово - Фото 1" className="w-full h-full object-cover" />
+              <div className="md:col-span-3 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
+                <img src="https://i.ibb.co/GQrBdSD7/photo-2026-07-08-15-53-35-4.jpg" alt="Майстер-клас Пирогово - Фото 1" className="w-full h-full object-cover" />
               </div>
-              <div className="md:col-span-3 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm">
-                <img src="СЮДИ_ВСТАВТЕ_ПОСИЛАННЯ_2" alt="Майстер-клас Пирогово - Фото 2" className="w-full h-full object-cover" />
+              <div className="md:col-span-3 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
+                <img src="https://i.ibb.co/v6D2RKM8/photo-2026-07-08-15-53-35-3.jpg" alt="Майстер-клас Пирогово - Фото 2" className="w-full h-full object-cover" />
               </div>
               {/* Ряд 2 */}
-              <div className="md:col-span-2 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm">
-                <img src="СЮДИ_ВСТАВТЕ_ПОСИЛАННЯ_3" alt="Майстер-клас Пирогово - Фото 3" className="w-full h-full object-cover" />
+              <div className="md:col-span-2 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
+                <img src="https://i.ibb.co/xtCKmtbF/photo-2026-07-08-15-53-35-5.jpg" alt="Майстер-клас Пирогово - Фото 3" className="w-full h-full object-cover" />
               </div>
-              <div className="md:col-span-2 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm">
-                <img src="СЮДИ_ВСТАВТЕ_ПОСИЛАННЯ_4" alt="Майстер-клас Пирогово - Фото 4" className="w-full h-full object-cover" />
+              <div className="md:col-span-2 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
+                <img src="https://i.ibb.co/9HCmcwsp/photo-2026-07-08-15-53-35.jpg" alt="Майстер-клас Пирогово - Фото 4" className="w-full h-full object-cover" />
               </div>
-              <div className="md:col-span-2 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm">
-                <img src="СЮДИ_ВСТАВТЕ_ПОСИЛАННЯ_5" alt="Майстер-клас Пирогово - Фото 5" className="w-full h-full object-cover" />
+              <div className="md:col-span-2 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
+                <img src="https://i.ibb.co/pjK3M8jp/photo-2026-07-08-15-53-34.jpg" alt="Майстер-клас Пирогово - Фото 5" className="w-full h-full object-cover" />
               </div>
             </div>
 
