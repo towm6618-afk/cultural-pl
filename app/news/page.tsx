@@ -4,15 +4,24 @@ import Link from "next/link"
 import { ArrowRight, Calendar, Sparkles } from "lucide-react"
 
 const posts = [
-    {
+  // ДОДАНО НОВУ СТАТТЮ (Другий майстер-клас, 8 серпня)
+  {
+    slug: "second-master-class-pyrohiv", // Зміни slug на той, який ти реально створив
+    category: "Арт-клас",
+    title: "У Пирогові відбувся другий відкритий майстер-клас із живопису від «Поліської Казки»",
+    excerpt: "8 серпня 2026 року понад 20 учасників зібралися в Національному музеї просто неба, щоб спробувати себе в живописі та через творчість відпочити від повсякденних турбот.",
+    date: "8 серпня 2026",
+    image: "https://i.ibb.co/vx5DkRGK/pyrohiv-4.jpg", // Заміни на реальне фото з другого майстер-класу
+  },
+  {
     slug: "master-class-pyrogiv",
     category: "Майстер-клас",
     title: "“Це можливість відволіктися від стресу” У музеї Пирогово відбувся перший відкритий майстер-клас із живопису від всеукраїнської культурної платформи “Поліська Казка”",
     excerpt: "5 липня у Національному музеї народної архітектури та побуту України в Пирогові всеукраїнська культурна платформа “Поліська Казка” провела перший відкритий майстер-клас із живопису. У творчій події взяли участь понад 30 учасників.",
     date: "5 липня 2026",
     image: "https://i.ibb.co/GQrBdSD7/photo-2026-07-08-15-53-35-4.jpg",
-    },
-    {
+  },
+  {
     slug: "stypendiia-zsu",
     category: "Стипендія",
     title: "Переможець конкурсу «Поліська Казка» передав стипендію на потреби ЗСУ",
@@ -88,7 +97,7 @@ export default function BlogPage() {
             {posts.map((post) => (
               <Link
                 key={post.slug}
-                href={`/news/${post.slug}`}
+                href={`/news/${post.slug}`} // Зверни увагу: посилання веде на /news/...
                 className="group flex flex-col h-full bg-card rounded-[2rem] border border-border overflow-hidden hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/30 hover:-translate-y-2 transition-all duration-500"
               >
                 {/* Блок з картинкою */}
