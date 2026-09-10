@@ -41,6 +41,21 @@ function formatDate(iso: string) {
 export default function AuctionPage() {
   const [selected, setSelected] = useState<AuctionArtwork | null>(null)
 
+  // Найвища ставка по кожній роботі — для відображення прямо в сітці,
+  // без відкриття картки.
+  const [highestBids, setHighestBids] = useState<Record<string, number>>({})
+
+  useEffect(() => {
+    fetch("/api/bid/highest")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.highest) setHighestBids(data.highest)
+      })
+      .catch(() => {
+        // мовчки ігноруємо — сітка все одно покаже стартові ціни
+      })
+  }, [])
+
   // Ставки/повідомлення обраної роботи
   const [bids, setBids] = useState<Bid[]>([])
   const [isLoadingBids, setIsLoadingBids] = useState(false)
@@ -120,6 +135,7 @@ export default function AuctionPage() {
       }
 
       setSubmitStatus("success")
+      setHighestBids((prev) => ({ ...prev, [selected.id]: Number(amount) }))
       setPhone("")
       setMessage("")
       setAmount("")
@@ -173,7 +189,9 @@ export default function AuctionPage() {
                   <div className="p-3">
                     <p className="text-sm font-medium truncate">{artwork.title}</p>
                     <p className="text-xs text-muted mt-1">
-                      Старт: {formatPrice(artwork.startPrice)}
+                      {highestBids[artwork.id]
+                        ? `Ставка: ${formatPrice(highestBids[artwork.id])}`
+                        : `Старт: ${formatPrice(artwork.startPrice)}`}
                     </p>
                   </div>
                 </button>
