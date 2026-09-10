@@ -62,6 +62,7 @@ export default function AuctionPage() {
   const [showAllBids, setShowAllBids] = useState(false)
 
   // Форма ставки
+  const [showBidForm, setShowBidForm] = useState(false)
   const [phone, setPhone] = useState("")
   const [message, setMessage] = useState("")
   const [amount, setAmount] = useState("")
@@ -96,6 +97,7 @@ export default function AuctionPage() {
     setSelected(artwork)
     setBids([])
     setShowAllBids(false)
+    setShowBidForm(false)
     setPhone("")
     setMessage("")
     setAmount("")
@@ -304,6 +306,15 @@ export default function AuctionPage() {
                   <Check className="w-5 h-5" />
                   <span>Дякуємо! Вашу ставку прийнято.</span>
                 </div>
+              ) : !showBidForm ? (
+                <div className="pt-2 border-t border-border">
+                  <Button
+                    onClick={() => setShowBidForm(true)}
+                    className="w-full bg-primary hover:bg-primary/90 mt-3"
+                  >
+                    <Gavel className="w-4 h-4 mr-2" /> Зробити ставку
+                  </Button>
+                </div>
               ) : (
                 <div className="space-y-3 pt-2 border-t border-border">
                   <p className="text-sm font-medium text-foreground pt-3">Зробити ставку</p>
@@ -314,6 +325,7 @@ export default function AuctionPage() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     disabled={isSubmitting}
+                    autoFocus
                   />
 
                   <Input

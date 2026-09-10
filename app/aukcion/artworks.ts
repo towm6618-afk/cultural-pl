@@ -31,7 +31,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "3",
-    title: "Робота 3 (замініть назву)",
+    title: "Робота 3  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -39,7 +39,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "4",
-    title: "Робота 4 (замініть назву)",
+    title: "Робота 4  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -47,7 +47,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "5",
-    title: "Робота 5 (замініть назву)",
+    title: "Робота 5  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -55,7 +55,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "6",
-    title: "Робота 6 (замініть назву)",
+    title: "Робота 6  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -63,7 +63,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "7",
-    title: "Робота 7 (замініть назву)",
+    title: "Робота 7  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -71,7 +71,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "8",
-    title: "Робота 8 (замініть назву)",
+    title: "Робота 8  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -79,7 +79,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "9",
-    title: "Робота 9 (замініть назву)",
+    title: "Робота 9  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -87,7 +87,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "10",
-    title: "Робота 10 (замініть назву)",
+    title: "Робота 10  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -95,7 +95,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "11",
-    title: "Робота 11 (замініть назву)",
+    title: "Робота 11  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -103,7 +103,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "12",
-    title: "Робота 12 (замініть назву)",
+    title: "Робота 12  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -111,7 +111,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "13",
-    title: "Робота 13 (замініть назву)",
+    title: "Робота 13  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -119,7 +119,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "14",
-    title: "Робота 14 (замініть назву)",
+    title: "Робота 14  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -127,7 +127,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "15",
-    title: "Робота 15 (замініть назву)",
+    title: "Робота 15  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -135,7 +135,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "16",
-    title: "Робота 16 (замініть назву)",
+    title: "Робота 16  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -143,7 +143,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "17",
-    title: "Робота 17 (замініть назву)",
+    title: "Робота 17  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -151,7 +151,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "18",
-    title: "Робота 18 (замініть назву)",
+    title: "Робота 18  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -159,7 +159,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "19",
-    title: "Робота 19 (замініть назву)",
+    title: "Робота 19  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
@@ -167,7 +167,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "20",
-    title: "Робота 20 (замініть назву)",
+    title: "Робота 20  ",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
