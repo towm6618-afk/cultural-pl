@@ -19,7 +19,7 @@ export const artworks: AuctionArtwork[] = [
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
-    image: "https://REPLACE-WITH-IMAGE-URL/1.webp",
+    image: "https://i.ibb.co/rfqKYntX/9.webp",
   },
   {
     id: "2",
@@ -27,7 +27,7 @@ export const artworks: AuctionArtwork[] = [
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварельні фарби, гуаш, кольорові олівці",
     startPrice: 1300,
-    image: "https://REPLACE-WITH-IMAGE-URL/2.webp",
+    image: "https://i.ibb.co/d0Z2sDy8/10.webp",
   },
   {
     id: "3",
