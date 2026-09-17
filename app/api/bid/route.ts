@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createClient } from "@/lib/supabase/server"
-import { artworks } from "@/app/aukcion/artworks"
+import { artworks } from "@/app/aukcions/artworks"
 
 // Телефон: приймаємо українські номери у форматах
 // +380671234567 / 380671234567 / 0671234567 / з пробілами й тире
