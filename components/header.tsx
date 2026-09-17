@@ -15,7 +15,6 @@ export function Header() {
     { href: "/news", label: "Новини" },
     { href: "/konkurs", label: "Конкурс" },
     { href: "/golosuvannya", label: "Голосування" },
-    { href: "/aukcion", label: "Аукціон" },
     { href: "/#media", label: "Медіа" },
   ]
 
