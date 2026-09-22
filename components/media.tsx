@@ -29,7 +29,7 @@ const mediaItems = [
     title: "Національний конкурс для молодих художників «Поліська казка» продовжує прийом заявок — як доєднатися",
     source: "online.ua",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/og-ru_64f8e67c93-6aeYLGpDvYIkrlSPQAO8iJGpTgfUzO.jpg",
-    url: "https://news.online.ua/nacionalnii-konkurs-dlia-molodix-xudoznikiv-poliska-kazka-prodovzhuie-priiom-zaiavok-iak-dojednatisia-900632/",
+    url: "https://news.online.ua/nacionalnii-konkurs-dlia-molodix-xudoznikiv-poliska-kazka-prodovzuje-priiom-zaiavok-iak-dojednatisia-900632/",
   },
   {
     title: "В Україні стартував національний конкурс народного мистецтва «Поліська казка»",
