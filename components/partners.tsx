@@ -33,7 +33,7 @@ const mediaPartners = [
   },
   {
     name: "Kyiv Maps",
-    logo: "https://i.ibb.co/cKdPDhpY/Kyiv-logo-english-2.png",
+    logo: "/partners/kyiv-maps.png",
   },
 ]
 
