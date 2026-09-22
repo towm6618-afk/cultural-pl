@@ -119,7 +119,7 @@ export default function MediaPage() {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
               Медіа-партнери
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8 items-center">
               {mediaItems.map((item, index) => (
                 <div key={index} className="flex items-center justify-center p-4 bg-background rounded-xl">
                   <img
@@ -129,6 +129,13 @@ export default function MediaPage() {
                   />
                 </div>
               ))}
+              <div className="flex items-center justify-center p-4 bg-background rounded-xl">
+                <img
+                  src="https://i.ibb.co/cKdPDhpY/Kyiv-logo-english-2.png"
+                  alt="Kyivmaps"
+                  className="max-h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all"
+                />
+              </div>
             </div>
           </div>
         </section>
