@@ -1,5 +1,3 @@
-
-
 const strategicPartners = [
   {
     name: "НАОМА",
@@ -32,6 +30,10 @@ const mediaPartners = [
   {
     name: "ТиКиїв",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-30%20%D0%B2%2012_24_54-64tjUZ72pqvn9YIO64Y0tRzwB0QD12.png",
+  },
+  {
+    name: "Kyiv Maps",
+    logo: "https://i.ibb.co/cKdPDhpY/Kyiv-logo-english-2.png",
   },
 ]
 
