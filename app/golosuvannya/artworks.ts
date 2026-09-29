@@ -487,7 +487,7 @@ export const artworks = [
   },
   {
     id: "82",
-    title: "Червіній кінь",
+    title: "Червоний кінь",
     artist: "Левченко Євгенія, 26 років",
     image: "/konkurs/82.webp",
   },
