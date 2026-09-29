@@ -585,7 +585,7 @@ const artworks = [
   },
   {
     id: "82",
-    title: "Червіній кінь",
+    title: "Червоний кінь",
     artist: "Левченко Євгенія, 26 років",
     image: "https://i.ibb.co/4w1rtnkx/82.webp",
     category: "Професійна категорія",
