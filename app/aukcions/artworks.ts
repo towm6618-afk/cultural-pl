@@ -154,7 +154,7 @@ export const artworks: AuctionArtwork[] = [
     title: "Едем",
     size: "?",
     materials: "Полотно, олія",
-    startPrice: 6000
+    startPrice: 6000,
     image: "https://i.ibb.co/Xk36FGDf/1-1.webp",
   },
   {
