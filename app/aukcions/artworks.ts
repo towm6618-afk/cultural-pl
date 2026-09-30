@@ -162,7 +162,7 @@ export const artworks: AuctionArtwork[] = [
     title: "Поліщука",
     size: "30х40",
     materials: "Папір, гуаш",
-    startPrice: 4000
+    startPrice: 4000,
     image: "https://i.ibb.co/DPjsKz5R/2-1.webp",
   },
   {
@@ -170,7 +170,7 @@ export const artworks: AuctionArtwork[] = [
     title: "Чудасія",
     size: "30х40",
     materials: "Папір, гуаш",
-    startPrice: 4000
+    startPrice: 4000,
     image: "https://i.ibb.co/JwF7t0cb/3-1.webp",
   },
 ]
