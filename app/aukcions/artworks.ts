@@ -31,8 +31,7 @@ export const artworks: AuctionArtwork[] = [
   },
   {
     id: "3",
-    title: "Тур гуляє лісами Полісся
-поки не прийшли люди",
+    title: "Тур гуляє лісами Полісся поки не прийшли люди",
     size: "420х297 А3",
     materials: "Акрил, папір",
     startPrice: 1300,
