@@ -1,21 +1,18 @@
 export interface AuctionArtwork {
   id: string
   title: string
+  artist: string
   size: string
   materials: string
   startPrice: number
   image: string
 }
 
-// ⚠️ ЗАПОВНІТЬ ЦЕЙ СПИСОК СВОЇМИ 20-МА РОБОТАМИ.
-// Перші дві роботи вже заповнені як приклад (за вашими даними).
-// Роботи 3–20 — заглушки (placeholder), замініть title/size/materials/startPrice/image
-// на реальні. image — посилання на фото (можна залити на https://ibb.co, як інші
-// картинки на сайті, і вставити пряме посилання).
 export const artworks: AuctionArtwork[] = [
   {
     id: "1",
     title: "Коза, що веде зорі",
+    artist: "Покиньборода Софія, 17 років",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварель, гуаш, кольорові олівці",
     startPrice: 2000,
@@ -24,6 +21,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "2",
     title: "Хранитель різдвяної зірки",
+    artist: "Покиньборода Софія, 17 років",
     size: "25×35 (приблизно)",
     materials: "Акварельний папір, акварель, гуаш, кольорові олівці",
     startPrice: 2000,
@@ -32,6 +30,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "3",
     title: "Тур гуляє лісами Полісся поки не прийшли люди",
+    artist: "Журавінська Софія, 26 років",
     size: "420х297 А3",
     materials: "Акрил, папір",
     startPrice: 2000,
@@ -40,6 +39,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "4",
     title: "Сад пам'яті та див",
+    artist: "Кулібаба Аделіна, 19 років",
     size: "29х42",
     materials: "Акварельний папір, гуаш",
     startPrice: 2000,
@@ -48,6 +48,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "5",
     title: "Сад химерних спогадів",
+    artist: "Ковальчук Єва, 16р",
     size: "40х60",
     materials: "Гуаш",
     startPrice: 2000,
@@ -56,6 +57,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "6",
     title: "Вартова нічних зір",
+    artist: "Литвин Марія, 30 років",
     size: "50x70",
     materials: "Цифровий друк",
     startPrice: 2000,
@@ -64,6 +66,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "7",
     title: "Музики",
+    artist: "Трішневська Дар'я",
     size: "A3",
     materials: "Акрил",
     startPrice: 2000,
@@ -72,6 +75,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "8",
     title: "Святвечір",
+    artist: "Боровик Софія, 18 років",
     size: "A3",
     materials: "Акварель",
     startPrice: 2000,
@@ -80,6 +84,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "9",
     title: "Жар-птиці у квітах",
+    artist: "Нестеренко Андрій, 29 років",
     size: "100x80",
     materials: "Папір, гуаш, клей",
     startPrice: 2000,
@@ -88,6 +93,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "10",
     title: "Зачарований ліс",
+    artist: "Різак Марія-Анастасія, 22 роки",
     size: "60×60",
     materials: "Колорова ліногравюра",
     startPrice: 2000,
@@ -96,6 +102,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "11",
     title: "Райські пави",
+    artist: "Науменко Софія, 18 років",
     size: "40х60",
     materials: "Акрилові фарби",
     startPrice: 2000,
@@ -104,6 +111,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "12",
     title: "Тягнись до світла",
+    artist: "Фалюш Вікторія",
     size: "?",
     materials: "Digital art",
     startPrice: 2000,
@@ -112,6 +120,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "13",
     title: "Червоний кінь",
+    artist: "Левченко Євгенія, 26 років",
     size: "А3",
     materials: "Папір, акварель, акрил",
     startPrice: 2000,
@@ -120,6 +129,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "14",
     title: "Казкові птахи",
+    artist: "Падалка Юлія, 20 років",
     size: "21*29,5 см (А4). Разом з оформленням - АЗ",
     materials: "Акрилові фарби, картон",
     startPrice: 2000,
@@ -128,6 +138,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "15",
     title: "Жоржини",
+    artist: "Калатур Кароліна, 18 років",
     size: "30х30",
     materials: "Полотно, олія",
     startPrice: 2000,
@@ -136,6 +147,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "16",
     title: "Дикий сіроманець",
+    artist: "Вовк Данільченко Дарина, 16р",
     size: "29,7х42",
     materials: "Акрилові фарби",
     startPrice: 2000,
@@ -144,6 +156,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "17",
     title: "Оленятко вночі",
+    artist: "Запнивітренко Єлизавета, 19 років",
     size: "42х17",
     materials: "Папір, гуаш, пастель",
     startPrice: 2000,
@@ -152,6 +165,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "18",
     title: "Едем",
+    artist: "Трубнікова Олеся, 24 роки",
     size: "?",
     materials: "Полотно, олія",
     startPrice: 2000,
@@ -160,6 +174,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "19",
     title: "Поліщука",
+    artist: "Трубнікова Олеся, 24 роки",
     size: "30х40",
     materials: "Папір, гуаш",
     startPrice: 2000,
@@ -168,6 +183,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "20",
     title: "Чудасія",
+    artist: "Трубнікова Олеся, 24 роки",
     size: "30х40",
     materials: "Папір, гуаш",
     startPrice: 2000,
