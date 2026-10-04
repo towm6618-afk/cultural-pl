@@ -190,6 +190,7 @@ export default function AuctionPage() {
                   </div>
                   <div className="p-3">
                     <p className="text-sm font-medium truncate">{artwork.title}</p>
+                    <p className="text-xs text-muted truncate mt-0.5">{artwork.artist}</p>
                     <p className="text-xs text-muted mt-1">
                       {highestBids[artwork.id]
                         ? `Ставка: ${formatPrice(highestBids[artwork.id])}`
@@ -229,6 +230,7 @@ export default function AuctionPage() {
               </div>
 
               <div className="text-sm text-muted space-y-1">
+                <p className="font-medium text-foreground">{selected.artist}</p>
                 <p>{selected.size}</p>
                 <p>{selected.materials}</p>
               </div>
