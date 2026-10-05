@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createClient } from "@/lib/supabase/server"
-import { artworks } from "@/app/aukcions/artworks"
+import { artworks, BID_STEP } from "@/app/aukcions/artworks"
 
 // Телефон: приймаємо українські номери у форматах
 // +380671234567 / 380671234567 / 0671234567 / з пробілами й тире
@@ -97,16 +97,24 @@ export async function POST(req: NextRequest) {
     }
 
     const currentHighest = existingBids && existingBids.length > 0 ? existingBids[0].amount : artwork.startPrice
-    const minAllowed = existingBids && existingBids.length > 0 ? currentHighest + 1 : artwork.startPrice
+    const minAllowed = existingBids && existingBids.length > 0 ? currentHighest + BID_STEP : artwork.startPrice
 
     if (numericAmount < minAllowed) {
       return NextResponse.json(
         {
           error:
             existingBids && existingBids.length > 0
-              ? `Ставка має бути більшою за поточну (${currentHighest} грн)`
+              ? `Мінімальна ставка — ${minAllowed} грн (поточна ${currentHighest} грн + крок ${BID_STEP} грн)`
               : `Ставка не може бути меншою за стартову ціну (${artwork.startPrice} грн)`,
         },
+        { status: 400 },
+      )
+    }
+
+    // Ставка має відповідати кроку: стартова ціна + N * BID_STEP
+    if ((numericAmount - artwork.startPrice) % BID_STEP !== 0) {
+      return NextResponse.json(
+        { error: `Ставка має бути кратною кроку ${BID_STEP} грн (наприклад, ${minAllowed} грн)` },
         { status: 400 },
       )
     }
