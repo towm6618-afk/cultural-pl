@@ -1,3 +1,6 @@
+// Крок ставки на аукціоні (грн). Кожна нова ставка = попередня + кратне цьому значенню.
+export const BID_STEP = 200
+
 export interface AuctionArtwork {
   id: string
   title: string
