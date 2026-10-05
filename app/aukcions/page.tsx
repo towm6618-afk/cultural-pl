@@ -13,8 +13,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-import { Check, Loader2, ChevronDown, ChevronUp, Gavel } from "lucide-react"
-import { artworks, type AuctionArtwork } from "./artworks"
+import { Check, Loader2, ChevronDown, ChevronUp, Gavel, Minus, Plus } from "lucide-react"
+import { artworks, BID_STEP, type AuctionArtwork } from "./artworks"
 
 interface Bid {
   id: string
@@ -65,12 +65,21 @@ export default function AuctionPage() {
   const [showBidForm, setShowBidForm] = useState(false)
   const [phone, setPhone] = useState("")
   const [message, setMessage] = useState("")
-  const [amount, setAmount] = useState("")
+  const [amount, setAmount] = useState<number | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState("")
 
   const currentHighest = bids.length > 0 ? bids[0].amount : null
+  // Мінімальна наступна ставка: старт, або поточна + крок
+  const minBid = selected
+    ? currentHighest !== null
+      ? currentHighest + BID_STEP
+      : selected.startPrice
+    : 0
+
+  // Сума, яка буде відправлена: не нижче мінімуму (якщо ставку перебили — підтягується вгору)
+  const effectiveAmount = Math.max(amount ?? minBid, minBid)
 
   const loadBids = async (artworkId: string) => {
     setIsLoadingBids(true)
@@ -100,7 +109,7 @@ export default function AuctionPage() {
     setShowBidForm(false)
     setPhone("")
     setMessage("")
-    setAmount("")
+    setAmount(null)
     setSubmitStatus("idle")
     setErrorMessage("")
   }
@@ -110,7 +119,7 @@ export default function AuctionPage() {
   }
 
   const handleSubmitBid = async () => {
-    if (!selected || !phone || !amount) return
+    if (!selected || !phone) return
 
     setIsSubmitting(true)
     setSubmitStatus("idle")
@@ -124,7 +133,7 @@ export default function AuctionPage() {
           artworkId: selected.id,
           phone,
           message,
-          amount: Number(amount),
+          amount: effectiveAmount,
         }),
       })
 
@@ -137,10 +146,10 @@ export default function AuctionPage() {
       }
 
       setSubmitStatus("success")
-      setHighestBids((prev) => ({ ...prev, [selected.id]: Number(amount) }))
+      setHighestBids((prev) => ({ ...prev, [selected.id]: effectiveAmount }))
       setPhone("")
       setMessage("")
-      setAmount("")
+      setAmount(null)
       await loadBids(selected.id)
     } catch {
       setSubmitStatus("error")
@@ -330,15 +339,36 @@ export default function AuctionPage() {
                     autoFocus
                   />
 
-                  <Input
-                    type="number"
-                    placeholder={`Сума ставки (грн), від ${formatPrice(
-                      (currentHighest ?? selected.startPrice) + (currentHighest ? 1 : 0),
-                    )}`}
-                    value={amount}
-                    onChange={(e) => setAmount(e.target.value)}
-                    disabled={isSubmitting}
-                  />
+                  <div>
+                    <p className="text-xs text-muted mb-1.5">
+                      Сума ставки · крок {formatPrice(BID_STEP)}
+                    </p>
+                    <div className="flex items-center gap-2">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="icon"
+                        onClick={() => setAmount(Math.max(effectiveAmount - BID_STEP, minBid))}
+                        disabled={isSubmitting || effectiveAmount <= minBid}
+                        aria-label={`Зменшити на ${BID_STEP} грн`}
+                      >
+                        <Minus className="w-4 h-4" />
+                      </Button>
+                      <div className="flex-1 text-center text-lg font-semibold border border-border rounded-md py-1.5">
+                        {formatPrice(effectiveAmount)}
+                      </div>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="icon"
+                        onClick={() => setAmount(effectiveAmount + BID_STEP)}
+                        disabled={isSubmitting}
+                        aria-label={`Збільшити на ${BID_STEP} грн`}
+                      >
+                        <Plus className="w-4 h-4" />
+                      </Button>
+                    </div>
+                  </div>
 
                   <Textarea
                     placeholder="Ваше повідомлення (необов'язково)"
@@ -354,7 +384,7 @@ export default function AuctionPage() {
 
                   <Button
                     onClick={handleSubmitBid}
-                    disabled={!phone || !amount || isSubmitting}
+                    disabled={!phone || isSubmitting}
                     className="w-full bg-primary hover:bg-primary/90"
                   >
                     {isSubmitting ? (
