@@ -169,7 +169,7 @@ export const artworks: AuctionArtwork[] = [
     id: "18",
     title: "Едем",
     artist: "Трубнікова Олеся, 24 роки",
-    size: "",
+    size: "80х90",
     materials: "Полотно, олія",
     startPrice: 2000,
     image: "https://i.ibb.co/Xk36FGDf/1-1.webp",
