@@ -69,7 +69,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "7",
     title: "Музики",
-    artist: "Трішневська Дар'я",
+    artist: "Трішневська Дар'я, 17 років",
     size: "A3",
     materials: "Акрил",
     startPrice: 2000,
@@ -114,7 +114,7 @@ export const artworks: AuctionArtwork[] = [
   {
     id: "12",
     title: "Тягнись до світла",
-    artist: "Фалюш Вікторія",
+    artist: "Фалюш Вікторія, 30 років",
     size: "?",
     materials: "Digital art",
     startPrice: 2000,
