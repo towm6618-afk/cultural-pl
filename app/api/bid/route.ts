@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createClient } from "@/lib/supabase/server"
 import { artworks, BID_STEP } from "@/app/aukcions/artworks"
+import nodemailer from "nodemailer"
 
 // Телефон: приймаємо українські номери у форматах
 // +380671234567 / 380671234567 / 0671234567 / з пробілами й тире
 const PHONE_REGEX = /^(\+?38)?0\d{9}$/
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
 function normalizePhone(raw: string) {
   return raw.replace(/[\s\-()]/g, "")
@@ -55,10 +58,10 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    let { artworkId, phone, message, amount } = body ?? {}
+    let { artworkId, phone, email, message, amount } = body ?? {}
 
-    if (!artworkId || !phone || amount === undefined || amount === null) {
-      return NextResponse.json({ error: "Заповніть телефон і суму ставки" }, { status: 400 })
+    if (!artworkId || !phone || !email || amount === undefined || amount === null) {
+      return NextResponse.json({ error: "Заповніть телефон, email і суму ставки" }, { status: 400 })
     }
 
     const artwork = artworks.find((a) => a.id === String(artworkId))
@@ -74,6 +77,11 @@ export async function POST(req: NextRequest) {
       )
     }
 
+    email = String(email).toLowerCase().trim()
+    if (!EMAIL_REGEX.test(email) || email.length > 254) {
+      return NextResponse.json({ error: "Введіть коректний email" }, { status: 400 })
+    }
+
     const numericAmount = Number(amount)
     if (!Number.isFinite(numericAmount) || numericAmount <= 0) {
       return NextResponse.json({ error: "Некоректна сума ставки" }, { status: 400 })
@@ -86,7 +94,7 @@ export async function POST(req: NextRequest) {
     // Перевіряємо поточну найвищу ставку по цій роботі
     const { data: existingBids, error: fetchError } = await supabase
       .from("bids")
-      .select("amount")
+      .select("amount, email")
       .eq("artwork_id", String(artworkId))
       .order("amount", { ascending: false })
       .limit(1)
@@ -122,6 +130,7 @@ export async function POST(req: NextRequest) {
     const { error: insertError } = await supabase.from("bids").insert({
       artwork_id: String(artworkId),
       phone,
+      email,
       message,
       amount: numericAmount,
     })
@@ -131,9 +140,72 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Помилка при збереженні ставки" }, { status: 500 })
     }
 
+    // Сповіщаємо попереднього лідера, якого щойно перебили (якщо в нього є email
+    // і це не та сама людина). Помилка пошти НЕ ламає ставку.
+    const previousLeaderEmail =
+      existingBids && existingBids.length > 0 ? (existingBids[0].email as string | null) : null
+
+    if (previousLeaderEmail && previousLeaderEmail !== email) {
+      try {
+        await sendOutbidEmail({
+          to: previousLeaderEmail,
+          artworkTitle: artwork.title,
+          oldAmount: currentHighest,
+          newAmount: numericAmount,
+          minNextBid: numericAmount + BID_STEP,
+          auctionUrl: `${new URL(req.url).origin}/aukcions`,
+        })
+      } catch (mailError) {
+        console.error("Outbid email error:", mailError)
+      }
+    }
+
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error("Bid POST error:", error)
     return NextResponse.json({ error: "Внутрішня помилка сервера" }, { status: 500 })
   }
+}
+
+function escapeHtml(str: string) {
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+}
+
+async function sendOutbidEmail(opts: {
+  to: string
+  artworkTitle: string
+  oldAmount: number
+  newAmount: number
+  minNextBid: number
+  auctionUrl: string
+}) {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
+  })
+
+  const title = escapeHtml(opts.artworkTitle)
+
+  await transporter.sendMail({
+    from: `"Аукціон" <${process.env.GMAIL_USER}>`,
+    to: opts.to,
+    subject: `Вашу ставку перебили — «${opts.artworkTitle}»`,
+    html: `
+      <div style="font-family: sans-serif; text-align: center; padding: 20px;">
+        <h2 style="color: #333;">Вашу ставку перебили</h2>
+        <p style="color: #555; font-size: 16px;">
+          На роботу «${title}» зроблено нову ставку —
+          <b>${opts.newAmount} грн</b> (ваша була ${opts.oldAmount} грн).
+        </p>
+        <p style="color: #555;">Щоб повернути лідерство, зробіть ставку від ${opts.minNextBid} грн.</p>
+        <a href="${opts.auctionUrl}"
+           style="display: inline-block; margin-top: 10px; padding: 12px 24px; background: #111; color: #fff; border-radius: 8px; text-decoration: none;">
+          Перейти до аукціону
+        </a>
+      </div>
+    `,
+  })
 }
