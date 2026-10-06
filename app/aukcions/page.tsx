@@ -64,6 +64,7 @@ export default function AuctionPage() {
   // Форма ставки
   const [showBidForm, setShowBidForm] = useState(false)
   const [phone, setPhone] = useState("")
+  const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [amount, setAmount] = useState<number | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -108,6 +109,7 @@ export default function AuctionPage() {
     setShowAllBids(false)
     setShowBidForm(false)
     setPhone("")
+    setEmail("")
     setMessage("")
     setAmount(null)
     setSubmitStatus("idle")
@@ -119,7 +121,7 @@ export default function AuctionPage() {
   }
 
   const handleSubmitBid = async () => {
-    if (!selected || !phone) return
+    if (!selected || !phone || !email) return
 
     setIsSubmitting(true)
     setSubmitStatus("idle")
@@ -132,6 +134,7 @@ export default function AuctionPage() {
         body: JSON.stringify({
           artworkId: selected.id,
           phone,
+          email,
           message,
           amount: effectiveAmount,
         }),
@@ -148,6 +151,7 @@ export default function AuctionPage() {
       setSubmitStatus("success")
       setHighestBids((prev) => ({ ...prev, [selected.id]: effectiveAmount }))
       setPhone("")
+      setEmail("")
       setMessage("")
       setAmount(null)
       await loadBids(selected.id)
@@ -330,6 +334,23 @@ export default function AuctionPage() {
                 <div className="space-y-3 pt-2 border-t border-border">
                   <p className="text-sm font-medium text-foreground pt-3">Зробити ставку</p>
 
+                  <Input
+                    type="tel"
+                    placeholder="Ваш номер телефону, напр. 0671234567"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    disabled={isSubmitting}
+                    autoFocus
+                  />
+
+                  <Input
+                    type="email"
+                    placeholder="Ваш email — сповістимо, якщо вашу ставку перебʼють"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={isSubmitting}
+                  />
+
                   <div>
                     <p className="text-xs text-muted mb-1.5">
                       Сума ставки · крок {formatPrice(BID_STEP)}
@@ -361,15 +382,6 @@ export default function AuctionPage() {
                     </div>
                   </div>
 
-                  <Input
-                    type="tel"
-                    placeholder="Ваш номер телефону, напр. 0671234567"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    disabled={isSubmitting}
-                    autoFocus
-                  />
-                  
                   <Textarea
                     placeholder="Ваше повідомлення (необов'язково)"
                     value={message}
@@ -384,7 +396,7 @@ export default function AuctionPage() {
 
                   <Button
                     onClick={handleSubmitBid}
-                    disabled={!phone || isSubmitting}
+                    disabled={!phone || !email || isSubmitting}
                     className="w-full bg-primary hover:bg-primary/90"
                   >
                     {isSubmitting ? (
