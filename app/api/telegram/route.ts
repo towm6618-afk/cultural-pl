@@ -7,7 +7,7 @@ import { artworks as auctionArtworks } from "@/app/aukcions/artworks"
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN
 
-// Telegram ID адміністраторів (через кому), яким показуємо телефон/email учасників аукціону.
+// Telegram ID адміністраторів(через кому), яким показуємо телефон/email учасників аукціону.
 // Усі інші бачать лише суми. Свій ID можна дізнатись у бота @userinfobot.
 const ADMIN_IDS = (process.env.TELEGRAM_ADMIN_IDS ?? "")
   .split(",")
