@@ -334,23 +334,6 @@ export default function AuctionPage() {
                 <div className="space-y-3 pt-2 border-t border-border">
                   <p className="text-sm font-medium text-foreground pt-3">Зробити ставку</p>
 
-                  <Input
-                    type="tel"
-                    placeholder="Ваш номер телефону, напр. 0671234567"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    disabled={isSubmitting}
-                    autoFocus
-                  />
-
-                  <Input
-                    type="email"
-                    placeholder="Ваш email — сповістимо, якщо вашу ставку перебʼють"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    disabled={isSubmitting}
-                  />
-
                   <div>
                     <p className="text-xs text-muted mb-1.5">
                       Сума ставки · крок {formatPrice(BID_STEP)}
@@ -382,6 +365,23 @@ export default function AuctionPage() {
                     </div>
                   </div>
 
+                  <Input
+                    type="tel"
+                    placeholder="Ваш номер телефону, напр. 0671234567"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    disabled={isSubmitting}
+                    autoFocus
+                  />
+
+                  <Input
+                    type="email"
+                    placeholder="Ваш email — сповістимо, якщо вашу ставку перебʼють"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={isSubmitting}
+                  />
+                  
                   <Textarea
                     placeholder="Ваше повідомлення (необов'язково)"
                     value={message}
