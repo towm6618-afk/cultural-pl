@@ -5,71 +5,9 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Національний конкурс народної творчості | Культурна Платформа «Поліська Казка»",
-  description: "Візьміть участь у першому національному конкурсі народного мистецтва «Поліська Казка». Стипендії до 25 000 грн/місяць.",
+  description: "Візьміть участь у другому національному конкурсі народного мистецтва «Поліська Казка». Стипендії до 25 000 грн/місяць.",
 }
 
-const juryMembers = [
-  {
-    name: "Маргарита Бондарєва",
-    role: "Засновниця культурної платформи «Поліська Казка»",
-    description: "Має академічну освіту у сфері публічної політики, європейської інтеграції та соціальних наук (Johns Hopkins University, SAIS; University College London)",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-12-17%20at%2011_edited_edited-rLGHB0sYLNwQz2zKLQEDmRwMh3wzkW.jpg",
-  },
-  {
-    name: "Оксана Повякель",
-    role: "Генеральний директор Національного музею народної архітектури та побуту України",
-    description: "Заслужений працівник культури України. Мистецтвознавець, кераміст  та продюсер культурних проєктів.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-12-17%20%D0%B2%2012_edited-DnQo5TljAogUgdIKDA0X5ONUARZ7Ro.jpg",
-  },
-  {
-    name: "Ахтем Сеітаблаєв",
-    role: "Український режисер, актор та військовослужбовець",
-    description: "Служить у ЗСУ на посаді художнього керівника підрозділу «ТРО Медіа» (відділ комунікацій Командування Сил територіальної оборони ЗСУ), а також є директором «Кримського дому», крім того, має звання «Заслуженого діяча мистецтв України».",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-30%20%D0%B2%2013_02_edited-thmLYIbIp0NmXoTGXldfEa0EBftNOT.jpg",
-  },
-  {
-    name: "Олесь Санін",
-    role: "Віцепрезидент Національної академії мистецтв України. ",
-    description: "Народний артист України, український режисер, лауреат  Державної премії України імені Олександра Довженка та Національної премії України імені Тараса Шевченка, кінорежисер. актор, оператор, продюсер, музикант і скульптор.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-12-22%20%D0%B2%2011_13_edited-WXrYCYGidV9SmwaIamks0fEiHvKkCX.jpg",
-  },
-  {
-    name: "Євген Нищук",
-    role: "Народний артист України",
-    description: "Голова Комітету з Національної премії України імені Тараса Шевченка та Генеральний директор-художній керівник Національного академічного драматичного театру ім. Івана Франка, народний артист України, актор театру та кіно, громадський і державний діяч, колишній Міністр культури України.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/312470681_681440666680037_8395954243288797366_n_edited-YWjFwAbXS4qkTENbMMoblN2IVjJ7p4.jpg",
-  },
-  {
-    name: "Ростислав Шмагало",
-    role: "Професор",
-    description: "Професор кафедри історії та теорії мистецтва у Львівській національній академії мистецтв (ЛНАМ), заступник голови Львівської обласної організації Національної спілки художників України.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-12-22%20%D0%B2%2011_10_edited-F41HLiwg1YIREnxm4Azz3xdTajvykZ.jpg",
-  },
-  {
-    name: "Олександр Цугорка",
-    role: "Ректор Національної академії образотворчого мистецтва та архітектури.",
-    description: "Заслужений діяч мистецтв України, видатний український художник, мистецтвознавець.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-30%20%D0%B2%2012_51_edited-XBcDT0UnPCNUdYJDzQePZ3p7syRRz6.jpg",
-  },
-  {
-    name: "Артем Палієнко",
-    role: "Директор Українського державного інституту культурної спадщини (УДІКС).",
-    description: "Колишній перший заступник генерального директора Національного музею народної архітектури та побуту України.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%90%D1%80%D1%82%D0%B5%D0%BC%20%D0%9F%D0%B0%D0%BB%D1%96%D1%94%D0%BD%D0%BA%D0%BE-ZDMntAEcN7evgPzzIKRJrMtO0CGdwU.jpg",
-  },
-  {
-    name: "Олена Осадча",
-    role: "Ректор Київської державної академії декоративно-прикладного мистецтва і дизайну імені Михайла Бойчука",
-    description: "Відома українська художниця, мистецтвознавець і педагог.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%9E%D0%BB%D0%B5%D0%BD%D0%B0%20%D0%9E%D1%81%D0%B0%D0%B4%D1%87%D0%B0-Z3onQflY8ebFFxVGMuquNOiQ1PndKb.jpg",
-  },
-  {
-    name: "Юрій Вакуленко",
-    role: "Віцепрезидент Національної академії мистецтв України, член Ради з питань розвитку національного культурно-мистецького комплексу «Мистецький арсенал».",
-    description: "",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%92%D0%B0%D0%BA%D1%83%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE%20%D0%AE%D1%80%D1%96%D0%B9-xKTH3tQcdsFAAHFhfSDRyPM5tgz0O7.jpg",
-  },
-]
 
 export default function KonkursPage() {
   return (
@@ -84,10 +22,10 @@ export default function KonkursPage() {
                 Прийом робіт завершено
               </div>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Національний конкурс народного мистецтва
+                Другий національний конкурс народного мистецтва
               </h1>
               <p className="text-lg md:text-xl text-muted leading-relaxed mb-8">
-                Всеукраїнська культурна платформа «Поліська Казка» спільно з Національною академією образотворчого мистецтва і архітектури оголосили старт першого національного конкурсу народного мистецтва «Поліська Казка».
+                Всеукраїнська культурна платформа «Поліська Казка» спільно з Національною академією образотворчого мистецтва і архітектури оголосили старт другого національного конкурсу народного мистецтва «Поліська Казка».
               </p>
 
               {/* Statistics */}
@@ -182,7 +120,7 @@ export default function KonkursPage() {
                       <span className="text-2xl">I</span>
                       <div>
                         <div className="font-bold text-foreground">I місце</div>
-                        <div className="text-primary font-semibold">25 000 грн / місяць упродовж року</div>
+                        <div className="text-primary font-semibold">25 000 грн / місяць</div>
                       </div>
                     </div>
                   </div>
@@ -261,7 +199,7 @@ export default function KonkursPage() {
                   Оригінали відібраних робіт будуть представлені на виставці в НАОМА.
                 </p>
                 <div className="bg-primary/10 text-foreground p-6 rounded-xl">
-                  <p className="font-bold text-lg mb-2">Оголошення переможців — 20 квітня 2026</p>
+                  <p className="font-bold text-lg mb-2">Оголошення переможців — 20 квітня 2027 року</p>
                   <p className="text-muted">
                     Переможці стануть учасниками мистецьких проєктів платформи та отримають річну стипендію,
                     що дозволить зосередитися на творчості.
@@ -277,8 +215,7 @@ export default function KonkursPage() {
                 <p className="text-muted mb-8">
                 </p>
                 <Link
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSezGch8eqZ14ei-35R_HlpEqgniWM7gBzPfL2c4rNdGRQdSMQ/viewform"
-                  target="_blank"
+                  href="/golosuvannya"
                   className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-medium hover:bg-accent transition-colors"
                 >
                   Народне голосування
@@ -287,37 +224,26 @@ export default function KonkursPage() {
             </div>
           </div>
         </section>
-        {/* Jury Section */}
-        <section className="py-16 md:py-24 bg-muted/10" id="jury">
+        {/* Jury / Ambassadors links */}
+        <section className="py-16 md:py-24 bg-muted/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
-              Конкурсна комісія
-            </h2>
-            <p className="text-muted text-center max-w-2xl mx-auto mb-12">
-              Професійне журі, яке оцінюватиме роботи учасників конкурсу
-            </p>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
-              {juryMembers.map((member) => (
-                <div key={member.name} className="text-center group">
-                  <div className="aspect-square mb-4 overflow-hidden rounded-2xl bg-secondary">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                    />
-                  </div>
-                  <h3 className="font-bold text-foreground text-sm md:text-base mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-xs md:text-sm text-primary font-medium mb-1">
-                    {member.role}
-                  </p>
-                  <p className="text-xs text-muted line-clamp-2 hidden md:block">
-                    {member.description}
-                  </p>
-                </div>
-              ))}
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <Link
+                href="/zhuri"
+                className="bg-background rounded-2xl p-8 border border-border hover:border-primary/40 hover:shadow-lg transition-all text-center"
+              >
+                <h3 className="font-serif text-2xl font-bold text-foreground mb-2">Конкурсна комісія</h3>
+                <p className="text-muted mb-4">Професійне журі, яке оцінює роботи учасників конкурсу</p>
+                <span className="text-primary font-medium">Переглянути журі →</span>
+              </Link>
+              <Link
+                href="/ambasadory"
+                className="bg-background rounded-2xl p-8 border border-border hover:border-primary/40 hover:shadow-lg transition-all text-center"
+              >
+                <h3 className="font-serif text-2xl font-bold text-foreground mb-2">Амбасадори</h3>
+                <p className="text-muted mb-4">Відомі люди, які підтримують конкурс і платформу</p>
+                <span className="text-primary font-medium">Переглянути амбасадорів →</span>
+              </Link>
             </div>
           </div>
         </section>
