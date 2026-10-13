@@ -2,8 +2,25 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, Calendar, Sparkles } from "lucide-react"
+import { thirdMasterClassPhotos, fourthArtClassPhotos } from "./news-photos"
 
 const posts = [
+  {
+    slug: "fourth-art-class-pyrohiv",
+    category: "Арт-клас",
+    title: "«Поліська Казка» провела четвертий і заключний арт-клас сезону у Пирогові",
+    excerpt: "27 вересня у Пирогові учасники малювали осінні краєвиди під керівництвом народного художника України Ігоря Мельничука та переможця конкурсу Костянтина Мельничука.",
+    date: "27 вересня 2026",
+    image: fourthArtClassPhotos.cover,
+  },
+  {
+    slug: "third-master-class-pyrohiv",
+    category: "Майстер-клас",
+    title: "«Поліська Казка» провела третій майстер-клас з графіки в Пирогові",
+    excerpt: "30 серпня учасники познайомилися з основами графіки під керівництвом художниці та переможниці конкурсу Олени Волошенко.",
+    date: "30 серпня 2026",
+    image: thirdMasterClassPhotos.cover,
+  },
   // ДОДАНО НОВУ СТАТТЮ (Другий майстер-клас, 8 серпня)
   {
     slug: "second-master-class-pyrohiv", // Зміни slug на той, який ти реально створив
