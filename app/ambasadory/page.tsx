@@ -25,19 +25,25 @@ export default function AmbassadorsPage() {
             {ambassadors.length === 0 ? (
               <p className="text-center text-muted">Список амбасадорів незабаром з’явиться.</p>
             ) : (
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
                 {ambassadors.map((person) => (
                   <div key={person.name} className="text-center group">
-                    <div className="aspect-square mb-4 overflow-hidden rounded-2xl bg-secondary">
-                      <img
-                        src={person.image}
-                        alt={person.name}
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                      />
+                    <div className="aspect-square mb-4 overflow-hidden rounded-2xl bg-secondary flex items-center justify-center">
+                      {person.image ? (
+                        <img
+                          src={person.image}
+                          alt={person.name}
+                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                        />
+                      ) : (
+                        <span className="font-serif text-5xl font-bold text-primary/60">
+                          {person.name.split(" ").map((w) => w[0]).join("")}
+                        </span>
+                      )}
                     </div>
                     <h3 className="font-bold text-foreground text-sm md:text-base mb-1">{person.name}</h3>
                     <p className="text-xs md:text-sm text-primary font-medium mb-1">{person.role}</p>
-                    <p className="text-xs text-muted">{person.description}</p>
+                    {person.description && <p className="text-xs text-muted">{person.description}</p>}
                   </div>
                 ))}
               </div>
