@@ -10,11 +10,11 @@
 // ============================================================
 
 export const thirdMasterClassPhotos = {
-  cover: "ВСТАВ_ПОСИЛАННЯ_НА_ГОЛОВНЕ_ФОТО",
+  cover: "https://i.ibb.co/gZWG3Vd4/pyrohiv-4.jpg",
   photos: [
-    "ВСТАВ_ПОСИЛАННЯ_1",
-    "ВСТАВ_ПОСИЛАННЯ_2",
-    "ВСТАВ_ПОСИЛАННЯ_3",
+    "https://i.ibb.co/ycy23wmM/IMG-5231.jpg",
+    "https://i.ibb.co/7dG50SVF/IMG-5236.jpg",
+    "https://i.ibb.co/RpLVmMTb/IMG-5238.jpg",
     // "ВСТАВ_ПОСИЛАННЯ_4",  ← ці потраплять у галерею в кінці
   ],
 }
