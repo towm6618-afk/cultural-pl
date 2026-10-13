@@ -20,11 +20,11 @@ export const thirdMasterClassPhotos = {
 }
 
 export const fourthArtClassPhotos = {
-  cover: "ВСТАВ_ПОСИЛАННЯ_НА_ГОЛОВНЕ_ФОТО",
+  cover: "https://i.ibb.co/G41FQjtk/photo-2026-10-13-14-38-48.jpg",
   photos: [
-    "ВСТАВ_ПОСИЛАННЯ_1",
-    "ВСТАВ_ПОСИЛАННЯ_2",
-    "ВСТАВ_ПОСИЛАННЯ_3",
+    "https://i.ibb.co/3YSrhYvZ/photo-2026-10-13-14-36-17.jpg",
+    "https://i.ibb.co/8LLrjmyQ/IMG-4820.jpg",
+    "https://i.ibb.co/mFHgfRd1/IMG-4866.jpg",
     // "ВСТАВ_ПОСИЛАННЯ_4",  ← ці потраплять у галерею в кінці
   ],
 }
