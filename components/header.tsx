@@ -15,6 +15,8 @@ export function Header() {
     { href: "/news", label: "Новини" },
     { href: "/aukcions", label: "Аукціон" },
     { href: "/konkurs", label: "Конкурс" },
+    { href: "/zhuri", label: "Журі" },
+    { href: "/ambasadory", label: "Амбасадори" },
     { href: "/golosuvannya", label: "Голосування" },
     { href: "/#media", label: "Медіа" },
   ]
@@ -31,7 +33,7 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden xl:flex items-center gap-6 2xl:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -54,7 +56,7 @@ export function Header() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="xl:hidden p-2 text-foreground"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -63,7 +65,7 @@ export function Header() {
       </div>
 
       {isOpen && (
-        <div className="lg:hidden bg-background border-b border-border">
+        <div className="xl:hidden bg-background border-b border-border">
           <nav className="flex flex-col px-4 py-4 gap-4">
             {navLinks.map((link) => (
               <Link
