@@ -726,16 +726,13 @@ export default function VotingPage() {
         <section className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-              Голосування завершено
+              Голосування відкриється навесні 2027 року
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
               Народне голосування
             </h1>
             <p className="text-lg text-muted max-w-2xl mx-auto">
-              Допоможіть обрати переможців першого національного конкурсу народного мистецтва для молодих художників.
-            </p>
-            <p className="text-lg text-muted max-w-2xl mx-auto">
-              Натисніть на картину, щоб проголосувати за улюблений твір
+              Народне голосування за переможців другого національного конкурсу народного мистецтва для молодих художників почнеться навесні 2027 року, а поки ви можете ознайомитися з роботами фіналістів минулорічного конкурсу.
             </p>
           </div>
         </section>
@@ -787,14 +784,14 @@ export default function VotingPage() {
       >
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-xl font-serif">Голосування</DialogTitle>
+            <DialogTitle className="text-xl font-serif">Робота фіналіста минулорічного конкурсу</DialogTitle>
             <DialogDescription>
               {/* ЗАКОМЕНТОВАНІ СЛОВА ПРО EMAIL
               {step === "email"
                 ? "Введіть ваш email, щоб проголосувати за цю роботу."
                 : "Введіть 4-значний код, надісланий на вашу пошту."}
                 */}
-              Прийом голосів офіційно завершено. Дякуємо!
+              Народне голосування другого конкурсу почнеться навесні 2027 року.
             </DialogDescription>
           </DialogHeader>
 
