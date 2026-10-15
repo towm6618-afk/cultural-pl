@@ -28,3 +28,9 @@ export const fourthArtClassPhotos = {
     // "ВСТАВ_ПОСИЛАННЯ_4",  ← ці потраплять у галерею в кінці
   ],
 }
+
+export const secondKonkursPhotos = {
+  // ↓↓↓ ТУТ ВСТАВ ПОСИЛАННЯ НА ФОТО 1 (пряме, .jpg / .png / .webp) ↓↓↓
+  cover: "https://i.ibb.co/G4nkGB53/IMG-5280.jpg",
+  photos: [] as string[],
+}
