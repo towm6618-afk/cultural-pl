@@ -2,9 +2,17 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, Calendar, Sparkles } from "lucide-react"
-import { thirdMasterClassPhotos, fourthArtClassPhotos } from "./news-photos"
+import { thirdMasterClassPhotos, fourthArtClassPhotos, secondKonkursPhotos } from "./news-photos"
 
 const posts = [
+  {
+    slug: "second-konkurs-poliska-kazka-2026",
+    category: "Анонс",
+    title: "«Поліська Казка» оголошує другий Національний конкурс народного мистецтва для молодих художників",
+    excerpt: "Стипендії до 25 000 грн щомісяця для художників віком від 16 до 30 років. Прийом заявок розпочнеться 1 листопада 2026 року.",
+    date: "15 жовтня 2026",
+    image: secondKonkursPhotos.cover,
+  },
   {
     slug: "fourth-art-class-pyrohiv",
     category: "Арт-клас",
@@ -119,11 +127,13 @@ export default function BlogPage() {
               >
                 {/* Блок з картинкою */}
                 <div className="aspect-[4/3] relative overflow-hidden bg-muted">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+                  {post.image ? (
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  ) : null}
 
                   {/* Затемнення для читабельності тексту на фото */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
