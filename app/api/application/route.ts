@@ -115,7 +115,7 @@ export async function POST(req: NextRequest) {
 
     // Якщо запис у таблицю не вдався — віддаємо помилку, щоб людина могла повторити
     try {
-      await appendRowToSheet(row)
+      await appendRowToSheet(row, files.map((f) => f.url))
     } catch (sheetError) {
       console.error("Application sheet error:", sheetError)
       return NextResponse.json({ error: "Не вдалося зберегти заявку. Спробуйте ще раз за кілька хвилин" }, { status: 500 })
