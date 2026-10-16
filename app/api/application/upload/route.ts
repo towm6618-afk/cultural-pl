@@ -3,7 +3,7 @@ import { handleUpload, type HandleUploadBody } from "@vercel/blob/client"
 import { ALLOWED_EXTENSIONS, ALLOWED_TYPES, MAX_FILE_SIZE, isSubmissionOpen } from "@/app/zayavka/config"
 
 // Видає браузеру одноразовий токен для прямого завантаження фото у Vercel Blob
-//  (в обхід ліміту 4.5 МБ на тіло запиту у serverless-функціях).
+// (в обхід ліміту 4.5 МБ на тіло запиту у serverless-функціях).
 // Дозволені лише png/jpg, до MAX_FILE_SIZE, лише у папку applications/.
 export async function POST(request: Request) {
   const body = (await request.json()) as HandleUploadBody
