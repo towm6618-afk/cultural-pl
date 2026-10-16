@@ -5,7 +5,7 @@
 // Коли відкривається прийом заявок (київський час, UTC+2 у листопаді).
 // До цієї дати форма на сайті заблокована, а сервер відхиляє заявки.
 // Щоб відкрити форму одразу — постав null.
-export const SUBMISSIONS_OPEN_FROM: string | null = "2026-11-01T00:00:00+02:00"
+export const SUBMISSIONS_OPEN_FROM: string | null = "2026-10-15T00:00:00+02:00"
 
 export const MAX_FILES = 3
 export const MAX_FILE_SIZE_MB = 20
