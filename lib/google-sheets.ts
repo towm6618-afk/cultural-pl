@@ -76,7 +76,7 @@ async function getAccessToken() {
   return cachedToken.value
 }
 
-export async function appendRowToSheet(row: string[]) {
+export async function appendRowToSheet(row: string[], photoUrls: string[] = []) {
   const sheetId = process.env.GOOGLE_SHEET_ID
   if (!sheetId) throw new Error("Не налаштовано GOOGLE_SHEET_ID")
 
@@ -84,16 +84,35 @@ export async function appendRowToSheet(row: string[]) {
   const tab = process.env.GOOGLE_SHEET_TAB?.trim()
   const range = encodeURIComponent(tab ? `'${tab.replace(/'/g, "''")}'!A:J` : "A:J")
   const token = await getAccessToken()
+  const headers = { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }
 
   // RAW — значення записуються як текст (захист від формул типу =IMPORTXML(...))
   const res = await fetch(
     `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`,
-    {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ values: [row] }),
-    },
+    { method: "POST", headers, body: JSON.stringify({ values: [row] }) },
   )
-
   if (!res.ok) throw new Error(`Google Sheets помилка: ${res.status} ${await res.text()}`)
+
+  // Мініатюри робіт у колонках K:M — формулою =IMAGE(...).
+  // Це окремий запит: у ньому лише наші перевірені посилання, не текст від користувача.
+  // Якщо він не вдасться — заявка вже збережена, тому лише логуємо.
+  if (photoUrls.length > 0) {
+    try {
+      const updatedRange: string | undefined = (await res.json())?.updates?.updatedRange
+      const rowNumber = updatedRange?.match(/!A(\d+):/)?.[1]
+      if (!rowNumber) throw new Error(`Не вдалося визначити рядок: ${updatedRange}`)
+
+      const formulas = photoUrls.slice(0, 3).map((url) => `=IMAGE("${url.replace(/"/g, "")}")`)
+      const sheetPrefix = updatedRange!.split("!")[0]
+      const photoRange = encodeURIComponent(`${sheetPrefix}!K${rowNumber}:M${rowNumber}`)
+
+      const photoRes = await fetch(
+        `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${photoRange}?valueInputOption=USER_ENTERED`,
+        { method: "PUT", headers, body: JSON.stringify({ values: [formulas] }) },
+      )
+      if (!photoRes.ok) throw new Error(`${photoRes.status} ${await photoRes.text()}`)
+    } catch (photoError) {
+      console.error("Sheet photo thumbnails error:", photoError)
+    }
+  }
 }
