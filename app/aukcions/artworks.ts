@@ -1,6 +1,21 @@
 // Крок ставки на аукціоні (грн). Кожна нова ставка = попередня + кратне цьому значенню.
 export const BID_STEP = 200
 
+// ─── Завершення аукціону ───────────────────────────────────────────────
+// Спосіб 1 (автоматично): дата й час закінчення з часовим поясом.
+//   Київ після 25.10.2026: +02:00, влітку: +03:00.
+//   Напр.: "2026-12-20T20:00:00+02:00". null — без автозавершення.
+export const AUCTION_ENDS_AT: string | null = null
+
+// Спосіб 2 (вручну): true — аукціон закритий негайно.
+export const AUCTION_FORCE_CLOSED = false
+
+export function isAuctionClosed(): boolean {
+  if (AUCTION_FORCE_CLOSED) return true
+  if (!AUCTION_ENDS_AT) return false
+  return Date.now() >= new Date(AUCTION_ENDS_AT).getTime()
+}
+
 export interface AuctionArtwork {
   id: string
   title: string
