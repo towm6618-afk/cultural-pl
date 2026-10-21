@@ -14,7 +14,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 import { Check, Loader2, ChevronDown, ChevronUp, Gavel, Minus, Plus } from "lucide-react"
-import { artworks, BID_STEP, type AuctionArtwork } from "./artworks"
+import { artworks, BID_STEP, isAuctionClosed, type AuctionArtwork } from "./artworks"
 
 interface Bid {
   id: string
@@ -40,6 +40,7 @@ function formatDate(iso: string) {
 
 export default function AuctionPage() {
   const [selected, setSelected] = useState<AuctionArtwork | null>(null)
+  const closed = isAuctionClosed()
 
   // Найвища ставка по кожній роботі — для відображення прямо в сітці,
   // без відкриття картки.
@@ -180,7 +181,9 @@ export default function AuctionPage() {
               Аукціон робіт
             </h1>
             <p className="text-lg text-muted max-w-2xl mx-auto">
-              Натисніть на роботу, щоб побачити деталі та зробити ставку.
+              {closed
+                ? "Аукціон завершено. Дякуємо всім учасникам!"
+                : "Натисніть на роботу, щоб побачити деталі та зробити ставку."}
             </p>
           </div>
         </section>
@@ -206,7 +209,7 @@ export default function AuctionPage() {
                     <p className="text-xs text-muted truncate mt-0.5">{artwork.artist}</p>
                     <p className="text-xs text-muted mt-1">
                       {highestBids[artwork.id]
-                        ? `Ставка: ${formatPrice(highestBids[artwork.id])}`
+                        ? `${closed ? "Фінальна ставка" : "Ставка"}: ${formatPrice(highestBids[artwork.id])}`
                         : `Старт: ${formatPrice(artwork.startPrice)}`}
                     </p>
                   </div>
@@ -251,7 +254,7 @@ export default function AuctionPage() {
               <div className="flex items-center justify-between bg-secondary/20 rounded-lg px-4 py-3">
                 <div>
                   <p className="text-xs text-muted uppercase tracking-wide">
-                    {currentHighest ? "Поточна ставка" : "Стартова ціна"}
+                    {currentHighest ? (closed ? "Фінальна ставка" : "Поточна ставка") : "Стартова ціна"}
                   </p>
                   <p className="text-lg font-semibold text-foreground">
                     {formatPrice(currentHighest ?? selected.startPrice)}
@@ -272,7 +275,7 @@ export default function AuctionPage() {
                   </div>
                 ) : bids.length === 0 ? (
                   <p className="text-sm text-muted py-2">
-                    Поки що немає ставок. Будьте першими!
+                    {closed ? "Ставок не було." : "Поки що немає ставок. Будьте першими!"}
                   </p>
                 ) : (
                   <div className="space-y-2">
@@ -316,7 +319,13 @@ export default function AuctionPage() {
               </div>
 
               {/* Форма ставки */}
-              {submitStatus === "success" ? (
+              {closed ? (
+                <div className="pt-2 border-t border-border">
+                  <p className="text-center text-sm text-muted mt-3">
+                    Аукціон завершено. Ставки більше не приймаються.
+                  </p>
+                </div>
+              ) : submitStatus === "success" ? (
                 <div className="flex items-center justify-center gap-2 p-4 bg-green-50 text-green-700 rounded-lg">
                   <Check className="w-5 h-5" />
                   <span>Дякуємо! Вашу ставку прийнято.</span>
@@ -381,7 +390,7 @@ export default function AuctionPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={isSubmitting}
                   />
-                  
+
                   <Textarea
                     placeholder="Ваше повідомлення (необов'язково)"
                     value={message}
