@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createClient } from "@/lib/supabase/server"
-import { artworks, BID_STEP } from "@/app/aukcions/artworks"
+import { artworks, BID_STEP, isAuctionClosed } from "@/app/aukcions/artworks"
 import nodemailer from "nodemailer"
 
 // Телефон: приймаємо українські номери у форматах
@@ -57,6 +57,14 @@ export async function GET(req: NextRequest) {
 // POST /api/bid  { artworkId, phone, message, amount }
 export async function POST(req: NextRequest) {
   try {
+    // Аукціон завершено — ставки більше не приймаються
+    if (isAuctionClosed()) {
+      return NextResponse.json(
+        { error: "Аукціон завершено. Ставки більше не приймаються." },
+        { status: 403 },
+      )
+    }
+
     const body = await req.json()
     let { artworkId, phone, email, message, amount } = body ?? {}
 
