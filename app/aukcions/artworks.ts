@@ -8,7 +8,7 @@ export const BID_STEP = 200
 export const AUCTION_ENDS_AT: string | null = null
 
 // Спосіб 2 (вручну): true — аукціон закритий негайно.
-export const AUCTION_FORCE_CLOSED = false
+export const AUCTION_FORCE_CLOSED = true
 
 export function isAuctionClosed(): boolean {
   if (AUCTION_FORCE_CLOSED) return true
