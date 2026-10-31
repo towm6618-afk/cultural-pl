@@ -1,17 +1,16 @@
 import Link from "next/link"
+import { Logo, Ornament, Strip } from "@/components/brand"
 
 export function Footer() {
   return (
-    <footer id="contact" className="bg-foreground text-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer id="contact" className="relative overflow-hidden bg-primary text-cream">
+      <Strip kind="pattern" className="bg-cream" />
+      <Ornament name="sun-yellow" className="hidden lg:block absolute right-0 bottom-0 w-52" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
           <div>
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%BC%D0%B8%D1%81%D1%82%D0%B5%D1%86%D1%82%D0%B2%D0%BE%2C%20%D0%BA%D0%BE%D0%BF%D1%96%D1%8F-omvlCV4W3nKGq9vFPbgQMH5FG47jMo.png"
-              alt="Поліська Казка"
-              className="h-14 w-auto mb-6 brightness-0 invert"
-            />
-            <p className="text-background/70 leading-relaxed max-w-md mb-8">
+            <Logo tone="cream" className="h-16 w-auto mb-6" />
+            <p className="text-cream/80 leading-relaxed max-w-md mb-8">
               Популяризуємо українське мистецтво, підтримуємо молодих митців.
               Ми даємо можливість творити, розвиватися та бути почутими.
             </p>
@@ -20,7 +19,7 @@ export function Footer() {
                 href="https://www.facebook.com/vkp.poliskakazka"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors"
+                className="w-10 h-10 rounded-full bg-cream/15 flex items-center justify-center hover:bg-orange transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -31,7 +30,7 @@ export function Footer() {
                 href="https://www.instagram.com/cultural_platform_poliskakazka/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors"
+                className="w-10 h-10 rounded-full bg-cream/15 flex items-center justify-center hover:bg-orange transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -43,32 +42,29 @@ export function Footer() {
 
           <div className="grid sm:grid-cols-2 gap-8">
             <div>
-              <h3 className="font-semibold text-background mb-4">Навігація</h3>
+              <h3 className="font-serif font-bold text-yellow text-lg mb-4">Навігація</h3>
               <nav className="flex flex-col gap-3">
-                <Link href="/#about" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/#about" className="text-cream/80 hover:text-yellow transition-colors">
                   Про нас
                 </Link>
-                <Link href="/news" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/news" className="text-cream/80 hover:text-yellow transition-colors">
                   Новини
                 </Link>
-                <Link href="/konkurs" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/konkurs" className="text-cream/80 hover:text-yellow transition-colors">
                   Конкурс
                 </Link>
-                <Link href="/golosuvannya" className="text-background/70 hover:text-primary transition-colors">
-                  Голосування
-                </Link>
-                <Link href="/#media" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/#media" className="text-cream/80 hover:text-yellow transition-colors">
                   Медіа
                 </Link>
-                <Link href="/#partners" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/#partners" className="text-cream/80 hover:text-yellow transition-colors">
                   Партнери
                 </Link>
               </nav>
             </div>
             <div>
-              <h3 className="font-semibold text-background mb-4">Контакти</h3>
-              <div className="flex flex-col gap-3 text-background/70">
-                <a href="mailto:info@cultural-platform.com" className="hover:text-primary transition-colors">
+              <h3 className="font-serif font-bold text-yellow text-lg mb-4">Контакти</h3>
+              <div className="flex flex-col gap-3 text-cream/80">
+                <a href="mailto:info@cultural-platform.com" className="hover:text-yellow transition-colors">
                   info@cultural-platform.com
                 </a>
                 <span>Київ, Україна</span>
@@ -77,12 +73,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-background/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-background/50 text-sm">
+        <div className="mt-16 pt-8 border-t border-cream/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-cream/60 text-sm">
             © Поліська Казка
           </p>
           <div className="flex items-center gap-6 text-sm">
-            <Link href="#" className="text-background/50 hover:text-background transition-colors">
+            <Link href="#" className="text-cream/60 hover:text-cream transition-colors">
             </Link>
           </div>
         </div>

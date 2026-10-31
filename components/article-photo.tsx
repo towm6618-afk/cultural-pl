@@ -34,7 +34,7 @@ export function ArticleGallery({ photos, alt }: { photos: string[]; alt: string 
     <div className="my-14">
       <div className="columns-1 sm:columns-2 gap-4 [&>*]:mb-4">
         {valid.map((src, i) => (
-          <div key={i} className="break-inside-avoid overflow-hidden rounded-3xl bg-secondary shadow-sm">
+          <div key={i} className="break-inside-avoid overflow-hidden rounded-lg bg-secondary shadow-sm">
             <img
               src={src}
               alt={`${alt} — фото ${i + 1}`}

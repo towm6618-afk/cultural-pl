@@ -16,11 +16,11 @@ export function Info() {
         {/* Три колонки з картками */}
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {/* Митці */}
-          <div className="group relative bg-card rounded-3xl border border-border/50 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/10 hover:border-primary/40 transition-all duration-500">
+          <div className="group relative bg-card rounded-lg border border-border/50 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/10 hover:border-primary/40 transition-all duration-500">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="p-8 md:p-10 relative z-10">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
                 <span className="text-3xl">🎨</span> {/* або заміни на svg/іконку */}
               </div>
 
@@ -35,11 +35,11 @@ export function Info() {
           </div>
 
           {/* Бізнес */}
-          <div className="group relative bg-card rounded-3xl border border-border/50 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/10 hover:border-primary/40 transition-all duration-500">
+          <div className="group relative bg-card rounded-lg border border-border/50 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/10 hover:border-primary/40 transition-all duration-500">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="p-8 md:p-10 relative z-10">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
                 <span className="text-3xl">💼</span>
               </div>
 
@@ -54,11 +54,11 @@ export function Info() {
           </div>
 
           {/* Філантропія */}
-          <div className="group relative bg-card rounded-3xl border border-border/50 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/10 hover:border-primary/40 transition-all duration-500">
+          <div className="group relative bg-card rounded-lg border border-border/50 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/10 hover:border-primary/40 transition-all duration-500">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="p-8 md:p-10 relative z-10">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
                 <span className="text-3xl">🤝</span>
               </div>
 

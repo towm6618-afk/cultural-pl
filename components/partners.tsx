@@ -1,3 +1,5 @@
+import { Strip } from "@/components/brand"
+
 const strategicPartners = [
   {
     name: "НАОМА",
@@ -39,13 +41,14 @@ const mediaPartners = [
 
 export function Partners() {
   return (
-    <section id="partners" className="py-24 bg-secondary/30">
+    <section id="partners" className="relative pt-0 pb-24 bg-secondary">
+      <Strip kind="crenel" className="mb-20" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary font-medium text-sm uppercase tracking-widest">
+          <span className="pill pill-brush pill-brush-orange">
             Партнери
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6 text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl text-ink mt-5 mb-6 text-balance">
             Наші партнери
           </h2>
           <p className="text-muted leading-relaxed">
@@ -54,14 +57,14 @@ export function Partners() {
         </div>
 
         <div className="mb-16">
-          <h3 className="text-lg font-semibold text-center text-foreground mb-8">
+          <h3 className="font-serif text-xl font-bold text-center text-primary mb-8">
             Стратегічний партнер
           </h3>
           <div className="flex justify-center">
             {strategicPartners.map((partner, index) => (
               <div
                 key={index}
-                className="bg-background rounded-2xl border border-border p-10 text-center max-w-md hover:border-primary/50 transition-colors"
+                className="frame frame-orange p-4 text-center max-w-md"
               >
                 <div className="h-48 flex items-center justify-center mb-6">
                   <img
@@ -79,14 +82,14 @@ export function Partners() {
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-center text-foreground mb-8">
+          <h3 className="font-serif text-xl font-bold text-center text-primary mb-8">
             Медіа-партнери
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {mediaPartners.map((partner, index) => (
               <div
                 key={index}
-                className="bg-background rounded-xl border border-border p-4 flex items-center justify-center h-20 hover:border-primary/50 transition-colors"
+                className="bg-card border-2 border-primary/30 p-4 flex items-center justify-center h-20 hover:border-orange transition-colors"
               >
                 <img
                   src={partner.logo}
