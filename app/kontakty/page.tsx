@@ -15,7 +15,7 @@ export default function KontaktyPage() {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-secondary">
+        <section className="page-hero py-16 md:py-24 bg-secondary">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -42,7 +42,7 @@ export default function KontaktyPage() {
                 <div className="space-y-6">
                   <Link
                     href="mailto:poliskakazka.info@gmail.com"
-                    className="flex items-start gap-4 p-6 bg-secondary rounded-2xl hover:bg-secondary/80 transition-colors group"
+                    className="flex items-start gap-4 p-6 bg-secondary rounded-lg hover:bg-secondary/80 transition-colors group"
                   >
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6 text-primary" />
@@ -58,7 +58,7 @@ export default function KontaktyPage() {
                   <Link
                     href="https://www.facebook.com/poliskakazka"
                     target="_blank"
-                    className="flex items-start gap-4 p-6 bg-secondary rounded-2xl hover:bg-secondary/80 transition-colors group"
+                    className="flex items-start gap-4 p-6 bg-secondary rounded-lg hover:bg-secondary/80 transition-colors group"
                   >
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                       <Facebook className="w-6 h-6 text-primary" />
@@ -74,7 +74,7 @@ export default function KontaktyPage() {
                   <Link
                     href="https://www.instagram.com/poliskakazka"
                     target="_blank"
-                    className="flex items-start gap-4 p-6 bg-secondary rounded-2xl hover:bg-secondary/80 transition-colors group"
+                    className="flex items-start gap-4 p-6 bg-secondary rounded-lg hover:bg-secondary/80 transition-colors group"
                   >
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                       <Instagram className="w-6 h-6 text-primary" />
@@ -87,7 +87,7 @@ export default function KontaktyPage() {
                     </div>
                   </Link>
 
-                  <div className="flex items-start gap-4 p-6 bg-secondary rounded-2xl">
+                  <div className="flex items-start gap-4 p-6 bg-secondary rounded-lg">
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
@@ -183,7 +183,7 @@ export default function KontaktyPage() {
               Часті запитання
             </h2>
             <div className="max-w-3xl mx-auto space-y-6">
-              <div className="bg-background rounded-2xl p-6">
+              <div className="bg-background rounded-lg p-6">
                 <h3 className="font-semibold text-foreground mb-2">
                   Як взяти участь у конкурсі?
                 </h3>
@@ -192,7 +192,7 @@ export default function KontaktyPage() {
                   фото своїх робіт. Участь безкоштовна.
                 </p>
               </div>
-              <div className="bg-background rounded-2xl p-6">
+              <div className="bg-background rounded-lg p-6">
                 <h3 className="font-semibold text-foreground mb-2">
                   Який віковий ліміт для учасників?
                 </h3>
@@ -200,7 +200,7 @@ export default function KontaktyPage() {
                   До участі запрошуються художники віком від 16 до 30 років.
                 </p>
               </div>
-              <div className="bg-background rounded-2xl p-6">
+              <div className="bg-background rounded-lg p-6">
                 <h3 className="font-semibold text-foreground mb-2">
                   Скільки робіт можна подати?
                 </h3>
@@ -208,7 +208,7 @@ export default function KontaktyPage() {
                   Кожен учасник може подати від 1 до 3 робіт.
                 </p>
               </div>
-              <div className="bg-background rounded-2xl p-6">
+              <div className="bg-background rounded-lg p-6">
                 <h3 className="font-semibold text-foreground mb-2">
                   Коли будуть оголошені результати?
                 </h3>

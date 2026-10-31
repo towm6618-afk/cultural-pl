@@ -150,7 +150,7 @@ export function ApplicationForm({ isOpen, opensFrom }: { isOpen: boolean; opensF
 
   if (status === "success") {
     return (
-      <div className="bg-secondary/40 border border-primary/20 rounded-3xl p-8 md:p-12 text-center">
+      <div className="bg-secondary/40 border border-primary/20 rounded-lg p-8 md:p-12 text-center">
         <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-6">
           <CheckCircle2 className="w-9 h-9" />
         </div>
@@ -164,7 +164,7 @@ export function ApplicationForm({ isOpen, opensFrom }: { isOpen: boolean; opensF
 
   if (!isOpen) {
     return (
-      <div className="bg-secondary/40 border border-border rounded-3xl p-8 md:p-12 text-center">
+      <div className="bg-secondary/40 border border-border rounded-lg p-8 md:p-12 text-center">
         <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-6">
           <Lock className="w-8 h-8" />
         </div>
@@ -181,7 +181,7 @@ export function ApplicationForm({ isOpen, opensFrom }: { isOpen: boolean; opensF
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-card border border-border rounded-3xl p-6 md:p-10 space-y-8 shadow-sm"
+      className="bg-card border border-border rounded-lg p-6 md:p-10 space-y-8 shadow-sm"
       noValidate
     >
       {/* Honeypot — приховане від людей поле */}
@@ -223,7 +223,7 @@ export function ApplicationForm({ isOpen, opensFrom }: { isOpen: boolean; opensF
           {Object.entries(CATEGORIES).map(([value, label]) => (
             <label
               key={value}
-              className="flex items-center gap-3 border border-border rounded-2xl px-4 py-3 cursor-pointer hover:border-primary/40 transition-colors"
+              className="flex items-center gap-3 border border-border rounded-lg px-4 py-3 cursor-pointer hover:border-primary/40 transition-colors"
             >
               <RadioGroupItem value={value} />
               <span className="text-base text-foreground">{label}</span>
@@ -288,7 +288,7 @@ export function ApplicationForm({ isOpen, opensFrom }: { isOpen: boolean; opensF
             type="button"
             onClick={() => fileInput.current?.click()}
             disabled={busy}
-            className="w-full flex flex-col items-center justify-center gap-2 border-2 border-dashed border-border hover:border-primary/50 hover:bg-primary/5 rounded-2xl py-8 transition-colors disabled:opacity-50"
+            className="w-full flex flex-col items-center justify-center gap-2 border-2 border-dashed border-border hover:border-primary/50 hover:bg-primary/5 rounded-lg py-8 transition-colors disabled:opacity-50"
           >
             <ImagePlus className="w-8 h-8 text-primary" />
             <span className="text-base font-medium text-foreground">Обрати файли</span>
@@ -301,7 +301,7 @@ export function ApplicationForm({ isOpen, opensFrom }: { isOpen: boolean; opensF
         {files.length > 0 && (
           <ul className="space-y-3 mt-4">
             {files.map((file, i) => (
-              <li key={`${file.name}-${i}`} className="flex items-center gap-4 border border-border rounded-2xl p-3">
+              <li key={`${file.name}-${i}`} className="flex items-center gap-4 border border-border rounded-lg p-3">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={URL.createObjectURL(file)} alt="" className="w-14 h-14 rounded-xl object-cover bg-secondary shrink-0" />
                 <div className="min-w-0 flex-1">

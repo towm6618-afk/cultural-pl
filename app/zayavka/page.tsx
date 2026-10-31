@@ -34,7 +34,7 @@ export default function ZayavkaPage() {
           </div>
 
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-orange text-cream px-4 py-2 rounded-full text-sm font-serif font-bold mb-6">
               <Sparkles className="w-4 h-4" />
               Другий національний конкурс
             </div>

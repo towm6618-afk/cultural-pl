@@ -76,7 +76,7 @@ export default function WinnersAnnouncePage() {
 
             {/* ПРОФЕСІЙНА КАТЕГОРІЯ */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Trophy className="w-7 h-7" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
@@ -85,7 +85,7 @@ export default function WinnersAnnouncePage() {
             </div>
 
             {/* 1 МІСЦЕ */}
-            <div className="bg-background border border-border p-6 md:p-8 rounded-3xl mb-8 shadow-sm">
+            <div className="bg-background border border-border p-6 md:p-8 rounded-lg mb-8 shadow-sm">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 <strong className="text-foreground text-xl">І місце здобула Надія Ваганова з триптихом «Полин».</strong> Переможниця отримала річну стипендію у розмірі 25 тисяч гривень щомісяця. У своїй роботі мисткиня звернулася до теми Полісся як краю глибокої пам’яті, трагедії та незламності, осмисливши образ зорі Полин як символ історичних випробувань і сили української землі.
               </p>
@@ -95,7 +95,7 @@ export default function WinnersAnnouncePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
 
               {/* Фото 1 */}
-              <div className="aspect-square bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm">
+              <div className="aspect-square bg-secondary/30 rounded-lg border border-border relative overflow-hidden shadow-sm">
                 <img
                   src="https://i.ibb.co/LdSQgFt1/IMG-1364.webp"
                   alt="Триптих Полин - частина 1"
@@ -104,7 +104,7 @@ export default function WinnersAnnouncePage() {
               </div>
 
               {/* Фото 2 */}
-              <div className="aspect-square bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm">
+              <div className="aspect-square bg-secondary/30 rounded-lg border border-border relative overflow-hidden shadow-sm">
                 <img
                   src="https://i.ibb.co/9HgwpnbX/IMG-1363.webp"
                   alt="Триптих Полин - частина 2"
@@ -113,7 +113,7 @@ export default function WinnersAnnouncePage() {
               </div>
 
               {/* Фото 3 */}
-              <div className="aspect-square bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm">
+              <div className="aspect-square bg-secondary/30 rounded-lg border border-border relative overflow-hidden shadow-sm">
                 <img
                   src="https://i.ibb.co/pvjcTGRZ/IMG-1362.webp"
                   alt="Триптих Полин - частина 3"
@@ -124,32 +124,32 @@ export default function WinnersAnnouncePage() {
             </div>
 
             {/* 2 МІСЦЕ */}
-            <div className="bg-background border border-border p-6 md:p-8 rounded-3xl mb-8 shadow-sm">
+            <div className="bg-background border border-border p-6 md:p-8 rounded-lg mb-8 shadow-sm">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 <strong className="text-foreground text-xl">ІІ місце посіла Олена Волошенко з роботою «Гірський козлик».</strong> Художниця отримала щомісячну стипендію у розмірі 20 тисяч гривень. Авторка працює з темами природи, стилізації форми та кольору, поєднуючи народні мотиви із сучасним художнім баченням.
               </p>
             </div>
 
             {/* МІСЦЕ ДЛЯ ОДНОГО ФОТО */}
-            <div className="w-full aspect-[16/9] bg-secondary/30 rounded-2xl border border-border mb-12 flex flex-col items-center justify-center relative overflow-hidden">
+            <div className="w-full aspect-[16/9] bg-secondary/30 rounded-lg border border-border mb-12 flex flex-col items-center justify-center relative overflow-hidden">
               <img src="https://i.ibb.co/TMYFxCKL/IMG-1361.webp" alt="Гірський козлик" className="w-full h-full object-cover" />
             </div>
 
             {/* 3 МІСЦЕ */}
-            <div className="bg-background border border-border p-6 md:p-8 rounded-3xl mb-8 shadow-sm">
+            <div className="bg-background border border-border p-6 md:p-8 rounded-lg mb-8 shadow-sm">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 <strong className="text-foreground text-xl">ІІІ місце виборола Марія Черничко з роботою «Ба і корівка».</strong> Лауреатка отримала річну стипендію у розмірі 15 тисяч гривень щомісяця. Картина присвячена образу українського села, ролі старших жінок як берегинь роду та важливості збереження традиційних знань.
               </p>
             </div>
 
             {/* МІСЦЕ ДЛЯ ОДНОГО ФОТО */}
-            <div className="w-full aspect-[16/9] bg-secondary/30 rounded-2xl border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
+            <div className="w-full aspect-[16/9] bg-secondary/30 rounded-lg border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
               <img src="https://i.ibb.co/9mSW7C91/IMG-1359.webp" alt="Ба і корівка" className="w-full h-full object-cover" />
             </div>
 
             {/* АМАТОРСЬКА КАТЕГОРІЯ */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Medal className="w-7 h-7" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
@@ -157,14 +157,14 @@ export default function WinnersAnnouncePage() {
               </h2>
             </div>
 
-            <div className="bg-background border border-border p-6 md:p-8 rounded-3xl mb-8 shadow-sm">
+            <div className="bg-background border border-border p-6 md:p-8 rounded-lg mb-8 shadow-sm">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 <strong className="text-foreground text-xl">І місце здобув 16-річний киянин Костянтин Мельничук з роботою «Сонячний Сон».</strong> Молодий митець зазначив, що у своїй роботі прагнув передати власне відчуття Полісся та його особливої атмосфери. Юний художник отримає річну стипендію розміром у 25 тисяч гривень щомісяця.
               </p>
             </div>
 
             {/* МІСЦЕ ДЛЯ ОДНОГО ФОТО */}
-            <div className="w-full aspect-[16/9] bg-secondary/30 rounded-2xl border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
+            <div className="w-full aspect-[16/9] bg-secondary/30 rounded-lg border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
               <img src="https://i.ibb.co/PGb27FyS/IMG-1395.webp" alt="Сонячний Сон" className="w-full h-full object-cover" />
 
             </div>
@@ -182,7 +182,7 @@ export default function WinnersAnnouncePage() {
 
             {/* ЖУРІ КОНКУРСУ */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Users className="w-7 h-7" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
@@ -229,7 +229,7 @@ export default function WinnersAnnouncePage() {
               Подальший розвиток конкурсу
             </h2>
 
-            <blockquote className="my-10 relative bg-primary/5 rounded-3xl p-8 md:p-10 border-l-4 border-primary">
+            <blockquote className="my-10 relative bg-primary/5 rounded-lg p-8 md:p-10 border-l-4 border-primary">
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-primary/10 rotate-12" />
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl font-serif italic text-foreground leading-relaxed mb-6">

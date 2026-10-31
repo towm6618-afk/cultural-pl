@@ -78,7 +78,7 @@ export default function KonkursAnnouncePage() {
 
             {/* Стипендії */}
             <div className="mt-12 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Trophy className="w-7 h-7" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
@@ -92,32 +92,32 @@ export default function KonkursAnnouncePage() {
 
             {/* Картки стипендій */}
             <div className="grid md:grid-cols-2 gap-6 mb-16">
-              <div className="bg-secondary/40 border border-border hover:border-primary/30 rounded-3xl p-8 transition-colors">
+              <div className="bg-secondary/40 border border-border hover:border-primary/30 rounded-lg p-8 transition-colors">
                 <h3 className="text-xl font-serif font-bold text-foreground mb-6">
                   Професійна категорія
                 </h3>
                 <ul className="space-y-4">
-                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl shadow-sm">
+                  <li className="flex items-center gap-4 bg-background p-4 rounded-lg shadow-sm">
                     <span className="text-primary font-bold text-xl">І</span>
                     <span className="text-lg text-muted-foreground">місце — <strong className="text-foreground">25 000 грн</strong> щомісяця</span>
                   </li>
-                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl shadow-sm">
+                  <li className="flex items-center gap-4 bg-background p-4 rounded-lg shadow-sm">
                     <span className="text-primary font-bold text-xl">ІІ</span>
                     <span className="text-lg text-muted-foreground">місце — <strong className="text-foreground">20 000 грн</strong> щомісяця</span>
                   </li>
-                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl shadow-sm">
+                  <li className="flex items-center gap-4 bg-background p-4 rounded-lg shadow-sm">
                     <span className="text-primary font-bold text-xl">ІІІ</span>
                     <span className="text-lg text-muted-foreground">місце — <strong className="text-foreground">15 000 грн</strong> щомісяця</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-secondary/40 border border-border hover:border-primary/30 rounded-3xl p-8 transition-colors">
+              <div className="bg-secondary/40 border border-border hover:border-primary/30 rounded-lg p-8 transition-colors">
                 <h3 className="text-xl font-serif font-bold text-foreground mb-6">
                   Аматорська категорія
                 </h3>
                 <ul className="space-y-4">
-                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl shadow-sm">
+                  <li className="flex items-center gap-4 bg-background p-4 rounded-lg shadow-sm">
                     <span className="text-primary font-bold text-xl">І</span>
                     <span className="text-lg text-muted-foreground">місце — <strong className="text-foreground">25 000 грн</strong> щомісяця протягом року</span>
                   </li>
@@ -127,7 +127,7 @@ export default function KonkursAnnouncePage() {
 
             {/* Мета та місія */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Target className="w-7 h-7" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
@@ -139,7 +139,7 @@ export default function KonkursAnnouncePage() {
               Головна мета конкурсу “Поліська Казка” — підтримка молодих художників, розвиток сучасного українського народного мистецтва та його популяризація в Україні й за кордоном.
             </p>
 
-            <blockquote className="my-12 relative bg-primary/5 rounded-3xl p-8 md:p-10 border-l-4 border-primary">
+            <blockquote className="my-12 relative bg-primary/5 rounded-lg p-8 md:p-10 border-l-4 border-primary">
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-primary/10 rotate-12" />
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl font-serif italic text-foreground leading-relaxed mb-6">
@@ -182,7 +182,7 @@ export default function KonkursAnnouncePage() {
 
             {/* Вимоги та техніки */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Palette className="w-7 h-7" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
@@ -217,7 +217,7 @@ export default function KonkursAnnouncePage() {
             </p>
 
             {/* Терміни подачі */}
-            <div className="bg-secondary/50 border border-primary/20 rounded-3xl p-8 md:p-12 mb-8">
+            <div className="bg-secondary/50 border border-primary/20 rounded-lg p-8 md:p-12 mb-8">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-background p-3 rounded-xl text-primary shadow-sm">
                   <CalendarDays className="w-6 h-6" />
@@ -255,7 +255,7 @@ export default function KonkursAnnouncePage() {
                 Оригінали відібраних робіт будуть представлені на виставці в Національній академії образотворчого мистецтва і архітектури.
               </p>
 
-              <div className="bg-background p-6 rounded-2xl border border-border shadow-sm text-center">
+              <div className="bg-background p-6 rounded-lg border border-border shadow-sm text-center">
                 <p className="text-xl font-medium text-foreground">
                   Імена переможців оголосять 20 квітня 2026 року
                 </p>

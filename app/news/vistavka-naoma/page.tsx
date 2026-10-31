@@ -77,7 +77,7 @@ export default function VistavkaNaomaPage() {
 
             {/* Секція: Традиція та сучасність */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Palette className="w-7 h-7" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
@@ -89,7 +89,7 @@ export default function VistavkaNaomaPage() {
               В експозиції представлено понад 80 робіт фіналістів конкурсу “Поліська Казка”, які експонуються разом із творами Марії Примаченко. Це створює унікальний діалог поколінь у мистецтві та демонструє, як трансформується народне мистецтво України сьогодні.
             </p>
 
-            <blockquote className="my-12 relative bg-primary/5 rounded-3xl p-8 md:p-10 border-l-4 border-primary">
+            <blockquote className="my-12 relative bg-primary/5 rounded-lg p-8 md:p-10 border-l-4 border-primary">
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-primary/10 rotate-12" />
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl font-serif italic text-foreground leading-relaxed mb-6">
@@ -129,10 +129,7 @@ export default function VistavkaNaomaPage() {
             </ul>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              У межах виставки оголошено старт другого етапу — народного голосування. Відвідувачі можуть проголосувати за найкращі роботи{" "}
-              <Link href="/golosuvannya" className="text-primary hover:text-primary/80 underline decoration-primary/30 hover:decoration-primary transition-all">
-                ось тут
-              </Link>.
+              У межах виставки оголошено старт другого етапу — народного голосування. Відвідувачі можуть проголосувати за найкращі роботи.
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -169,7 +166,7 @@ export default function VistavkaNaomaPage() {
             </p>
 
             {/* Блок з інформацією (стилізований як у прикладі) */}
-            <div className="bg-secondary/50 border border-primary/20 rounded-3xl p-8 md:p-12 mb-8">
+            <div className="bg-secondary/50 border border-primary/20 rounded-lg p-8 md:p-12 mb-8">
               <div className="flex items-center gap-4 mb-8">
                 <div className="bg-background p-3 rounded-xl text-primary shadow-sm">
                   <CalendarDays className="w-6 h-6" />
@@ -239,7 +236,7 @@ export default function VistavkaNaomaPage() {
                 </li>
               </ul>
 
-              <div className="bg-background p-6 rounded-2xl border border-border shadow-sm text-center">
+              <div className="bg-background p-6 rounded-lg border border-border shadow-sm text-center">
                 <p className="text-xl font-medium text-foreground">
                   <Link href="https://forms.gle/Xr8imFSKCd8MEKZ27" className="text-primary hover:text-primary/80 underline decoration-primary/30 hover:decoration-primary transition-all">
                     Зареєструватися можна тут.

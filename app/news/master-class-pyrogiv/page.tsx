@@ -71,7 +71,7 @@ export default function MasterClassPyrogivPage() {
             </p>
 
             {/* ЦИТАТА 1: ПОЛІНА (Оригінал збережено) */}
-            <blockquote className="my-10 relative bg-primary/5 rounded-3xl p-8 md:p-10 border-l-4 border-primary">
+            <blockquote className="my-10 relative bg-primary/5 rounded-lg p-8 md:p-10 border-l-4 border-primary">
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-primary/10 rotate-12" />
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl font-serif italic text-foreground leading-relaxed mb-6">
@@ -88,7 +88,7 @@ export default function MasterClassPyrogivPage() {
             </p>
 
             {/* ЦИТАТА 2: НАДІЯ ВАГАНОВА (Оригінал збережено) */}
-            <blockquote className="my-10 relative bg-secondary/30 rounded-3xl p-8 md:p-10 border-l-4 border-muted-foreground/30">
+            <blockquote className="my-10 relative bg-secondary/30 rounded-lg p-8 md:p-10 border-l-4 border-muted-foreground/30">
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-muted-foreground/5 rotate-12" />
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl font-serif italic text-foreground leading-relaxed mb-4">
@@ -103,20 +103,20 @@ export default function MasterClassPyrogivPage() {
             {/* ГАЛЕРЕЯ НА 5 ФОТО (Із вашими реальними посиланнями) */}
             <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-12 mt-8">
               {/* Ряд 1 */}
-              <div className="md:col-span-3 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
+              <div className="md:col-span-3 aspect-[4/5] bg-secondary/30 rounded-lg border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
                 <img src="https://i.ibb.co/GQrBdSD7/photo-2026-07-08-15-53-35-4.jpg" alt="Майстер-клас Пирогово - Фото 1" className="w-full h-full object-cover" />
               </div>
-              <div className="md:col-span-3 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
+              <div className="md:col-span-3 aspect-[4/5] bg-secondary/30 rounded-lg border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
                 <img src="https://i.ibb.co/v6D2RKM8/photo-2026-07-08-15-53-35-3.jpg" alt="Майстер-клас Пирогово - Фото 2" className="w-full h-full object-cover" />
               </div>
               {/* Ряд 2 */}
-              <div className="md:col-span-2 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
+              <div className="md:col-span-2 aspect-[4/5] bg-secondary/30 rounded-lg border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
                 <img src="https://i.ibb.co/xtCKmtbF/photo-2026-07-08-15-53-35-5.jpg" alt="Майстер-клас Пирогово - Фото 3" className="w-full h-full object-cover" />
               </div>
-              <div className="md:col-span-2 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
+              <div className="md:col-span-2 aspect-[4/5] bg-secondary/30 rounded-lg border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
                 <img src="https://i.ibb.co/9HCmcwsp/photo-2026-07-08-15-53-35.jpg" alt="Майстер-клас Пирогово - Фото 4" className="w-full h-full object-cover" />
               </div>
-              <div className="md:col-span-2 aspect-[4/5] bg-secondary/30 rounded-2xl border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
+              <div className="md:col-span-2 aspect-[4/5] bg-secondary/30 rounded-lg border border-border relative overflow-hidden shadow-sm hover:opacity-95 transition-opacity">
                 <img src="https://i.ibb.co/pjK3M8jp/photo-2026-07-08-15-53-34.jpg" alt="Майстер-клас Пирогово - Фото 5" className="w-full h-full object-cover" />
               </div>
             </div>
@@ -126,7 +126,7 @@ export default function MasterClassPyrogivPage() {
             </p>
 
             {/* БЛОК ЛОКАЦІЇ */}
-            <div className="flex items-center gap-4 bg-background border border-border p-5 rounded-2xl my-8 shadow-sm">
+            <div className="flex items-center gap-4 bg-background border border-border p-5 rounded-lg my-8 shadow-sm">
               <div className="bg-primary/10 p-3 rounded-full">
                 <MapPin className="w-6 h-6 text-primary" />
               </div>
@@ -149,7 +149,7 @@ export default function MasterClassPyrogivPage() {
             </p>
 
             {/* ЦИТАТА 3: МАРГАРИТА БОНДАРЄВА (Оригінал збережено) */}
-            <blockquote className="my-10 relative bg-primary/5 rounded-3xl p-8 md:p-10 border-l-4 border-primary">
+            <blockquote className="my-10 relative bg-primary/5 rounded-lg p-8 md:p-10 border-l-4 border-primary">
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-primary/10 rotate-12" />
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl font-serif italic text-foreground leading-relaxed mb-6">

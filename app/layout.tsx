@@ -1,17 +1,18 @@
 import type { Metadata, Viewport } from "next"
-import { Inter, Playfair_Display } from "next/font/google"
+import { Montserrat, IBM_Plex_Serif } from "next/font/google"
 import "./globals.css"
 
-const inter = Inter({ 
-  subsets: ["latin", "cyrillic"], 
-  variable: "--font-inter",
-  display: "swap"
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-montserrat",
+  display: "swap",
 })
 
-const playfair = Playfair_Display({ 
-  subsets: ["latin", "cyrillic"], 
-  variable: "--font-playfair",
-  display: "swap"
+const plexSerif = IBM_Plex_Serif({
+  subsets: ["latin", "cyrillic"],
+  weight: ["500", "600", "700"],
+  variable: "--font-plex-serif",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#B8860B",
+  themeColor: "#0A4123",
   width: "device-width",
   initialScale: 1,
 }
@@ -31,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="uk" className={`${inter.variable} ${playfair.variable}`} data-scroll-behavior="smooth">
+    <html lang="uk" className={`${montserrat.variable} ${plexSerif.variable}`} data-scroll-behavior="smooth">
       <body className="antialiased">
         {children}
       </body>

@@ -59,7 +59,7 @@ export default function ScholarshipZsuPage() {
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-12 leading-[1.2]">
             Переможець конкурсу народного мистецтва “Поліська Казка” передав свою першу стипендію на потреби ЗСУ
           </h1>
-{ <div className="w-full bg-secondary/30 rounded-2xl border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
+{ <div className="w-full bg-secondary/30 rounded-lg border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
                <img src="https://i.ibb.co/JjTWk0Fj/image.png" alt="Передача допомоги" className="w-full h-full object-cover" />
             </div> }
           {/* ОСНОВНИЙ ТЕКСТ */}
@@ -73,7 +73,7 @@ export default function ScholarshipZsuPage() {
             </p>
 
             {/* ЦИТАТА КОСТЯНТИНА */}
-            <blockquote className="my-10 relative bg-primary/5 rounded-3xl p-8 md:p-10 border-l-4 border-primary">
+            <blockquote className="my-10 relative bg-primary/5 rounded-lg p-8 md:p-10 border-l-4 border-primary">
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-primary/10 rotate-12" />
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl font-serif italic text-foreground leading-relaxed mb-6">
@@ -91,7 +91,7 @@ export default function ScholarshipZsuPage() {
             </p>
 
             {/* ЦИТАТА ВІЙСЬКОВОГО */}
-            <blockquote className="my-10 relative bg-secondary/30 rounded-3xl p-8 md:p-10 border-l-4 border-muted-foreground/30">
+            <blockquote className="my-10 relative bg-secondary/30 rounded-lg p-8 md:p-10 border-l-4 border-muted-foreground/30">
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-muted-foreground/5 rotate-12" />
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl font-serif italic text-foreground leading-relaxed mb-4">
@@ -105,13 +105,13 @@ export default function ScholarshipZsuPage() {
             </p>
 
             {/* ДОДАТКОВЕ ФОТО (якщо є) */}
-            { <div className="w-full bg-secondary/30 rounded-2xl border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
+            { <div className="w-full bg-secondary/30 rounded-lg border border-border mb-16 flex flex-col items-center justify-center relative overflow-hidden">
                <img src="https://i.ibb.co/zh1xtPWv/IMG-2053.jpg" alt="Передача допомоги" className="w-full h-full object-cover" />
             </div> }
 
             {/* ІНФОРМАЦІЯ ПРО КОНКУРС */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Palette className="w-7 h-7" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
@@ -136,7 +136,7 @@ export default function ScholarshipZsuPage() {
             </p>
 
             {/* СПИСОК ПЕРЕМОЖЦІВ */}
-            <ul className="space-y-4 mb-8 bg-background border border-border p-6 md:p-8 rounded-3xl shadow-sm">
+            <ul className="space-y-4 mb-8 bg-background border border-border p-6 md:p-8 rounded-lg shadow-sm">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                 <span className="text-lg text-muted-foreground"><strong className="text-foreground">Марія Черничко</strong> — третє місце за роботу «Ба і корівка» та щомісячна стипендія у розмірі 15 тисяч гривень.</span>
@@ -156,7 +156,7 @@ export default function ScholarshipZsuPage() {
             </p>
 
             {/* ВИСНОВОК */}
-            <div className="bg-secondary/30 p-8 rounded-3xl border border-border">
+            <div className="bg-secondary/30 p-8 rounded-lg border border-border">
               <p className="text-lg text-foreground font-medium leading-relaxed m-0 text-center">
                 Історія Костянтина стала яскравим прикладом того, як українське мистецтво, громадянська свідомість та підтримка захисників України можуть об’єднуватися заради спільного майбутнього. Саме такі молоді митці формують нову культурну історію незалежної України.
               </p>

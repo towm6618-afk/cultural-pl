@@ -60,7 +60,7 @@ export default function MediaPage() {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-secondary">
+        <section className="page-hero py-16 md:py-24 bg-secondary">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -83,7 +83,7 @@ export default function MediaPage() {
                   key={index}
                   href={item.url}
                   target="_blank"
-                  className="group bg-background border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
+                  className="group bg-background border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
                 >
                   <div className="p-6">
                     <div className="flex items-center gap-4 mb-4">

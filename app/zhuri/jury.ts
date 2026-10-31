@@ -59,4 +59,10 @@ export const juryMembers = [
     description: "",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%92%D0%B0%D0%BA%D1%83%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE%20%D0%AE%D1%80%D1%96%D0%B9-xKTH3tQcdsFAAHFhfSDRyPM5tgz0O7.jpg",
   },
+  {
+    name: "Василь Перевальський",
+    role: "Український художник-графік. Академік Національної академії мистецтв України. Народний художник України.",
+    description: "Доцент. Лауреат літературно-мистецької премії ім. І. Нечуя-Левицького.",
+    image: "https://i.ibb.co/nsqqYsZS/photo-2026-10-29-16-04-43.webp",
+  },
 ]

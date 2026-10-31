@@ -2,6 +2,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Metadata } from "next"
 import Link from "next/link"
+import { ApplyButton } from "./apply-button"
 
 export const metadata: Metadata = {
   title: "Національний конкурс народної творчості | Культурна Платформа «Поліська Казка»",
@@ -15,12 +16,9 @@ export default function KonkursPage() {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-secondary">
+        <section className="page-hero py-16 md:py-24 bg-secondary">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-                Прийом робіт завершено
-              </div>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
                 Другий національний конкурс народного мистецтва
               </h1>
@@ -35,19 +33,13 @@ export default function KonkursPage() {
                   <div className="text-muted">грн стипендія</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-primary">10</div>
+                  <div className="text-4xl md:text-5xl font-bold text-primary">11</div>
                   <div className="text-muted">членів журі</div>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSezGch8eqZ14ei-35R_HlpEqgniWM7gBzPfL2c4rNdGRQdSMQ/viewform?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPMTI0MDI0NTc0Mjg3NDE0AAGnrszkMQtoub9PJv2DCU5unTTCt5QQ-wu4-zeLqKpfCZar5-WzYq_iNPG2Xkk_aem_YvDpMOwNZIkQmV-xnZ4aOA&pli=1"
-                  target="_blank"
-                  className="bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-medium hover:bg-accent transition-colors"
-                >
-                  Подати заявку
-                </Link>
+                <ApplyButton />
                 <Link
                   href="#rules"
                   className="bg-background text-foreground px-8 py-4 rounded-full text-lg font-medium hover:bg-muted/20 transition-colors border border-border"
@@ -77,7 +69,7 @@ export default function KonkursPage() {
 
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 {/* Professional Category */}
-                <div className="bg-secondary rounded-2xl p-8">
+                <div className="frame frame-green p-3 md:p-5">
                   <h3 className="font-serif text-xl font-bold text-foreground mb-6">
                     Професійна категорія
                   </h3>
@@ -107,7 +99,7 @@ export default function KonkursPage() {
                 </div>
 
                 {/* Amateur Category */}
-                <div className="bg-secondary rounded-2xl p-8">
+                <div className="frame frame-green p-3 md:p-5">
                   <h3 className="font-serif text-xl font-bold text-foreground mb-6">
                     Аматорська категорія
                   </h3>
@@ -145,7 +137,7 @@ export default function KonkursPage() {
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
                 Тематика робіт
               </h2>
-              <div className="bg-secondary rounded-2xl p-8 mb-12">
+              <div className="frame frame-green p-3 md:p-5 mb-12">
                 <p className="text-muted mb-4"></p>
                 <ul className="space-y-3 text-foreground">
                   <li className="flex items-start gap-3">
@@ -186,10 +178,9 @@ export default function KonkursPage() {
                 Відбір та результати
               </h2>
               <div className="space-y-4 text-muted leading-relaxed mb-12">
-                <p>Визначення переможців відбуватиметься у два етапи:</p>
+                <p>Переможців визначатиме професійне журі:</p>
                 <ul className="space-y-2 ml-4">
                   <li>• рішення професійного журі</li>
-                  <li>• народне голосування</li>
                 </ul>
                 <p>
                   Оригінали відібраних робіт будуть представлені на виставці в НАОМА.
@@ -202,43 +193,20 @@ export default function KonkursPage() {
                   </p>
                 </div>
               </div>
-
-              {/* CTA */}
-              <div className="text-center bg-secondary rounded-2xl p-8 md:p-12">
-                <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">
-                  Допомогти обрати переможців конкурсу?
-                </h3>
-                <p className="text-muted mb-8">
-                </p>
-                <Link
-                  href="/golosuvannya"
-                  className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-medium hover:bg-accent transition-colors"
-                >
-                  Народне голосування
-                </Link>
-              </div>
             </div>
           </div>
         </section>
-        {/* Jury / Ambassadors links */}
+        {/* Jury link */}
         <section className="py-16 md:py-24 bg-muted/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="grid gap-6 max-w-2xl mx-auto">
               <Link
                 href="/zhuri"
-                className="bg-background rounded-2xl p-8 border border-border hover:border-primary/40 hover:shadow-lg transition-all text-center"
+                className="bg-background rounded-lg p-8 border border-border hover:border-primary/40 hover:shadow-lg transition-all text-center"
               >
                 <h3 className="font-serif text-2xl font-bold text-foreground mb-2">Конкурсна комісія</h3>
                 <p className="text-muted mb-4">Професійне журі, яке оцінює роботи учасників конкурсу</p>
                 <span className="text-primary font-medium">Переглянути журі →</span>
-              </Link>
-              <Link
-                href="/ambasadory"
-                className="bg-background rounded-2xl p-8 border border-border hover:border-primary/40 hover:shadow-lg transition-all text-center"
-              >
-                <h3 className="font-serif text-2xl font-bold text-foreground mb-2">Амбасадори</h3>
-                <p className="text-muted mb-4">Відомі люди, які підтримують конкурс і платформу</p>
-                <span className="text-primary font-medium">Переглянути амбасадорів →</span>
               </Link>
             </div>
           </div>

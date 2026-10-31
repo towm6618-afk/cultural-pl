@@ -13,7 +13,7 @@ export default function AmbassadorsPage() {
     <>
       <Header />
       <main className="pt-20">
-        <section className="py-16 md:py-24 bg-muted/10 min-h-[60vh]">
+        <section className="page-hero py-16 md:py-24 bg-secondary min-h-[60vh]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground text-center mb-4">
               Амбасадори

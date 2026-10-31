@@ -78,7 +78,7 @@ export default function FourthArtClassPage() {
 
             {/* Розділ 1 */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <ImageIcon className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-snug">
@@ -104,7 +104,7 @@ export default function FourthArtClassPage() {
 
             {/* Розділ 2 */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Sparkles className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-snug">
@@ -122,7 +122,7 @@ export default function FourthArtClassPage() {
               За словами засновниці Всеукраїнської культурної платформи «Поліська Казка» Маргарити Бондарєвої, ідея запросити Ігоря Мельничука виникла як відповідь на великий інтерес аудиторії до попередніх мистецьких зустрічей.
             </p>
 
-            <blockquote className="my-10 relative bg-primary/5 rounded-3xl p-8 md:p-10 border-l-4 border-primary group">
+            <blockquote className="my-10 relative bg-primary/5 rounded-lg p-8 md:p-10 border-l-4 border-primary group">
               <Quote className="absolute top-6 right-8 w-16 h-16 text-primary/10 group-hover:scale-110 transition-transform duration-500" />
               <div className="relative z-10">
                 <p className="text-xl font-serif italic text-foreground leading-relaxed mb-4">
@@ -140,7 +140,7 @@ export default function FourthArtClassPage() {
 
             {/* Розділ 3 */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Heart className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-snug">
@@ -159,7 +159,7 @@ export default function FourthArtClassPage() {
 
             {/* Розділ 4 */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Users className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-snug">
@@ -177,7 +177,7 @@ export default function FourthArtClassPage() {
             {/* Галерея (4-е фото і далі) */}
             <ArticleGallery photos={rest} alt={ALT} />
 
-            <div className="bg-primary text-primary-foreground p-6 rounded-2xl text-center shadow-lg">
+            <div className="bg-primary text-primary-foreground p-6 rounded-lg text-center shadow-lg">
               <p className="text-xl font-medium">
                 Слідкуйте за анонсами «Поліської Казки» та долучайтеся до нових творчих зустрічей.
               </p>

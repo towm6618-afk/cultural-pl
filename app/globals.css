@@ -1,17 +1,31 @@
 @import "tailwindcss";
 
+/* ===== Брендбук «Поліська Казка» ===== */
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-sans);
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-plex-serif), Georgia, serif;
 
-  --color-background: #FFFDF9;
-  --color-foreground: #1A1A1A;
-  --color-primary: #B8860B;
-  --color-primary-foreground: #FFFFFF;
-  --color-secondary: #F5E6C8;
-  --color-muted: #6B6B6B;
-  --color-accent: #D4A857;
-  --color-border: #E5DDD0;
+  /* основні кольори з брендбуку */
+  --color-green: #0A4123;   /* основний */
+  --color-cream: #FCEFD2;   /* фоновий */
+  --color-pink: #F2004F;    /* акцент */
+  --color-purple: #693186;  /* акцент */
+  --color-yellow: #FDD500;  /* акцент */
+  --color-orange: #E86427;  /* додатковий */
+  --color-blue: #4382C5;    /* додатковий */
+  --color-ink: #060606;     /* для тексту */
+
+  /* семантичні токени (їх використовують усі сторінки) */
+  --color-background: #FCEFD2;
+  --color-foreground: #060606;
+  --color-card: #FFF9EA;
+  --color-primary: #0A4123;
+  --color-primary-foreground: #FCEFD2;
+  --color-secondary: #FAE6AE;
+  --color-muted: #4a4636;
+  --color-muted-foreground: #4a4636;
+  --color-accent: #E86427;
+  --color-border: #D9C99E;
 
   --radius: 0.5rem;
 }
@@ -22,6 +36,131 @@ html {
 
 body {
   font-family: var(--font-sans);
+  font-weight: 500;
   background-color: var(--color-background);
   color: var(--color-foreground);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+:focus-visible {
+  outline: 3px solid #E86427;
+  outline-offset: 3px;
+}
+
+/* ===== Бордюри з брендбуку (бесшовні повтори) ===== */
+.strip {
+  display: block;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-position: left center;
+  background-size: auto 100%;
+  pointer-events: none;
+}
+.strip-step    { height: 26px; background-image: url("/brand/b-step-tile.png"); }
+.strip-arrows  { height: 40px; background-image: url("/brand/b-arrows-tile.png"); }
+.strip-dots    { height: 12px; background-image: url("/brand/b-dots-tile.png"); }
+.strip-crenel  { height: 34px; background-image: url("/brand/b-crenel-tile.png"); }
+.strip-dash    { height: 14px; background-image: url("/brand/b-dash-tile.png"); background-repeat: round; background-position: center; background-size: auto 100%; }
+.strip-pattern { height: 56px; background-image: url("/brand/b-pattern-tile.png"); }
+.strip-stripes { height: 32px; background-image: url("/brand/b-stripes-tile.png"); }
+
+/* ===== Декор першого блоку внутрішніх сторінок ===== */
+main.pt-20 > section:first-of-type {
+  position: relative;
+}
+main.pt-20 > section:first-of-type::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 30px;
+  background: url("/brand/b-arrows-tile.png") repeat-x left center / auto 100%;
+  pointer-events: none;
+}
+main.pt-20 > section:first-of-type > div { padding-bottom: 1.5rem; }
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    url("/brand/sun-orange.png") no-repeat right 4% top 14% / 120px auto,
+    url("/brand/star-red.png") no-repeat left 3% bottom 22% / 84px auto;
+  opacity: .95;
+}
+@media (max-width: 1023px) {
+  .page-hero::before { display: none; }
+}
+
+/* ===== Кнопки у стилі пост-плашок з брендбуку ===== */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border-radius: 9999px;
+  background: var(--color-orange);
+  color: var(--color-cream);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: .8rem;
+  padding: .4rem 1rem;
+  letter-spacing: .02em;
+}
+
+/* Заголовки-плашки на мазках пензля з брендбуку */
+.pill-brush {
+  border-radius: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  justify-content: center;
+  font-size: .95rem;
+  padding: 1.1rem 3.3rem 1.1rem 3rem;
+  line-height: 1.1;
+}
+.pill-brush-red    { background-image: url("/brand/brush-red.png"); }
+.pill-brush-green  { background-image: url("/brand/brush-green.png"); }
+.pill-brush-purple { background-image: url("/brand/brush-purple.png"); }
+.pill-brush-orange { background-image: url("/brand/brush-orange.png"); padding: 1.1rem 2.4rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* ===== Рамки з брендбуку (9-slice з PNG, розтягуються під будь-який блок) ===== */
+.frame {
+  border-style: solid;
+  border-color: transparent;
+  background-clip: padding-box;
+}
+.frame-green {
+  border-width: 32px 30px;
+  border-image: url("/brand/frame-green.png") 66 62 / 32px 30px stretch;
+}
+.frame-green-solid {
+  border-width: 32px 30px;
+  border-image: url("/brand/frame-green-solid.png") 66 62 / 32px 30px stretch;
+}
+.frame-orange {
+  border-width: 30px;
+  border-image: url("/brand/frame-orange.png") 40 38 / 30px stretch;
+}
+
+/* Круглі портрети в рамці-квітці (фіолетова рамка з брендбуку) */
+.frame-quatrefoil {
+  position: relative;
+  padding: 14%;
+}
+.frame-quatrefoil::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: url("/brand/frame-purple.png") center / contain no-repeat;
 }

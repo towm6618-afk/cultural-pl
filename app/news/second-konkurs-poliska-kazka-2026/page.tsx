@@ -96,7 +96,7 @@ export default function SecondKonkursPage() {
 
             {/* Розділ 1 */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Sparkles className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-snug">
@@ -111,7 +111,7 @@ export default function SecondKonkursPage() {
               Роботи фіналістів першого конкурсу були представлені на виставці в Національній академії образотворчого мистецтва і архітектури у символічному діалозі з творами видатної української художниці Марії Примаченко. За підсумками першого конкурсу переможці отримали річні стипендії, які стали реальною фінансовою підтримкою для їхнього подальшого творчого розвитку.
             </p>
 
-            <blockquote className="my-10 relative bg-primary/5 rounded-3xl p-8 md:p-10 border-l-4 border-primary group">
+            <blockquote className="my-10 relative bg-primary/5 rounded-lg p-8 md:p-10 border-l-4 border-primary group">
               <Quote className="absolute top-6 right-8 w-16 h-16 text-primary/10 group-hover:scale-110 transition-transform duration-500" />
               <div className="relative z-10">
                 <p className="text-xl font-serif italic text-foreground leading-relaxed mb-4">
@@ -129,7 +129,7 @@ export default function SecondKonkursPage() {
 
             {/* Розділ 2: Стипендії */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Trophy className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-snug">
@@ -142,32 +142,32 @@ export default function SecondKonkursPage() {
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-10">
-              <div className="bg-secondary/40 border border-border hover:border-primary/30 rounded-3xl p-8 transition-colors">
+              <div className="bg-secondary/40 border border-border hover:border-primary/30 rounded-lg p-8 transition-colors">
                 <h3 className="text-xl font-serif font-bold text-foreground mb-6">
                   Професійна категорія
                 </h3>
                 <ul className="space-y-4">
-                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl shadow-sm">
+                  <li className="flex items-center gap-4 bg-background p-4 rounded-lg shadow-sm">
                     <span className="text-primary font-bold text-xl">І</span>
                     <span className="text-lg text-muted-foreground">місце — <strong className="text-foreground">25 000 грн</strong> щомісяця протягом року</span>
                   </li>
-                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl shadow-sm">
+                  <li className="flex items-center gap-4 bg-background p-4 rounded-lg shadow-sm">
                     <span className="text-primary font-bold text-xl">ІІ</span>
                     <span className="text-lg text-muted-foreground">місце — <strong className="text-foreground">20 000 грн</strong> щомісяця протягом року</span>
                   </li>
-                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl shadow-sm">
+                  <li className="flex items-center gap-4 bg-background p-4 rounded-lg shadow-sm">
                     <span className="text-primary font-bold text-xl">ІІІ</span>
                     <span className="text-lg text-muted-foreground">місце — <strong className="text-foreground">15 000 грн</strong> щомісяця протягом року</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-secondary/40 border border-border hover:border-primary/30 rounded-3xl p-8 transition-colors">
+              <div className="bg-secondary/40 border border-border hover:border-primary/30 rounded-lg p-8 transition-colors">
                 <h3 className="text-xl font-serif font-bold text-foreground mb-6">
                   Аматорська категорія
                 </h3>
                 <ul className="space-y-4">
-                  <li className="flex items-center gap-4 bg-background p-4 rounded-2xl shadow-sm">
+                  <li className="flex items-center gap-4 bg-background p-4 rounded-lg shadow-sm">
                     <span className="text-primary font-bold text-xl">І</span>
                     <span className="text-lg text-muted-foreground">місце — <strong className="text-foreground">25 000 грн</strong> щомісяця протягом року</span>
                   </li>
@@ -179,7 +179,7 @@ export default function SecondKonkursPage() {
               Таким чином, конкурс передбачає не лише мистецьке визнання, а й стабільну фінансову підтримку творчого розвитку молодих художників.
             </p>
 
-            <blockquote className="my-10 relative bg-primary/5 rounded-3xl p-8 md:p-10 border-l-4 border-primary group">
+            <blockquote className="my-10 relative bg-primary/5 rounded-lg p-8 md:p-10 border-l-4 border-primary group">
               <Quote className="absolute top-6 right-8 w-16 h-16 text-primary/10 group-hover:scale-110 transition-transform duration-500" />
               <div className="relative z-10">
                 <p className="text-xl font-serif italic text-foreground leading-relaxed mb-4">
@@ -197,7 +197,7 @@ export default function SecondKonkursPage() {
 
             {/* Розділ 3: Тема */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Palette className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-snug">
@@ -236,7 +236,7 @@ export default function SecondKonkursPage() {
 
             {/* Розділ 4: Хто може взяти участь */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Users className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-snug">
@@ -264,7 +264,7 @@ export default function SecondKonkursPage() {
             </p>
 
             {/* Розділ 5: Терміни */}
-            <div className="bg-secondary/50 border border-primary/20 rounded-3xl p-8 md:p-12 mb-8">
+            <div className="bg-secondary/50 border border-primary/20 rounded-lg p-8 md:p-12 mb-8">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-background p-3 rounded-xl text-primary shadow-sm">
                   <CalendarDays className="w-6 h-6" />
@@ -278,7 +278,7 @@ export default function SecondKonkursPage() {
                 Прийом заявок на другий Національний конкурс народного мистецтва «Поліська Казка» стартує 1 листопада 2026 року. Майбутнім учасникам організатори радять уже зараз починати працювати над ідеями конкурсних робіт та шукати власний погляд на тему «Поліської Казки».
               </p>
 
-              <div className="bg-background p-6 rounded-2xl border border-border shadow-sm text-center mb-8">
+              <div className="bg-background p-6 rounded-lg border border-border shadow-sm text-center mb-8">
                 <p className="text-xl font-medium text-foreground">
                   Старт прийому заявок — 1 листопада 2026 року
                 </p>

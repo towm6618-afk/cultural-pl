@@ -82,9 +82,9 @@ export default function PressConferencePage() {
             </p>
 
             {/* Блок з учасниками заходу */}
-            <div className="bg-secondary/40 border border-secondary hover:border-primary/20 transition-colors duration-300 rounded-3xl p-8 my-10 group shadow-sm">
+            <div className="bg-secondary/40 border border-secondary hover:border-primary/20 transition-colors duration-300 rounded-lg p-8 my-10 group shadow-sm">
               <div className="flex items-center gap-4 mb-6">
-                <div className="bg-background p-3 rounded-2xl text-primary shadow-sm group-hover:-translate-y-1 transition-transform">
+                <div className="bg-background p-3 rounded-lg text-primary shadow-sm group-hover:-translate-y-1 transition-transform">
                   <Users className="w-6 h-6" />
                 </div>
               </div>
@@ -148,7 +148,7 @@ export default function PressConferencePage() {
             </p>
 
             {/* Інтерактивне посилання в кінці */}
-            <div className="bg-secondary/30 border border-secondary hover:border-primary/30 transition-all duration-300 rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6 group">
+            <div className="bg-secondary/30 border border-secondary hover:border-primary/30 transition-all duration-300 rounded-lg p-8 flex flex-col sm:flex-row items-center justify-between gap-6 group">
               <p className="text-lg text-foreground font-medium text-center sm:text-left m-0">
                 Детальніше про конкурс ми розповідали <Link href="/news/konkurs" className="text-primary hover:text-primary/80 underline decoration-primary/30 hover:decoration-primary transition-all">
                   тут.

@@ -13,7 +13,7 @@ export default function ProNasPage() {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-secondary">
+        <section className="page-hero py-16 md:py-24 bg-secondary">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -50,7 +50,7 @@ export default function ProNasPage() {
                   </p>
                 </div>
               </div>
-              <div className="bg-secondary rounded-2xl p-8 md:p-12">
+              <div className="frame frame-green p-3 md:p-8">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center p-6 bg-background rounded-xl">
                     <div className="text-3xl md:text-4xl font-bold text-primary mb-2">300K</div>
@@ -81,7 +81,7 @@ export default function ProNasPage() {
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
                 Засновниця платформи
               </h2>
-              <div className="bg-background rounded-2xl p-8 md:p-12">
+              <div className="bg-background rounded-lg p-8 md:p-12">
                 <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-6 flex items-center justify-center">
                   <span className="text-3xl font-serif text-primary">МБ</span>
                 </div>
@@ -106,7 +106,7 @@ export default function ProNasPage() {
               Наші цінності
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center p-8 bg-secondary rounded-2xl">
+              <div className="frame frame-orange text-center p-3">
                 <div className="w-16 h-16 bg-primary/10 rounded-full mx-auto mb-6 flex items-center justify-center">
                   <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -117,7 +117,7 @@ export default function ProNasPage() {
                   Надаємо фінансову та інформаційну підтримку молодим українським художникам
                 </p>
               </div>
-              <div className="text-center p-8 bg-secondary rounded-2xl">
+              <div className="frame frame-orange text-center p-3">
                 <div className="w-16 h-16 bg-primary/10 rounded-full mx-auto mb-6 flex items-center justify-center">
                   <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -128,7 +128,7 @@ export default function ProNasPage() {
                   Популяризуємо українське народне мистецтво та культурну спадщину
                 </p>
               </div>
-              <div className="text-center p-8 bg-secondary rounded-2xl">
+              <div className="frame frame-orange text-center p-3">
                 <div className="w-16 h-16 bg-primary/10 rounded-full mx-auto mb-6 flex items-center justify-center">
                   <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />

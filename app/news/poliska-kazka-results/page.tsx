@@ -73,7 +73,7 @@ export default function ArticlePage() {
             </p>
 
             {/* Врізка-посилання на минулу статтю */}
-            <div className="bg-secondary/50 border border-border rounded-2xl p-6 my-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="bg-secondary/50 border border-border rounded-lg p-6 my-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <h4 className="font-bold text-foreground mb-1">Про умови участі та місію конкурсу ми детально розповідали тут.</h4>
                 <p className="text-muted-foreground text-sm"></p>
@@ -92,7 +92,7 @@ export default function ArticlePage() {
 
             {/* Географія */}
             <div className="mt-12 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Globe className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
@@ -108,7 +108,7 @@ export default function ArticlePage() {
             </p>
 
             {/* Цитата */}
-            <blockquote className="my-12 relative overflow-hidden bg-secondary rounded-3xl p-8 md:p-10">
+            <blockquote className="my-12 relative overflow-hidden bg-secondary rounded-lg p-8 md:p-10">
               <Quote className="absolute -top-4 -right-4 w-32 h-32 text-background/50 rotate-12" />
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl font-serif italic text-foreground leading-relaxed mb-6">
@@ -132,7 +132,7 @@ export default function ArticlePage() {
 
             {/* Інтерпретація */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Sparkles className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
@@ -144,7 +144,7 @@ export default function ArticlePage() {
               Серед образів, які найчастіше з’являлися у роботах конкурсантів, — <strong>мавки, дивоптахи, чарівні квіти та поліські відьми</strong>. Молоді митці активно працюють із поліською міфологією, поєднуючи традиційні символи із сучасною візуальною мовою.
             </p>
 
-            <div className="bg-background border border-border p-6 rounded-2xl my-6 shadow-sm">
+            <div className="bg-background border border-border p-6 rounded-lg my-6 shadow-sm">
               <p className="text-foreground text-lg">
                 ❄️ <strong className="font-bold">Неочікуваний тренд:</strong> авторські вертепи — ймовірно, натхненні затяжною зимою та різдвяною атмосферою.
               </p>
@@ -156,7 +156,7 @@ export default function ArticlePage() {
 
             {/* Статистика учасників */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Users className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
@@ -170,15 +170,15 @@ export default function ArticlePage() {
 
             {/* Інтерактивні картки статистики */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-              <div className="bg-secondary/50 border border-border p-6 rounded-2xl text-center hover:-translate-y-1 transition-transform shadow-sm">
+              <div className="bg-secondary/50 border border-border p-6 rounded-lg text-center hover:-translate-y-1 transition-transform shadow-sm">
                 <div className="text-4xl font-bold text-primary mb-2">11<span className="text-2xl"> років</span></div>
                 <div className="text-sm text-foreground font-medium">Наймолодшому автору</div>
               </div>
-              <div className="bg-secondary/50 border border-border p-6 rounded-2xl text-center hover:-translate-y-1 transition-transform shadow-sm">
+              <div className="bg-secondary/50 border border-border p-6 rounded-lg text-center hover:-translate-y-1 transition-transform shadow-sm">
                 <div className="text-4xl font-bold text-primary mb-2">15<span className="text-2xl"> років</span></div>
                 <div className="text-sm text-foreground font-medium">Значна кількість заявок</div>
               </div>
-              <div className="bg-secondary/50 border border-border p-6 rounded-2xl text-center hover:-translate-y-1 transition-transform shadow-sm">
+              <div className="bg-secondary/50 border border-border p-6 rounded-lg text-center hover:-translate-y-1 transition-transform shadow-sm">
                 <div className="text-4xl font-bold text-primary mb-2">71<span className="text-2xl"> рік</span></div>
                 <div className="text-sm text-foreground font-medium">Найстаршому митцю</div>
               </div>
@@ -193,7 +193,7 @@ export default function ArticlePage() {
 
             {/* Матеріали та форма */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Palette className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">

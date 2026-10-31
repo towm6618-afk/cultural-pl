@@ -76,7 +76,7 @@ export default function MasterClassArticlePage() {
 
             {/* Розділ 1 */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <ImageIcon className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-snug">
@@ -94,7 +94,7 @@ export default function MasterClassArticlePage() {
               Тема заняття була присвячена домашнім тваринам, традиційному українському подвір’ю та міфічним істотам, які могли б існувати у світі української народної уяви. Учасники спостерігали за автентичними хатами, господарськими будівлями та традиційним ландшафтом Пирогова, а потім переносили власні враження та фантазії на полотно.
             </p>
 
-            <blockquote className="my-10 relative bg-primary/5 rounded-3xl p-8 md:p-10 border-l-4 border-primary group">
+            <blockquote className="my-10 relative bg-primary/5 rounded-lg p-8 md:p-10 border-l-4 border-primary group">
               <Quote className="absolute top-6 right-8 w-16 h-16 text-primary/10 group-hover:scale-110 transition-transform duration-500" />
               <div className="relative z-10">
                 <p className="text-xl font-serif italic text-foreground leading-relaxed mb-4">
@@ -130,7 +130,7 @@ export default function MasterClassArticlePage() {
 
             {/* Розділ 3 */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Heart className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-snug">
@@ -146,7 +146,7 @@ export default function MasterClassArticlePage() {
               Пані Белла, яка вже вдруге взяла участь у майстер-класі, поділилася власними враженнями:
             </p>
 
-            <blockquote className="my-10 relative bg-secondary/50 rounded-3xl p-8 md:p-10 border-l-4 border-foreground/30 group">
+            <blockquote className="my-10 relative bg-secondary/50 rounded-lg p-8 md:p-10 border-l-4 border-foreground/30 group">
               <Quote className="absolute top-6 right-8 w-16 h-16 text-foreground/5 group-hover:scale-110 transition-transform duration-500" />
               <div className="relative z-10">
                 <p className="text-xl font-serif italic text-foreground leading-relaxed">
@@ -180,7 +180,7 @@ export default function MasterClassArticlePage() {
               Для учасниці Катерини Нікітенко це був перший майстер-клас від «Поліської Казки».
             </p>
 
-            <blockquote className="my-10 relative bg-primary/5 rounded-3xl p-8 md:p-10 border-l-4 border-primary group">
+            <blockquote className="my-10 relative bg-primary/5 rounded-lg p-8 md:p-10 border-l-4 border-primary group">
               <Quote className="absolute top-6 right-8 w-16 h-16 text-primary/10 group-hover:scale-110 transition-transform duration-500" />
               <div className="relative z-10">
                 <p className="text-xl font-serif italic text-foreground leading-relaxed mb-4">
@@ -196,7 +196,7 @@ export default function MasterClassArticlePage() {
 
             {/* Розділ 5 */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Sparkles className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-snug">
@@ -211,7 +211,7 @@ export default function MasterClassArticlePage() {
               За словами засновниці платформи Маргарити Бондарєвої, попереду на учасників чекають нові зустрічі:
             </p>
 
-            <blockquote className="my-10 relative bg-secondary/50 rounded-3xl p-8 md:p-10 border-l-4 border-foreground/30 group">
+            <blockquote className="my-10 relative bg-secondary/50 rounded-lg p-8 md:p-10 border-l-4 border-foreground/30 group">
               <Quote className="absolute top-6 right-8 w-16 h-16 text-foreground/5 group-hover:scale-110 transition-transform duration-500" />
               <div className="relative z-10">
                 <p className="text-xl font-serif italic text-foreground leading-relaxed">
@@ -274,7 +274,7 @@ export default function MasterClassArticlePage() {
 
             {/* Розділ 8 */}
             <div className="mt-16 mb-8 flex items-center gap-4 group">
-              <div className="bg-primary/10 p-3 rounded-2xl text-primary group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:-translate-y-1 transition-transform duration-300">
                 <Users className="w-6 h-6" />
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-snug">
@@ -295,7 +295,7 @@ export default function MasterClassArticlePage() {
               Пирогів, українська хата, народна традиція, пензель, фарби та власна фантазія — іноді саме з цього починається особиста історія любові до українського мистецтва.
             </p>
             
-            <div className="bg-primary text-primary-foreground p-6 rounded-2xl text-center shadow-lg">
+            <div className="bg-primary text-primary-foreground p-6 rounded-lg text-center shadow-lg">
               <p className="text-xl font-medium">
                 Слідкуйте за наступними анонсами «Поліської Казки» та долучайтеся до нових творчих зустрічей.
               </p>
