@@ -19,6 +19,9 @@ export default function KonkursPage() {
         <section className="page-hero py-16 md:py-24 bg-secondary">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
+              <div className="inline-flex items-center gap-2 bg-orange text-cream px-4 py-2 rounded-full text-sm font-serif font-bold mb-6">
+                Прийом заявок триватиме до 31 січня 2027 року
+              </div>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
                 Другий національний конкурс народного мистецтва
               </h1>
