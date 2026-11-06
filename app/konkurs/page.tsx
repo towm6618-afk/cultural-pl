@@ -202,7 +202,7 @@ export default function KonkursPage() {
         {/* Jury link */}
         <section className="py-16 md:py-24 bg-muted/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-6 max-w-2xl mx-auto">
+            <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
               <Link
                 href="/zhuri"
                 className="bg-background rounded-lg p-8 border border-border hover:border-primary/40 hover:shadow-lg transition-all text-center"
@@ -210,6 +210,14 @@ export default function KonkursPage() {
                 <h3 className="font-serif text-2xl font-bold text-foreground mb-2">Конкурсна комісія</h3>
                 <p className="text-muted mb-4">Професійне журі, яке оцінює роботи учасників конкурсу</p>
                 <span className="text-primary font-medium">Переглянути журі →</span>
+              </Link>
+              <Link
+                href="/ambasadory"
+                className="bg-background rounded-lg p-8 border border-border hover:border-primary/40 hover:shadow-lg transition-all text-center"
+              >
+                <h3 className="font-serif text-2xl font-bold text-foreground mb-2">Амбасадори</h3>
+                <p className="text-muted mb-4">Відомі митці, які підтримують платформу та конкурс</p>
+                <span className="text-primary font-medium">Переглянути амбасадорів →</span>
               </Link>
             </div>
           </div>
