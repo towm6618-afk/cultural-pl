@@ -13,7 +13,7 @@ export default function AmbassadorsPage() {
     <>
       <Header />
       <main className="pt-20">
-        <section className="page-hero py-16 md:py-24 bg-secondary min-h-[60vh]">
+        <section className="page-hero py-16 md:py-24 bg-secondary">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground text-center mb-4">
               Амбасадори
@@ -22,19 +22,22 @@ export default function AmbassadorsPage() {
               Люди, які підтримують платформу «Поліська Казка» та популяризують українське мистецтво
             </p>
 
-            {ambassadors.length === 0 ? (
-              <p className="text-center text-muted">Список амбасадорів незабаром з’явиться.</p>
-            ) : (
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
-                {ambassadors.map((person) => (
-                  <div key={person.name} className="text-center group">
-                    <h3 className="font-bold text-foreground text-sm md:text-base mb-1">{person.name}</h3>
-                    <p className="text-xs md:text-sm text-primary font-medium mb-1">{person.role}</p>
-                    {person.description && <p className="text-xs text-muted">{person.description}</p>}
+            <div className="grid gap-10 md:grid-cols-3 md:gap-8 max-w-6xl mx-auto">
+              {ambassadors.map((person) => (
+                <article key={person.name} className="text-center group">
+                  <div className="frame-quatrefoil aspect-square mb-4 max-w-xs mx-auto">
+                    <img
+                      src={person.image}
+                      alt={person.name}
+                      className="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
-                ))}
-              </div>
-            )}
+                  <h2 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-2">{person.name}</h2>
+                  <p className="text-sm text-primary font-medium mb-3">{person.role}</p>
+                  <p className="text-sm text-muted leading-relaxed">{person.description}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
       </main>
