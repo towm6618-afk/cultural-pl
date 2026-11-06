@@ -25,8 +25,10 @@ export default function JuryPage() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
               {juryMembers.map((member) => (
                 <div key={member.name} className="text-center group">
-                  <div className="frame-quatrefoil aspect-square mb-4">
+                  <div className="aspect-square mb-4 max-w-[200px] mx-auto">
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src={member.image}
                       alt={member.name}
                       className="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-300"
