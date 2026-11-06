@@ -25,8 +25,10 @@ export default function AmbassadorsPage() {
             <div className="grid gap-10 md:grid-cols-3 md:gap-8 max-w-6xl mx-auto">
               {ambassadors.map((person) => (
                 <article key={person.name} className="text-center group">
-                  <div className="frame-quatrefoil aspect-square mb-4 max-w-xs mx-auto">
+                  <div className="aspect-square mb-4 max-w-[240px] mx-auto">
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src={person.image}
                       alt={person.name}
                       className="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-300"
