@@ -2,9 +2,17 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, Calendar, Sparkles } from "lucide-react"
-import { thirdMasterClassPhotos, fourthArtClassPhotos, secondKonkursPhotos } from "./news-photos"
+import { thirdMasterClassPhotos, fourthArtClassPhotos, secondKonkursPhotos, kryvolapAmbassadorPhotos } from "./news-photos"
 
 const posts = [
+  {
+    slug: "anatolii-kryvolap-ambassador-poliska-kazka",
+    category: "Амбасадор",
+    title: "Анатолій Криволап став амбасадором другого Національного конкурсу народного мистецтва «Поліська Казка»",
+    excerpt: "Лауреат Національної премії України імені Тараса Шевченка став одним із трьох амбасадорів конкурсу для молодих художників. Прийом заявок триває до 31 січня 2027 року.",
+    date: "14 листопада 2026",
+    image: kryvolapAmbassadorPhotos.cover,
+  },
   {
     slug: "second-konkurs-poliska-kazka-2026",
     category: "Анонс",
