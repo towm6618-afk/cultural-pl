@@ -78,7 +78,7 @@ export default function KryvolapAmbassadorPage() {
             </Link>
           </div>
 
-          <ArticleCover src={cover} alt={ALT} narrow />
+          <ArticleCover src={cover} alt={ALT} narrow credit="Єлизавета Балмер" />
 
           <div className="flex items-center gap-4 mb-6">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
