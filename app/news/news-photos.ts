@@ -34,3 +34,8 @@ export const secondKonkursPhotos = {
   cover: "https://i.ibb.co/G4nkGB53/IMG-5280.jpg",
   photos: [] as string[],
 }
+
+export const kryvolapAmbassadorPhotos = {
+  cover: "/news/kryvolap-ambassador.jpg",
+  photos: [] as string[],
+}
