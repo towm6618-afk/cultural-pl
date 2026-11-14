@@ -36,6 +36,6 @@ export const secondKonkursPhotos = {
 }
 
 export const kryvolapAmbassadorPhotos = {
-  cover: "/news/kryvolap-ambassador.jpg",
+  cover: "https://i.ibb.co/9kRnyVWv/IMG-6165.webp",
   photos: [] as string[],
 }
