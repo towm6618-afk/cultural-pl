@@ -2,13 +2,13 @@
 // Якщо посилання порожнє або ще не замінене — фото просто не показується.
 
 function isValid(src?: string) {
-  return !!src && /^https?:\/\//.test(src.trim())
+  return !!src && /^(https?:\/\/|\/)/.test(src.trim())
 }
 
-export function ArticleCover({ src, alt }: { src?: string; alt: string }) {
+export function ArticleCover({ src, alt, narrow }: { src?: string; alt: string; narrow?: boolean }) {
   if (!isValid(src)) return null
   return (
-    <div className="max-w-3xl mx-auto w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 shadow-lg">
+    <div className={`${narrow ? "max-w-md" : "max-w-3xl"} mx-auto w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 shadow-lg`}>
       <img src={src} alt={alt} className="w-full h-auto object-cover" />
     </div>
   )
