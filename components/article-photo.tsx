@@ -23,7 +23,7 @@ export function ArticleCover({
         <img src={src} alt={alt} className="w-full h-auto object-cover" />
       </div>
       {credit && (
-        <figcaption className="mt-3 text-center text-sm text-muted-foreground">Фотограф: {credit}</figcaption>
+        <figcaption className="mt-3 text-left text-sm text-muted-foreground">Фото: {credit}</figcaption>
       )}
     </figure>
   )
