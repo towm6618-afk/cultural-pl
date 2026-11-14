@@ -5,12 +5,27 @@ function isValid(src?: string) {
   return !!src && /^(https?:\/\/|\/)/.test(src.trim())
 }
 
-export function ArticleCover({ src, alt, narrow }: { src?: string; alt: string; narrow?: boolean }) {
+export function ArticleCover({
+  src,
+  alt,
+  narrow,
+  credit,
+}: {
+  src?: string
+  alt: string
+  narrow?: boolean
+  credit?: string
+}) {
   if (!isValid(src)) return null
   return (
-    <div className={`${narrow ? "max-w-md" : "max-w-3xl"} mx-auto w-full overflow-hidden rounded-[2rem] bg-secondary mb-10 shadow-lg`}>
-      <img src={src} alt={alt} className="w-full h-auto object-cover" />
-    </div>
+    <figure className={`${narrow ? "max-w-md" : "max-w-3xl"} mx-auto w-full mb-10`}>
+      <div className="overflow-hidden rounded-[2rem] bg-secondary shadow-lg">
+        <img src={src} alt={alt} className="w-full h-auto object-cover" />
+      </div>
+      {credit && (
+        <figcaption className="mt-3 text-center text-sm text-muted-foreground">Фотограф: {credit}</figcaption>
+      )}
+    </figure>
   )
 }
 
